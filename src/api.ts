@@ -71,7 +71,7 @@ import {
  * ```
  */
 // TODO -- this will be updated when api is ready
-export function account(options: AccountServiceRequest) : Promise<APIResponse> {
+export function account(options: AccountServiceRequest): Promise<APIResponse> {
   return queryApi(options, 'account', '/api/v2/account');
 }
 
@@ -96,7 +96,7 @@ export function account(options: AccountServiceRequest) : Promise<APIResponse> {
  * })().catch(console.error);
  * ```
  */
-export function cToken(options: CTokenServiceRequest) : Promise<APIResponse> {
+export function cToken(options: CTokenServiceRequest): Promise<APIResponse> {
   return queryApi(options, 'cToken', '/api/v2/ctoken');
 }
 
@@ -121,7 +121,7 @@ export function cToken(options: CTokenServiceRequest) : Promise<APIResponse> {
  * })().catch(console.error);
  * ```
  */
-export function vToken(options: CTokenServiceRequest) : Promise<APIResponse> {
+export function vToken(options: CTokenServiceRequest): Promise<APIResponse> {
   return queryApi(options, 'vToken', '/api/vtoken');
 }
 
@@ -149,7 +149,7 @@ export function vToken(options: CTokenServiceRequest) : Promise<APIResponse> {
  * })().catch(console.error);
  * ```
  */
-export function marketHistory(options: MarketHistoryServiceRequest) : Promise<APIResponse> {
+export function marketHistory(options: MarketHistoryServiceRequest): Promise<APIResponse> {
   // return queryApi(options, 'Market History', '/api/v2/market_history/graph');
   return queryApi(options, 'Market History', '/api/market_history/graph');
 }
@@ -178,7 +178,7 @@ export function marketHistory(options: MarketHistoryServiceRequest) : Promise<AP
  * })().catch(console.error);
  * ```
  */
-export function governance(options: GovernanceServiceRequest, endpoint: string) : Promise<APIResponse> {
+export function governance(options: GovernanceServiceRequest, endpoint: string): Promise<APIResponse> {
   if (endpoint === 'proposals') {
     // endpoint = '/api/v2/governance/proposals';
     endpoint = '/api/governance/proposals';
@@ -193,15 +193,17 @@ export function governance(options: GovernanceServiceRequest, endpoint: string) 
   return queryApi(options, 'GovernanceService', endpoint);
 }
 
-function queryApi(options: APIRequest, name: string, path: string) : Promise<APIResponse> {
+function queryApi(options: APIRequest, name: string, path: string): Promise<APIResponse> {
   return new Promise((resolve, reject) => {
     const errorPrefix = `Venus [api] [${name}] | `;
     let responseCode, responseMessage;
 
+    let hostname = 'https://mainnetapi.venus.io'; // 'https://api.compound.finance'
+    if (options && (options.network === 'testnet')) hostname = 'https://testnetapi.venus.io';
+
     request({
-      // hostname: 'https://api.compound.finance',
+      // hostname,
       hostname: 'http://localhost', port: 3000,
-      // hostname: 'https://testnetapi.venus.io',
       path,
       method: 'POST',
       headers: {
