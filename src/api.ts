@@ -202,8 +202,7 @@ function queryApi(options: APIRequest, name: string, path: string): Promise<APIR
     if (options && (options.network === 'testnet')) hostname = 'https://testnetapi.venus.io';
 
     request({
-      // hostname,
-      hostname: 'http://localhost', port: 3000,
+      hostname,
       path,
       method: 'POST',
       headers: {
@@ -212,7 +211,6 @@ function queryApi(options: APIRequest, name: string, path: string): Promise<APIR
       },
       body: options
     }).then((response) => {
-      console.log('------------ response', response);
       responseCode = response.status;
       responseMessage = response.statusText;
 
@@ -224,7 +222,6 @@ function queryApi(options: APIRequest, name: string, path: string): Promise<APIR
         throw 'Invalid request made to the Venus API.';
       }
     }).catch((error) => {
-      console.log('------------ error', error);
       let errorMessage = '';
 
       if (error.name === 'SyntaxError') {
