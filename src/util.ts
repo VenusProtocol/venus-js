@@ -219,6 +219,8 @@ export function getNetNameWithChainId(chainId: number) : string {
     4: 'rinkeby',
     5: 'goerli',
     42: 'kovan',
+    56: 'mainnet', // Binance Smart Chain Mainnet
+    97: 'Chapel', // Binance Smart Chain Testnet
   };
   return networks[chainId];
 }
