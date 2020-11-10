@@ -198,6 +198,7 @@ function queryApi(options: APIRequest, name: string, path: string): Promise<APIR
     const errorPrefix = `Venus [api] [${name}] | `;
     let responseCode, responseMessage;
 
+    // TODO -- api service endpoint should be updated.
     let hostname = 'https://mainnetapi.venus.io'; // 'https://api.compound.finance'
     if (options && (options.network === 'testnet')) hostname = 'https://testnetapi.venus.io';
 
