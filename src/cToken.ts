@@ -14,7 +14,7 @@ import { BigNumber } from '@ethersproject/bignumber/lib/bignumber';
 import { CallOptions, TrxResponse } from './types';
 
 /**
- * Supplies the user's Ethereum asset to the Compound Protocol.
+ * Supplies the user's Ethereum asset to the Venus Protocol.
  *
  * @param {string} asset A string of the asset to supply.
  * @param {number | string | BigNumber} amount A string, number, or BigNumber
@@ -33,15 +33,15 @@ import { CallOptions, TrxResponse } from './types';
  * @example
  *
  * ```
- * const compound = new Compound(window.ethereum);
+ * const compound = new Venus(window.ethereum);
  *
  * // Ethers.js overrides are an optional 3rd parameter for `supply`
  * // const trxOptions = { gasLimit: 250000, mantissa: false };
  * 
  * (async function() {
  * 
- *   console.log('Supplying ETH to the Compound Protocol...');
- *   const trx = await compound.supply(Compound.ETH, 1);
+ *   console.log('Supplying ETH to the Venus Protocol...');
+ *   const trx = await compound.supply(Venus.ETH, 1);
  *   console.log('Ethers.js transaction object', trx);
  * 
  * })().catch(console.error);
@@ -54,7 +54,7 @@ export async function supply(
   options: CallOptions = {}
 ) : Promise<TrxResponse> {
   await netId(this);
-  const errorPrefix = 'Compound [supply] | ';
+  const errorPrefix = 'Venus [supply] | ';
 
   const cTokenName = 'c' + asset;
   const cTokenAddress = address[this._network.name][cTokenName];
@@ -122,7 +122,7 @@ export async function supply(
 }
 
 /**
- * Redeems the user's Ethereum asset from the Compound Protocol.
+ * Redeems the user's Ethereum asset from the Venus Protocol.
  *
  * @param {string} asset A string of the asset to redeem, or its cToken name.
  * @param {number | string | BigNumber} amount A string, number, or BigNumber
@@ -139,12 +139,12 @@ export async function supply(
  * @example
  *
  * ```
- * const compound = new Compound(window.ethereum);
+ * const compound = new Venus(window.ethereum);
  * 
  * (async function() {
  * 
  *   console.log('Redeeming ETH...');
- *   const trx = await compound.redeem(Compound.ETH, 1); // also accepts cToken args
+ *   const trx = await compound.redeem(Venus.ETH, 1); // also accepts cToken args
  *   console.log('Ethers.js transaction object', trx);
  * 
  * })().catch(console.error);
@@ -156,7 +156,7 @@ export async function redeem(
   options: CallOptions = {}
 ): Promise<TrxResponse> {
   await netId(this);
-  const errorPrefix = 'Compound [redeem] | ';
+  const errorPrefix = 'Venus [redeem] | ';
 
   if (typeof asset !== 'string' || asset.length < 1) {
     throw Error(errorPrefix + 'Argument `asset` must be a non-empty string.');
@@ -199,7 +199,7 @@ export async function redeem(
 }
 
 /**
- * Borrows an Ethereum asset from the Compound Protocol for the user. The user's
+ * Borrows an Ethereum asset from the Venus Protocol for the user. The user's
  *     address must first have supplied collateral and entered a corresponding
  *     market.
  *
@@ -218,7 +218,7 @@ export async function redeem(
  * @example
  *
  * ```
- * const compound = new Compound(window.ethereum);
+ * const compound = new Venus(window.ethereum);
  * 
  * (async function() {
  * 
@@ -226,7 +226,7 @@ export async function redeem(
  *   const trxOptions = { mantissa: true };
  * 
  *   console.log('Borrowing 32 Dai...');
- *   const trx = await compound.borrow(Compound.DAI, daiScaledUp, trxOptions);
+ *   const trx = await compound.borrow(Venus.DAI, daiScaledUp, trxOptions);
  * 
  *   console.log('Ethers.js transaction object', trx);
  * 
@@ -239,7 +239,7 @@ export async function borrow(
   options: CallOptions = {}
 ) : Promise<TrxResponse> {
   await netId(this);
-  const errorPrefix = 'Compound [borrow] | ';
+  const errorPrefix = 'Venus [borrow] | ';
 
   const cTokenName = 'c' + asset;
   const cTokenAddress = address[this._network.name][cTokenName];
@@ -299,13 +299,13 @@ export async function borrow(
  * @example
  *
  * ```
- * const compound = new Compound(window.ethereum);
+ * const compound = new Venus(window.ethereum);
  * 
  * (async function() {
  * 
  *   console.log('Repaying Dai borrow...');
  *   const address = null; // set this to any address to repayBorrowBehalf
- *   const trx = await compound.repayBorrow(Compound.DAI, 32, address);
+ *   const trx = await compound.repayBorrow(Venus.DAI, 32, address);
  * 
  *   console.log('Ethers.js transaction object', trx);
  * 
@@ -320,7 +320,7 @@ export async function repayBorrow(
   options: CallOptions = {}
 ) : Promise<TrxResponse> {
   await netId(this);
-  const errorPrefix = 'Compound [repayBorrow] | ';
+  const errorPrefix = 'Venus [repayBorrow] | ';
 
   const cTokenName = 'c' + asset;
   const cTokenAddress = address[this._network.name][cTokenName];
