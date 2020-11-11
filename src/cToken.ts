@@ -57,9 +57,9 @@ export async function supply(
   const errorPrefix = 'Venus [supply] | ';
 
   const vTokenName = 'v' + asset;
-  const cTokenAddress = address[this._network.name][vTokenName];
+  const vTokenAddress = address[this._network.name][vTokenName];
 
-  if (!cTokenAddress || !underlyings.includes(asset)) {
+  if (!vTokenAddress || !underlyings.includes(asset)) {
     throw Error(errorPrefix + 'Argument `asset` cannot be supplied.');
   }
 
@@ -94,7 +94,7 @@ export async function supply(
     const allowance = await eth.read(
       underlyingAddress,
       'allowance',
-      [ userAddress, cTokenAddress ],
+      [ userAddress, vTokenAddress ],
       options
     );
 
@@ -105,7 +105,7 @@ export async function supply(
       await eth.trx(
         underlyingAddress,
         'approve',
-        [ cTokenAddress, amount ],
+        [ vTokenAddress, amount ],
         options
       );
     }
@@ -118,7 +118,7 @@ export async function supply(
     parameters.push(amount);
   }
 
-  return eth.trx(cTokenAddress, 'mint', parameters, options);
+  return eth.trx(vTokenAddress, 'mint', parameters, options);
 }
 
 /**
@@ -165,7 +165,7 @@ export async function redeem(
   const assetIsCToken = asset[0] === 'c';
 
   const vTokenName = assetIsCToken ? asset : 'v' + asset;
-  const cTokenAddress = address[this._network.name][vTokenName];
+  const vTokenAddress = address[this._network.name][vTokenName];
 
   const underlyingName = assetIsCToken ? asset.slice(1, asset.length) : asset;
 
@@ -195,7 +195,7 @@ export async function redeem(
   const parameters = [ amount ];
   const method = assetIsCToken ? 'redeem' : 'redeemUnderlying';
 
-  return eth.trx(cTokenAddress, method, parameters, trxOptions);
+  return eth.trx(vTokenAddress, method, parameters, trxOptions);
 }
 
 /**
@@ -242,9 +242,9 @@ export async function borrow(
   const errorPrefix = 'Venus [borrow] | ';
 
   const vTokenName = 'v' + asset;
-  const cTokenAddress = address[this._network.name][vTokenName];
+  const vTokenAddress = address[this._network.name][vTokenName];
 
-  if (!cTokenAddress || !underlyings.includes(asset)) {
+  if (!vTokenAddress || !underlyings.includes(asset)) {
     throw Error(errorPrefix + 'Argument `asset` cannot be borrowed.');
   }
 
@@ -270,7 +270,7 @@ export async function borrow(
   const parameters = [ amount ];
   trxOptions.abi = vTokenName === constants.cETH ? abi.cEther : abi.cErc20;
 
-  return eth.trx(cTokenAddress, 'borrow', parameters, trxOptions);
+  return eth.trx(vTokenAddress, 'borrow', parameters, trxOptions);
 }
 
 /**
@@ -323,9 +323,9 @@ export async function repayBorrow(
   const errorPrefix = 'Venus [repayBorrow] | ';
 
   const vTokenName = 'v' + asset;
-  const cTokenAddress = address[this._network.name][vTokenName];
+  const vTokenAddress = address[this._network.name][vTokenName];
 
-  if (!cTokenAddress || !underlyings.includes(asset)) {
+  if (!vTokenAddress || !underlyings.includes(asset)) {
     throw Error(errorPrefix + 'Argument `asset` is not supported.');
   }
 
@@ -372,7 +372,7 @@ export async function repayBorrow(
     const allowance = await eth.read(
       underlyingAddress,
       'allowance',
-      [ userAddress, cTokenAddress ],
+      [ userAddress, vTokenAddress ],
       trxOptions
     );
 
@@ -383,11 +383,11 @@ export async function repayBorrow(
       await eth.trx(
         underlyingAddress,
         'approve',
-        [ cTokenAddress, amount ],
+        [ vTokenAddress, amount ],
         trxOptions
       );
     }
   }
 
-  return eth.trx(cTokenAddress, method, parameters, trxOptions);
+  return eth.trx(vTokenAddress, method, parameters, trxOptions);
 }
