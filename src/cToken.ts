@@ -78,15 +78,20 @@ export async function supply(
 
   amount = ethers.BigNumber.from(amount.toString());
 
-  if (vTokenName === constants.cETH) {
-    options.abi = abi.cEther;
+  // if (vTokenName === constants.cETH) {
+  //   options.abi = abi.cEther;
+  // } else {
+  //   options.abi = abi.cErc20;
+  // }
+  if (vTokenName === constants.vBNB) {
+    options.abi = abi.vBNB;
   } else {
-    options.abi = abi.cErc20;
+    options.abi = abi.vBep20;
   }
 
   options._compoundProvider = this._provider;
 
-  if (vTokenName !== constants.cETH && noApprove !== true) {
+  if (vTokenName !== constants.vBNB && noApprove !== true) {
     const underlyingAddress = address[this._network.name][asset];
     const userAddress = this._provider.address;
 
@@ -112,7 +117,7 @@ export async function supply(
   }
 
   const parameters = [];
-  if (vTokenName === constants.cETH) {
+  if (vTokenName === constants.vBNB) {
     options.value = amount;
   } else {
     parameters.push(amount);
@@ -162,12 +167,12 @@ export async function redeem(
     throw Error(errorPrefix + 'Argument `asset` must be a non-empty string.');
   }
 
-  const assetIsCToken = asset[0] === 'c';
+  const assetIsVToken = asset[0] === 'v';
 
-  const vTokenName = assetIsCToken ? asset : 'v' + asset;
+  const vTokenName = assetIsVToken ? asset : 'v' + asset;
   const vTokenAddress = address[this._network.name][vTokenName];
 
-  const underlyingName = assetIsCToken ? asset.slice(1, asset.length) : asset;
+  const underlyingName = assetIsVToken ? asset.slice(1, asset.length) : asset;
 
   if (!cTokens.includes(vTokenName) || !underlyings.includes(underlyingName)) {
     throw Error(errorPrefix + 'Argument `asset` is not supported.');
@@ -190,10 +195,10 @@ export async function redeem(
 
   const trxOptions: CallOptions = {
     _compoundProvider: this._provider,
-    abi: vTokenName === constants.cETH ? abi.cEther : abi.cErc20,
+    abi: vTokenName === constants.vBNB ? abi.vBNB : abi.vBep20,
   };
   const parameters = [ amount ];
-  const method = assetIsCToken ? 'redeem' : 'redeemUnderlying';
+  const method = assetIsVToken ? 'redeem' : 'redeemUnderlying';
 
   return eth.trx(vTokenAddress, method, parameters, trxOptions);
 }
@@ -268,7 +273,7 @@ export async function borrow(
     _compoundProvider: this._provider,
   };
   const parameters = [ amount ];
-  trxOptions.abi = vTokenName === constants.cETH ? abi.cEther : abi.cErc20;
+  trxOptions.abi = vTokenName === constants.vBNB ? abi.vBNB : abi.vBep20;
 
   return eth.trx(vTokenAddress, 'borrow', parameters, trxOptions);
 }
@@ -356,15 +361,15 @@ export async function repayBorrow(
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const parameters: any[] = method === 'repayBorrowBehalf' ? [ borrower ] : [];
-  if (vTokenName === constants.cETH) {
+  if (vTokenName === constants.vBNB) {
     trxOptions.value = amount;
-    trxOptions.abi = abi.cEther;
+    trxOptions.abi = abi.vBNB;
   } else {
     parameters.push(amount);
-    trxOptions.abi = abi.cErc20;
+    trxOptions.abi = abi.vBep20;
   }
 
-  if (vTokenName !== constants.cETH && noApprove !== true) {
+  if (vTokenName !== constants.vBNB && noApprove !== true) {
     const underlyingAddress = address[this._network.name][asset];
     const userAddress = this._provider.address;
 
