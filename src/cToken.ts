@@ -56,8 +56,8 @@ export async function supply(
   await netId(this);
   const errorPrefix = 'Venus [supply] | ';
 
-  const cTokenName = 'c' + asset;
-  const cTokenAddress = address[this._network.name][cTokenName];
+  const vTokenName = 'v' + asset;
+  const cTokenAddress = address[this._network.name][vTokenName];
 
   if (!cTokenAddress || !underlyings.includes(asset)) {
     throw Error(errorPrefix + 'Argument `asset` cannot be supplied.');
@@ -78,7 +78,7 @@ export async function supply(
 
   amount = ethers.BigNumber.from(amount.toString());
 
-  if (cTokenName === constants.cETH) {
+  if (vTokenName === constants.cETH) {
     options.abi = abi.cEther;
   } else {
     options.abi = abi.cErc20;
@@ -86,7 +86,7 @@ export async function supply(
 
   options._compoundProvider = this._provider;
 
-  if (cTokenName !== constants.cETH && noApprove !== true) {
+  if (vTokenName !== constants.cETH && noApprove !== true) {
     const underlyingAddress = address[this._network.name][asset];
     const userAddress = this._provider.address;
 
@@ -112,7 +112,7 @@ export async function supply(
   }
 
   const parameters = [];
-  if (cTokenName === constants.cETH) {
+  if (vTokenName === constants.cETH) {
     options.value = amount;
   } else {
     parameters.push(amount);
@@ -164,12 +164,12 @@ export async function redeem(
 
   const assetIsCToken = asset[0] === 'c';
 
-  const cTokenName = assetIsCToken ? asset : 'c' + asset;
-  const cTokenAddress = address[this._network.name][cTokenName];
+  const vTokenName = assetIsCToken ? asset : 'v' + asset;
+  const cTokenAddress = address[this._network.name][vTokenName];
 
   const underlyingName = assetIsCToken ? asset.slice(1, asset.length) : asset;
 
-  if (!cTokens.includes(cTokenName) || !underlyings.includes(underlyingName)) {
+  if (!cTokens.includes(vTokenName) || !underlyings.includes(underlyingName)) {
     throw Error(errorPrefix + 'Argument `asset` is not supported.');
   }
 
@@ -190,7 +190,7 @@ export async function redeem(
 
   const trxOptions: CallOptions = {
     _compoundProvider: this._provider,
-    abi: cTokenName === constants.cETH ? abi.cEther : abi.cErc20,
+    abi: vTokenName === constants.cETH ? abi.cEther : abi.cErc20,
   };
   const parameters = [ amount ];
   const method = assetIsCToken ? 'redeem' : 'redeemUnderlying';
@@ -241,8 +241,8 @@ export async function borrow(
   await netId(this);
   const errorPrefix = 'Venus [borrow] | ';
 
-  const cTokenName = 'c' + asset;
-  const cTokenAddress = address[this._network.name][cTokenName];
+  const vTokenName = 'v' + asset;
+  const cTokenAddress = address[this._network.name][vTokenName];
 
   if (!cTokenAddress || !underlyings.includes(asset)) {
     throw Error(errorPrefix + 'Argument `asset` cannot be borrowed.');
@@ -268,7 +268,7 @@ export async function borrow(
     _compoundProvider: this._provider,
   };
   const parameters = [ amount ];
-  trxOptions.abi = cTokenName === constants.cETH ? abi.cEther : abi.cErc20;
+  trxOptions.abi = vTokenName === constants.cETH ? abi.cEther : abi.cErc20;
 
   return eth.trx(cTokenAddress, 'borrow', parameters, trxOptions);
 }
@@ -322,8 +322,8 @@ export async function repayBorrow(
   await netId(this);
   const errorPrefix = 'Venus [repayBorrow] | ';
 
-  const cTokenName = 'c' + asset;
-  const cTokenAddress = address[this._network.name][cTokenName];
+  const vTokenName = 'v' + asset;
+  const cTokenAddress = address[this._network.name][vTokenName];
 
   if (!cTokenAddress || !underlyings.includes(asset)) {
     throw Error(errorPrefix + 'Argument `asset` is not supported.');
@@ -356,7 +356,7 @@ export async function repayBorrow(
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const parameters: any[] = method === 'repayBorrowBehalf' ? [ borrower ] : [];
-  if (cTokenName === constants.cETH) {
+  if (vTokenName === constants.cETH) {
     trxOptions.value = amount;
     trxOptions.abi = abi.cEther;
   } else {
@@ -364,7 +364,7 @@ export async function repayBorrow(
     trxOptions.abi = abi.cErc20;
   }
 
-  if (cTokenName !== constants.cETH && noApprove !== true) {
+  if (vTokenName !== constants.cETH && noApprove !== true) {
     const underlyingAddress = address[this._network.name][asset];
     const userAddress = this._provider.address;
 
