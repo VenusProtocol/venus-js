@@ -34,9 +34,11 @@ export const constants = {
   // venus constants
   'vUSDC': 'vUSDC',
   'vUSDT': 'vUSDT',
+  'vSXP': 'vSXP',
   'DAI': 'DAI',
   'USDC': 'USDC',
   'USDT': 'USDT',
+  'SXP': 'SXP',
 };
 
 export const address = {
@@ -200,12 +202,12 @@ export const abi = {
 export const cTokens = [
   'cBAT', 'cCOMP', 'cDAI', 'cETH', 'cREP', 'cSAI', 'cUNI', 'cUSDC', 'cUSDT', 'cWBTC', 'cZRX',
   // venus tokens
-  'vUSDC', 'vUSDT',
+  'vUSDC', 'vUSDT', 'vSXP',
 ];
 export const underlyings = [
   'BAT', 'COMP', 'DAI', 'ETH', 'REP', 'SAI', 'UNI', 'USDC', 'USDT', 'WBTC', 'ZRX',
   // venus underlyings
-  'USDC', 'USDT'
+  'USDC', 'USDT', 'SXP',
 ];
 
 // additional assets supported by the open price feed
@@ -240,8 +242,10 @@ export const decimals = {
   // venus decimals
   'vUSDC': 8,
   'vUSDT': 8,
+  'vSXP': 8,
   'USDC': 6,
   'USDT': 6,
+  'SXP': 18,
 };
 
 export const errorCodes = {
