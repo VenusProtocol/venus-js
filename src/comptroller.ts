@@ -49,18 +49,20 @@ export async function enterMarkets(
 
   const addresses = [];
   for (let i = 0; i < markets.length; i++) {
-    if (markets[i][0] !== 'c') {
-      markets[i] = 'c' + markets[i];
+    if (markets[i][0] !== 'v') {
+      markets[i] = 'v' + markets[i];
     }
 
     if (!cTokens.includes(markets[i])) {
-      throw Error(errorPrefix + 'Provided market `' + markets[i] + '` is not a recognized cToken.');
+      throw Error(errorPrefix + 'Provided market `' + markets[i] + '` is not a recognized vToken.');
     }
 
     addresses.push(address[this._network.name][markets[i]]);
   }
 
+  console.log('--- vToken addresses:', addresses);
   const comptrollerAddress = address[this._network.name].Comptroller;
+  console.log('--- comptroller address:', comptrollerAddress);
   const parameters = [ addresses ];
 
   const trxOptions: CallOptions = {

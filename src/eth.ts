@@ -230,7 +230,21 @@ export async function getProviderNetwork(
 
   networkId = isNaN(networkId) ? 0 : +networkId;
 
-  const network = ethers.providers.getNetwork(networkId) || { name: 'unknown' };
+  let network = ethers.providers.getNetwork(networkId) || { name: 'unknown' };
+  if (network.name === 'unknown') {
+    if (networkId === 97) {
+      // TODO -- should update later with Chapel
+      // 'ropsten',
+      // {
+      //   name: 'Chapel',
+      //   networkId: 97,
+      //   chainId: 97,
+      // },
+      network = { chainId: 97, name: 'ropsten' }
+    } else if (networkId === 56) {
+      network = { chainId: 97, name: 'mainnet' }
+    }
+  }
 
   return {
     id: networkId,
