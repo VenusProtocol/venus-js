@@ -59,10 +59,7 @@ export async function enterMarkets(
 
     addresses.push(address[this._network.name][markets[i]]);
   }
-
-  console.log('--- vToken addresses:', addresses);
   const comptrollerAddress = address[this._network.name].Comptroller;
-  console.log('--- comptroller address:', comptrollerAddress);
   const parameters = [ addresses ];
 
   const trxOptions: CallOptions = {
