@@ -10,7 +10,7 @@ import { address, abi, cTokens } from './constants';
 import { CallOptions, TrxResponse } from './types';
 
 /**
- * Enters the user's address into Compound Protocol markets.
+ * Enters the user's address into Venus Protocol markets.
  *
  * @param {any[]} markets An array of strings of markets to enter, meaning use
  *     those supplied assets as collateral.
@@ -24,10 +24,10 @@ import { CallOptions, TrxResponse } from './types';
  * @example
  *
  * ```
- * const compound = new Compound(window.ethereum);
+ * const compound = new Venus(window.ethereum);
  * 
  * (async function () {
- *   const trx = await compound.enterMarkets(Compound.ETH); // Use [] for multiple
+ *   const trx = await compound.enterMarkets(Venus.SXP); // Use [] for multiple
  *   console.log('Ethers.js transaction object', trx);
  * })().catch(console.error);
  * ```
@@ -37,7 +37,7 @@ export async function enterMarkets(
   options: CallOptions = {}
 ) : Promise<TrxResponse> {
   await netId(this);
-  const errorPrefix = 'Compound [enterMarkets] | ';
+  const errorPrefix = 'Venus [enterMarkets] | ';
 
   if (typeof markets === 'string') {
     markets = [ markets ];
@@ -72,7 +72,7 @@ export async function enterMarkets(
 }
 
 /**
- * Exits the user's address from a Compound Protocol market.
+ * Exits the user's address from a Venus Protocol market.
  *
  * @param {string} market A string of the symbol of the market to exit.
  * @param {CallOptions} [options] Call options and Ethers.js overrides for the 
@@ -85,10 +85,10 @@ export async function enterMarkets(
  * @example
  *
  * ```
- * const compound = new Compound(window.ethereum);
+ * const compound = new Venus(window.ethereum);
  * 
  * (async function () {
- *   const trx = await compound.exitMarket(Compound.ETH);
+ *   const trx = await compound.exitMarket(Venus.SXP);
  *   console.log('Ethers.js transaction object', trx);
  * })().catch(console.error);
  * ```
@@ -98,14 +98,14 @@ export async function exitMarket(
   options: CallOptions = {}
 ) : Promise<TrxResponse> {
   await netId(this);
-  const errorPrefix = 'Compound [exitMarkets] | ';
+  const errorPrefix = 'Venus [exitMarkets] | ';
 
   if (typeof market !== 'string' || market === '') {
     throw Error(errorPrefix + 'Argument `market` must be a string of a cToken market name.');
   }
 
-  if (market[0] !== 'c') {
-    market = 'c' + market;
+  if (market[0] !== 'v') {
+    market = 'v' + market;
   }
 
   if (!cTokens.includes(market)) {
