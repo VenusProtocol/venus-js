@@ -17,7 +17,7 @@ import {
  } from './types';
 
 /**
- * Submit a vote on a Compound Governance proposal.
+ * Submit a vote on a Venus Governance proposal.
  *
  * @param {string} proposalId The ID of the proposal to vote on. This is an
  *     auto-incrementing integer in the Governor Alpha contract.
@@ -32,10 +32,10 @@ import {
  * @example
  *
  * ```
- * const compound = new Compound(window.ethereum);
+ * const venus = new Venus(window.ethereum);
  * 
  * (async function() {
- *   const castVoteTx = await compound.castVote(12, true);
+ *   const castVoteTx = await venus.castVote(12, true);
  *   console.log('Ethers.js transaction object', castVoteTx);
  * })().catch(console.error);
  * ```
@@ -47,7 +47,7 @@ export async function castVote(
 ) : Promise<TrxResponse> {
   await netId(this);
 
-  const errorPrefix = 'Compound [castVote] | ';
+  const errorPrefix = 'Venus [castVote] | ';
 
   if (typeof proposalId !== 'number') {
     throw Error(errorPrefix + 'Argument `proposalId` must be an integer.');
@@ -68,7 +68,7 @@ export async function castVote(
 }
 
 /**
- * Submit a vote on a Compound Governance proposal using an EIP-712 signature.
+ * Submit a vote on a Venus Governance proposal using an EIP-712 signature.
  *
  * @param {string} proposalId The ID of the proposal to vote on. This is an
  *     auto-incrementing integer in the Governor Alpha contract.
@@ -84,10 +84,10 @@ export async function castVote(
  *
  * @example
  * ```
- * const compound = new Compound(window.ethereum);
+ * const venus = new Venus(window.ethereum);
  * 
  * (async function() {
- *   const castVoteTx = await compound.castVoteBySig(
+ *   const castVoteTx = await venus.castVoteBySig(
  *     12,
  *     true,
  *     {
@@ -108,7 +108,7 @@ export async function castVoteBySig(
 ) : Promise<TrxResponse> {
   await netId(this);
 
-  const errorPrefix = 'Compound [castVoteBySig] | ';
+  const errorPrefix = 'Venus [castVoteBySig] | ';
 
   if (typeof proposalId !== 'number') {
     throw Error(errorPrefix + 'Argument `proposalId` must be an integer.');
@@ -140,7 +140,7 @@ export async function castVoteBySig(
 }
 
 /**
- * Create a vote signature for a Compound Governance proposal using EIP-712.
+ * Create a vote signature for a Venus Governance proposal using EIP-712.
  *     This can be used to create an 'empty ballot' without burning gas. The 
  *     signature can then be sent to someone else to post to the blockchain. 
  *     The recipient can post one signature using the `castVoteBySig` method.
@@ -156,14 +156,14 @@ export async function castVoteBySig(
  *
  * @example
  * ```
- * const compound = new Compound(window.ethereum);
+ * const venus = new Venus(window.ethereum);
  *
  * (async () => {
  *
- *   const voteForSignature = await compound.createVoteSignature(20, true);
+ *   const voteForSignature = await venus.createVoteSignature(20, true);
  *   console.log('voteForSignature', voteForSignature);
  *
- *   const voteAgainstSignature = await compound.createVoteSignature(20, false);
+ *   const voteAgainstSignature = await venus.createVoteSignature(20, false);
  *   console.log('voteAgainstSignature', voteAgainstSignature);
  *
  * })().catch(console.error);
@@ -180,7 +180,7 @@ export async function createVoteSignature(
   const chainId = this._network.id;
 
   const domain: EIP712Domain = {
-    name: 'Compound Governor Alpha',
+    name: 'Venus Governor Alpha',
     chainId,
     verifyingContract: governorAddress
   };
