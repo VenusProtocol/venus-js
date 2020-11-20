@@ -24,10 +24,10 @@ import { CallOptions, TrxResponse } from './types';
  * @example
  *
  * ```
- * const compound = new Venus(window.ethereum);
+ * const venus = new Venus(window.ethereum);
  * 
  * (async function () {
- *   const trx = await compound.enterMarkets(Venus.SXP); // Use [] for multiple
+ *   const trx = await venus.enterMarkets(Venus.SXP); // Use [] for multiple
  *   console.log('Ethers.js transaction object', trx);
  * })().catch(console.error);
  * ```
@@ -85,10 +85,10 @@ export async function enterMarkets(
  * @example
  *
  * ```
- * const compound = new Venus(window.ethereum);
+ * const venus = new Venus(window.ethereum);
  * 
  * (async function () {
- *   const trx = await compound.exitMarket(Venus.SXP);
+ *   const trx = await venus.exitMarket(Venus.SXP);
  *   console.log('Ethers.js transaction object', trx);
  * })().catch(console.error);
  * ```
