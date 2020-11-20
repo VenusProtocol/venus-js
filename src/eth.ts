@@ -119,18 +119,18 @@ function _ethJsonRpc(
  *
  * @example
  * ```
- * const cEthAddress = Compound.util.getAddress(Compound.cETH);
+ * const vBnbAddress = Venus.util.getAddress(Venus.vBNB);
  * 
  * (async function() {
  * 
- *   const srpb = await Compound.eth.read(
- *     cEthAddress,
+ *   const srpb = await Venus.eth.read(
+ *     vBnbAddress,
  *     'function supplyRatePerBlock() returns (uint256)',
  *     // [], // [optional] parameters
  *     // {}  // [optional] call options, provider, network, plus Ethers.js "overrides"
  *   );
  * 
- *   console.log('cETH market supply rate per block:', srpb.toString());
+ *   console.log('vBNB market supply rate per block:', srpb.toString());
  * 
  * })().catch(console.error);
  * ```
@@ -165,15 +165,15 @@ export function read(
  * @example
  * ```
  * const oneEthInWei = '1000000000000000000';
- * const cEthAddress = '0x4ddc2d193948926d02f9b1fe9e1daa0718270ed5';
+ * const vBnbAddress = '0x4ddc2d193948926d02f9b1fe9e1daa0718270ed5';
  * const provider = window.ethereum;
  * 
  * (async function() {
- *   console.log('Supplying ETH to the Compound Protocol...');
+ *   console.log('Supplying BNB to the Venus Protocol...');
  * 
- *   // Mint some cETH by supplying ETH to the Compound Protocol
- *   const trx = await Compound.eth.trx(
- *     cEthAddress,
+ *   // Mint some vBNB by supplying BNB to the Venus Protocol
+ *   const trx = await Venus.eth.trx(
+ *     vBnbAddress,
  *     'function mint() payable',
  *     [],
  *     {
@@ -200,7 +200,7 @@ export function trx(
 }
 
 /**
- * This helps the Compound.js constructor discover which Ethereum network the
+ * This helps the Venus.js constructor discover which Ethereum network the
  *     developer wants to use.
  *
  * @param {Provider | string} [provider] Optional Ethereum network provider.
@@ -255,19 +255,19 @@ export async function getProviderNetwork(
 /**
  * Fetches the current Ether balance of a provided Ethereum address.
  *
- * @param {string} address The Ethereum address in which to get the ETH balance.
+ * @param {string} address The Ethereum address in which to get the BNB balance.
  * @param {Provider | string} [provider] Optional Ethereum network provider.
  *     Defaults to Ethers.js fallback mainnet provider.
  *
- * @returns {BigNumber} Returns a BigNumber hexadecimal value of the ETH balance
+ * @returns {BigNumber} Returns a BigNumber hexadecimal value of the BNB balance
  *     of the address.
  *
  * @example
  * ```
  * (async function () {
  * 
- *   balance = await Compound.eth.getBalance(myAddress, provider);
- *   console.log('My ETH Balance', +balance);
+ *   balance = await Venus.eth.getBalance(myAddress, provider);
+ *   console.log('My BNB Balance', +balance);
  * 
  * })().catch(console.error);
  * ```
