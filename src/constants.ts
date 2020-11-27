@@ -40,6 +40,7 @@ export const constants = {
   'USDC': 'USDC',
   'USDT': 'USDT',
   'SXP': 'SXP',
+  'BNB': 'BNB',
 };
 
 export const address = {
