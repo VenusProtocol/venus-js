@@ -1,21 +1,21 @@
-// Example of fetching prices from the Compound protocol's open price feed using
-// Compound.js
-const Compound = require('../../dist/nodejs/index.js');
-const compound = new Compound();
+// Example of fetching prices from the Venus protocol's open price feed using
+// Venus.js
+const Venus = require('../../dist/nodejs/index.js');
+const venus = new Venus();
 
 let price;
 (async function() {
 
-  price = await compound.getPrice(Compound.BAT);
+  price = await venus.getPrice(Venus.BAT);
   console.log('BAT in USDC', price);
 
-  price = await compound.getPrice(Compound.cBAT);
+  price = await venus.getPrice(Venus.cBAT);
   console.log('cBAT in USDC', price);
 
-  price = await compound.getPrice(Compound.BAT, Compound.cUSDC);
+  price = await venus.getPrice(Venus.BAT, Venus.cUSDC);
   console.log('BAT in cUSDC', price);
 
-  price = await compound.getPrice(Compound.BAT, Compound.ETH);
+  price = await venus.getPrice(Venus.BAT, Venus.ETH);
   console.log('BAT in ETH', price);
 
 })().catch(console.error);

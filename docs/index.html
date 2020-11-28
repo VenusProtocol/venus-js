@@ -3,8 +3,8 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Compound.js - v0.1.2</title>
-	<meta name="description" content="Documentation for Compound.js - v0.1.2">
+	<title>Venus.js - v0.0.1</title>
+	<meta name="description" content="Documentation for Venus.js - v0.0.1">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="assets/css/main.css">
 </head>
@@ -22,7 +22,7 @@
 						<li class="state loading">Preparing search index...</li>
 						<li class="state failure">The search index is not available</li>
 					</ul>
-					<a href="index.html" class="title">Compound.js - v0.1.2</a>
+					<a href="index.html" class="title">Venus.js - v0.0.1</a>
 				</div>
 				<div class="table-cell" id="tsd-widgets">
 					<div id="tsd-filter">
@@ -54,7 +54,7 @@
 					<a href="globals.html">Globals</a>
 				</li>
 			</ul>
-			<h1>Compound.js - v0.1.2</h1>
+			<h1>Venus.js - v0.0.1</h1>
 		</div>
 	</div>
 </header>
@@ -62,11 +62,11 @@
 	<div class="row">
 		<div class="col-8 col-content">
 			<div class="tsd-panel tsd-typography">
-				<a href="#compoundjs" id="compoundjs" style="color: inherit; text-decoration: none;">
-					<h1>Compound.js</h1>
+				<a href="#venusjs" id="venusjs" style="color: inherit; text-decoration: none;">
+					<h1>Venus.js</h1>
 				</a>
-				<p>A JavaScript SDK for Ethereum and the Compound Protocol. Wraps around <a href="https://github.com/ethers-io/ethers.js/">Ethers.js</a>. Works in the <strong>web browser</strong> and <strong>Node.js</strong>.</p>
-				<p><a href="https://compound-finance.github.io/compound-js/docs/">Compound.js Documentation</a></p>
+				<p>A JavaScript SDK for Ethereum and the Venus Protocol. Wraps around <a href="https://github.com/ethers-io/ethers.js/">Ethers.js</a>. Works in the <strong>web browser</strong> and <strong>Node.js</strong>.</p>
+				<p><a href="https://compound.finance/docs/compound-js">Venus.js Documentation</a></p>
 				<p>This SDK is in <strong>open beta</strong>, and is constantly under development. <strong>USE AT YOUR OWN RISK</strong>.</p>
 				<a href="#ethereum-read-amp-write" id="ethereum-read-amp-write" style="color: inherit; text-decoration: none;">
 					<h2>Ethereum Read &amp; Write</h2>
@@ -75,12 +75,12 @@
 				<a href="#read" id="read" style="color: inherit; text-decoration: none;">
 					<h3>Read</h3>
 				</a>
-				<pre><code class="language-js"><span class="hljs-keyword">const</span> Compound = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;@compound-finance/compound-js&#x27;</span>); <span class="hljs-comment">// in Node.js</span>
-<span class="hljs-keyword">const</span> cUsdtAddress = Compound.util.getAddress(Compound.cUSDT);
+				<pre><code class="language-js"><span class="hljs-keyword">const</span> Venus = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;@compound-finance/compound-js&#x27;</span>); <span class="hljs-comment">// in Node.js</span>
+<span class="hljs-keyword">const</span> cUsdtAddress = Venus.util.getAddress(Venus.cUSDT);
 
 (<span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
 
-  <span class="hljs-keyword">let</span> supplyRatePerBlock = <span class="hljs-keyword">await</span> Compound.eth.read(
+  <span class="hljs-keyword">let</span> supplyRatePerBlock = <span class="hljs-keyword">await</span> Venus.eth.read(
     cUsdtAddress,
     <span class="hljs-string">&#x27;function supplyRatePerBlock() returns (uint)&#x27;</span>,
     [], <span class="hljs-comment">// [optional] parameters</span>
@@ -97,32 +97,32 @@
 
 (<span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
 
-  <span class="hljs-keyword">const</span> trx = <span class="hljs-keyword">await</span> Compound.eth.trx(
+  <span class="hljs-keyword">const</span> trx = <span class="hljs-keyword">await</span> Venus.eth.trx(
     toAddress,
     <span class="hljs-string">&#x27;function send() external payable&#x27;</span>,
     [],
     {
-      <span class="hljs-attr">value</span>: Compound._ethers.utils.parseEther(<span class="hljs-string">&#x27;1.0&#x27;</span>), <span class="hljs-comment">// 1 ETH</span>
+      <span class="hljs-attr">value</span>: Venus._ethers.utils.parseEther(<span class="hljs-string">&#x27;1.0&#x27;</span>), <span class="hljs-comment">// 1 ETH</span>
       <span class="hljs-attr">provider</span>: <span class="hljs-built_in">window</span>.ethereum, <span class="hljs-comment">// in a web browser</span>
     }
   );
 
-  <span class="hljs-keyword">const</span> toAddressEthBalance = <span class="hljs-keyword">await</span> Compound.eth.getBalance(toAddress);
+  <span class="hljs-keyword">const</span> toAddressEthBalance = <span class="hljs-keyword">await</span> Venus.eth.getBalance(toAddress);
 
 })().catch(<span class="hljs-built_in">console</span>.error);</code></pre>
-				<a href="#compound-protocol" id="compound-protocol" style="color: inherit; text-decoration: none;">
-					<h2>Compound Protocol</h2>
+				<a href="#venus-protocol" id="venus-protocol" style="color: inherit; text-decoration: none;">
+					<h2>Venus Protocol</h2>
 				</a>
-				<p>Simple methods for using the Compound protocol.</p>
-				<pre><code class="language-js"><span class="hljs-keyword">const</span> compound = <span class="hljs-keyword">new</span> Compound(<span class="hljs-built_in">window</span>.ethereum); <span class="hljs-comment">// in a web browser</span>
+				<p>Simple methods for using the Venus protocol.</p>
+				<pre><code class="language-js"><span class="hljs-keyword">const</span> compound = <span class="hljs-keyword">new</span> Venus(<span class="hljs-built_in">window</span>.ethereum); <span class="hljs-comment">// in a web browser</span>
 
 <span class="hljs-comment">// Ethers.js overrides are an optional 3rd parameter for `supply`</span>
 <span class="hljs-comment">// const trxOptions = { gasLimit: 250000, mantissa: false };</span>
 
 (<span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
 
-  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;Supplying ETH to the Compound protocol...&#x27;</span>);
-  <span class="hljs-keyword">const</span> trx = <span class="hljs-keyword">await</span> compound.supply(Compound.ETH, <span class="hljs-number">1</span>);
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;Supplying ETH to the Venus protocol...&#x27;</span>);
+  <span class="hljs-keyword">const</span> trx = <span class="hljs-keyword">await</span> compound.supply(Venus.ETH, <span class="hljs-number">1</span>);
   <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;Ethers.js transaction object&#x27;</span>, trx);
 
 })().catch(<span class="hljs-built_in">console</span>.error);</code></pre>
@@ -133,11 +133,15 @@
 				<pre><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text/javascript&quot;</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;https://cdn.jsdelivr.net/npm/@compound-finance/compound-js@latest/dist/browser/compound.min.js&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
 
 <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text/javascript&quot;</span>&gt;</span><span class="javascript">
-  <span class="hljs-built_in">window</span>.Compound; <span class="hljs-comment">// or `Compound`</span>
+  <span class="hljs-built_in">window</span>.Venus; <span class="hljs-comment">// or `Venus`</span>
 </span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></code></pre>
 				<p>Node.js</p>
 				<pre><code>npm <span class="hljs-keyword">install</span> @<span class="hljs-keyword">compound</span>-finance/<span class="hljs-keyword">compound</span>-js</code></pre>
-				<pre><code class="language-js"><span class="hljs-keyword">const</span> Compound = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;@compound-finance/compound-js&#x27;</span>);</code></pre>
+				<pre><code class="language-js"><span class="hljs-keyword">const</span> Venus = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;@compound-finance/compound-js&#x27;</span>);
+
+<span class="hljs-comment">// or, when using ES6</span>
+
+<span class="hljs-keyword">import</span> Venus <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@compound-finance/compound-js&#x27;</span>;</code></pre>
 				<a href="#more-code-examples" id="more-code-examples" style="color: inherit; text-decoration: none;">
 					<h2>More Code Examples</h2>
 				</a>
@@ -150,41 +154,41 @@
 					<h2>Instance Creation</h2>
 				</a>
 				<p>The following are valid Ethereum providers for initialization of the SDK.</p>
-				<pre><code class="language-js"><span class="hljs-keyword">var</span> compound = <span class="hljs-keyword">new</span> Compound(<span class="hljs-built_in">window</span>.ethereum); <span class="hljs-comment">// web browser</span>
+				<pre><code class="language-js"><span class="hljs-keyword">var</span> compound = <span class="hljs-keyword">new</span> Venus(<span class="hljs-built_in">window</span>.ethereum); <span class="hljs-comment">// web browser</span>
 
-<span class="hljs-keyword">var</span> compound = <span class="hljs-keyword">new</span> Compound(<span class="hljs-string">&#x27;http://127.0.0.1:8545&#x27;</span>); <span class="hljs-comment">// HTTP provider</span>
+<span class="hljs-keyword">var</span> compound = <span class="hljs-keyword">new</span> Venus(<span class="hljs-string">&#x27;http://127.0.0.1:8545&#x27;</span>); <span class="hljs-comment">// HTTP provider</span>
 
-<span class="hljs-keyword">var</span> compound = <span class="hljs-keyword">new</span> Compound(); <span class="hljs-comment">// Uses Ethers.js fallback mainnet (for testing only)</span>
+<span class="hljs-keyword">var</span> compound = <span class="hljs-keyword">new</span> Venus(); <span class="hljs-comment">// Uses Ethers.js fallback mainnet (for testing only)</span>
 
-<span class="hljs-keyword">var</span> compound = <span class="hljs-keyword">new</span> Compound(<span class="hljs-string">&#x27;ropsten&#x27;</span>); <span class="hljs-comment">// Uses Ethers.js fallback (for testing only)</span>
+<span class="hljs-keyword">var</span> compound = <span class="hljs-keyword">new</span> Venus(<span class="hljs-string">&#x27;ropsten&#x27;</span>); <span class="hljs-comment">// Uses Ethers.js fallback (for testing only)</span>
 
 <span class="hljs-comment">// Init with private key (server side)</span>
-<span class="hljs-keyword">var</span> compound = <span class="hljs-keyword">new</span> Compound(<span class="hljs-string">&#x27;https://mainnet.infura.io/v3/_your_project_id_&#x27;</span>, {
+<span class="hljs-keyword">var</span> compound = <span class="hljs-keyword">new</span> Venus(<span class="hljs-string">&#x27;https://mainnet.infura.io/v3/_your_project_id_&#x27;</span>, {
   <span class="hljs-attr">privateKey</span>: <span class="hljs-string">&#x27;0x_your_private_key_&#x27;</span>, <span class="hljs-comment">// preferably with environment variable</span>
 });
 
 <span class="hljs-comment">// Init with HD mnemonic (server side)</span>
-<span class="hljs-keyword">var</span> compound = <span class="hljs-keyword">new</span> Compound(<span class="hljs-string">&#x27;mainnet&#x27;</span> {
+<span class="hljs-keyword">var</span> compound = <span class="hljs-keyword">new</span> Venus(<span class="hljs-string">&#x27;mainnet&#x27;</span> {
   <span class="hljs-attr">mnemonic</span>: <span class="hljs-string">&#x27;clutch captain shoe...&#x27;</span>, <span class="hljs-comment">// preferably with environment variable</span>
 });</code></pre>
 				<a href="#constants-and-contract-addresses" id="constants-and-contract-addresses" style="color: inherit; text-decoration: none;">
 					<h2>Constants and Contract Addresses</h2>
 				</a>
 				<p>Names of contracts, their addresses, ABIs, token decimals, and more can be found in <code>/src/constants.ts</code>. Addresses, for all networks, can be easily fetched using the <code>getAddress</code> function, combined with contract name constants.</p>
-				<pre><code class="language-js"><span class="hljs-built_in">console</span>.log(Compound.DAI, Compound.ETH, Compound.cETH);
+				<pre><code class="language-js"><span class="hljs-built_in">console</span>.log(Venus.DAI, Venus.ETH, Venus.cETH);
 <span class="hljs-comment">// DAI, ETH, cETH</span>
 
-<span class="hljs-keyword">const</span> cUsdtAddress = Compound.util.getAddress(Compound.cUSDT);
+<span class="hljs-keyword">const</span> cUsdtAddress = Venus.util.getAddress(Venus.cUSDT);
 <span class="hljs-comment">// Mainnet cUSDT address. Second parameter can be a network like &#x27;ropsten&#x27;.</span></code></pre>
 				<a href="#mantissas" id="mantissas" style="color: inherit; text-decoration: none;">
 					<h2>Mantissas</h2>
 				</a>
 				<p>Parameters of number values can be plain numbers or their scaled up mantissa values. There is a transaction option boolean to tell the SDK what the developer is passing.</p>
 				<pre><code class="language-js"><span class="hljs-comment">// 1 Dai</span>
-<span class="hljs-keyword">await</span> compound.borrow(Compound.DAI, <span class="hljs-string">&#x27;1000000000000000000&#x27;</span>, { <span class="hljs-attr">mantissa</span>: <span class="hljs-literal">true</span> });
+<span class="hljs-keyword">await</span> compound.borrow(Venus.DAI, <span class="hljs-string">&#x27;1000000000000000000&#x27;</span>, { <span class="hljs-attr">mantissa</span>: <span class="hljs-literal">true</span> });
 
 <span class="hljs-comment">// `mantissa` defaults to false if it is not specified or if an options object is not passed</span>
-<span class="hljs-keyword">await</span> compound.borrow(Compound.DAI, <span class="hljs-number">1</span>, { <span class="hljs-attr">mantissa</span>: <span class="hljs-literal">false</span> });</code></pre>
+<span class="hljs-keyword">await</span> compound.borrow(Venus.DAI, <span class="hljs-number">1</span>, { <span class="hljs-attr">mantissa</span>: <span class="hljs-literal">false</span> });</code></pre>
 				<a href="#transaction-options" id="transaction-options" style="color: inherit; text-decoration: none;">
 					<h2>Transaction Options</h2>
 				</a>
@@ -196,24 +200,24 @@
   provider,   <span class="hljs-comment">// JSON RPC string, Web3 object, or Ethers.js fallback network (string)</span>
   network,    <span class="hljs-comment">// Ethers.js fallback network provider, &quot;provider&quot; has precedence over &quot;network&quot;</span>
   <span class="hljs-keyword">from</span>,       <span class="hljs-comment">// Address that the Ethereum transaction is send from</span>
-  gasPrice,   <span class="hljs-comment">// Ethers.js override `Compound_ethers.utils.parseUnits(&#x27;10.0&#x27;, &#x27;gwei&#x27;)`</span>
+  gasPrice,   <span class="hljs-comment">// Ethers.js override `Venus._ethers.utils.parseUnits(&#x27;10.0&#x27;, &#x27;gwei&#x27;)`</span>
   gasLimit,   <span class="hljs-comment">// Ethers.js override - see https://docs.ethers.io/ethers.js/v5-beta/api-contract.html#overrides</span>
   value,      <span class="hljs-comment">// Number or string</span>
   data,       <span class="hljs-comment">// Number or string</span>
   chainId,    <span class="hljs-comment">// Number</span>
   nonce,      <span class="hljs-comment">// Number</span>
-  privateKey, <span class="hljs-comment">// String, meant to be used with `Compound.eth.trx` (server side)</span>
-  mnemonic,   <span class="hljs-comment">// String, meant to be used with `Compound.eth.trx` (server side)</span>
+  privateKey, <span class="hljs-comment">// String, meant to be used with `Venus.eth.trx` (server side)</span>
+  mnemonic,   <span class="hljs-comment">// String, meant to be used with `Venus.eth.trx` (server side)</span>
 };</code></pre>
 				<a href="#api" id="api" style="color: inherit; text-decoration: none;">
 					<h2>API</h2>
 				</a>
-				<p>The <a href="https://compound.finance/docs/api">Compound API</a> is accessible from Compound.js. The corresponding services are defined in the <code>api</code> namespace on the class.</p>
+				<p>The <a href="https://compound.finance/docs/api">Venus API</a> is accessible from Venus.js. The corresponding services are defined in the <code>api</code> namespace on the class.</p>
 				<ul>
-					<li><code>Compound.api.account</code></li>
-					<li><code>Compound.api.cToken</code></li>
-					<li><code>Compound.api.marketHistory</code></li>
-					<li><code>Compound.api.governance</code></li>
+					<li><code>Venus.api.account</code></li>
+					<li><code>Venus.api.cToken</code></li>
+					<li><code>Venus.api.marketHistory</code></li>
+					<li><code>Venus.api.governance</code></li>
 				</ul>
 				<p>The governance method requires a second parameter (string) for the corresponding endpoint shown in the <a href="https://compound.finance/docs/api#GovernanceService">documentation</a>.</p>
 				<ul>
@@ -223,7 +227,7 @@
 				</ul>
 				<p>Here is an example for using the <code>account</code> endpoint. The <code>network</code> parameter in the request body is optional and defaults to <code>mainnet</code>.</p>
 				<pre><code class="language-js"><span class="hljs-keyword">const</span> main = <span class="hljs-keyword">async</span> () =&gt; {
-  <span class="hljs-keyword">const</span> account = <span class="hljs-keyword">await</span> Compound.api.account({
+  <span class="hljs-keyword">const</span> account = <span class="hljs-keyword">await</span> Venus.api.account({
     <span class="hljs-string">&quot;addresses&quot;</span>: <span class="hljs-string">&quot;0xB61C5971d9c0472befceFfbE662555B78284c307&quot;</span>,
     <span class="hljs-string">&quot;network&quot;</span>: <span class="hljs-string">&quot;ropsten&quot;</span>
   });
@@ -232,7 +236,7 @@
   <span class="hljs-keyword">if</span> (<span class="hljs-built_in">Object</span>.isExtensible(account) &amp;&amp; account.accounts) {
     account.accounts.forEach(<span class="hljs-function">(<span class="hljs-params">acc</span>) =&gt;</span> {
       acc.tokens.forEach(<span class="hljs-function">(<span class="hljs-params">tok</span>) =&gt;</span> {
-        <span class="hljs-keyword">if</span> (tok.symbol === Compound.cDAI) {
+        <span class="hljs-keyword">if</span> (tok.symbol === Venus.cDAI) {
           daiBorrowBalance = +tok.borrow_balance_underlying.value;
         }
       });
@@ -262,10 +266,10 @@ main().catch(<span class="hljs-built_in">console</span>.error);</code></pre>
 					<h3>Node.js Build</h3>
 				</a>
 				<pre><code class="language-js"><span class="hljs-comment">// Local build (do `npm install` first)</span>
-<span class="hljs-keyword">const</span> Compound = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;./dist/nodejs/index.js&#x27;</span>);
+<span class="hljs-keyword">const</span> Venus = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;./dist/nodejs/index.js&#x27;</span>);
 
 <span class="hljs-comment">// Public NPM build</span>
-<span class="hljs-keyword">const</span> Compound = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;@compound-finance/compound-js&#x27;</span>);</code></pre>
+<span class="hljs-keyword">const</span> Venus = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;@compound-finance/compound-js&#x27;</span>);</code></pre>
 			</div>
 		</div>
 		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">

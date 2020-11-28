@@ -34,13 +34,13 @@
     @keyframes spin { to { -webkit-transform: rotate(360deg); } }
     @-webkit-keyframes spin { to { -webkit-transform: rotate(360deg); } }
   </style>
-  <title>Compound.js Examples</title>
+  <title>Venus.js Examples</title>
 </head>
 <body>
   <div class="container">
-    <h1>Compound.js Examples [Alpha]</h1>
+    <h1>Venus.js Examples [Alpha]</h1>
     <p>
-      Code examples for client interaction with the <a href="https://compound.finance/">Compound</a> protocol via Compound.js.
+      Code examples for client interaction with the <a href="https://compound.finance/">Venus</a> protocol via Venus.js.
     </p>
 
     &nbsp;
@@ -70,7 +70,7 @@ const cEthAddress = '0x4ddc2d193948926d02f9b1fe9e1daa0718270ed5';
 
 (async function() {
 
-  const srpb = await Compound.eth.read(
+  const srpb = await Venus.eth.read(
     cEthAddress,
     'function supplyRatePerBlock() returns (uint256)',
     // [], // [optional] parameters
@@ -86,7 +86,7 @@ const cEthAddress = '0x4ddc2d193948926d02f9b1fe9e1daa0718270ed5';
 
     <div class="item">
       <h2>Ethereum Send Transaction (JSON RPC eth_sendTransaction)</h2>
-      <p>Create and send an Ethereum transaction with JSON RPC. This button's transaction transfers your Ether to the Compound protocol using the <b>trx</b> method.</p>
+      <p>Create and send an Ethereum transaction with JSON RPC. This button's transaction transfers your Ether to the Venus protocol using the <b>trx</b> method.</p>
       <button id="eth-sendTransaction-button">Supply 1 ETH</button>
       <br />
       <div id="eth-sendTransaction-content"></div>
@@ -95,10 +95,10 @@ const cEthAddress = '0x4ddc2d193948926d02f9b1fe9e1daa0718270ed5';
 const provider = window.ethereum;
 
 (async function() {
-  console.log('Supplying ETH to the Compound Protocol...');
+  console.log('Supplying ETH to the Venus Protocol...');
 
-  // Mint some cETH by supplying ETH to the Compound Protocol
-  const trx = await Compound.eth.trx(
+  // Mint some cETH by supplying ETH to the Venus Protocol
+  const trx = await Venus.eth.trx(
     cEthAddress,
     'function mint() payable',
     [],
@@ -118,19 +118,19 @@ const provider = window.ethereum;
 
     <div class="item">
       <h2>Supply</h2>
-      <p>This button's transaction transfers your Ether to the Compound protocol using the <b>supply</b> method.</p>
+      <p>This button's transaction transfers your Ether to the Venus protocol using the <b>supply</b> method.</p>
       <button id="supply-button">Supply 1 ETH</button>
       <br />
       <div id="supply-content"></div>
-      <pre><code class="js">const compound = new Compound(window.ethereum);
+      <pre><code class="js">const venus = new Venus(window.ethereum);
 
 // Ethers.js overrides are an optional 3rd parameter for `supply`
 // const trxOptions = { gasLimit: 250000, mantissa: false };
 
 (async function() {
 
-  console.log('Supplying ETH to the Compound protocol...');
-  const trx = await compound.supply(Compound.ETH, 1);
+  console.log('Supplying ETH to the Venus protocol...');
+  const trx = await venus.supply(Venus.ETH, 1);
   console.log('Ethers.js transaction object', trx);
 
 })().catch(console.error);</code></pre>
@@ -140,16 +140,16 @@ const provider = window.ethereum;
 
     <div class="item">
       <h2>Redeem</h2>
-      <p>This button's transaction redeems your Ether from the Compound protocol using the <b>redeem</b> method.</p>
+      <p>This button's transaction redeems your Ether from the Venus protocol using the <b>redeem</b> method.</p>
       <button id="redeem-button">Redeem 1 ETH</button>
       <br />
       <div id="redeem-content"></div>
-      <pre><code class="js">const compound = new Compound(window.ethereum);
+      <pre><code class="js">const venus = new Venus(window.ethereum);
 
 (async function() {
 
   console.log('Redeeming ETH...');
-  const trx = await compound.redeem(Compound.ETH, 1); // also accepts cToken args
+  const trx = await venus.redeem(Venus.ETH, 1); // also accepts cToken args
   console.log('Ethers.js transaction object', trx);
 
 })().catch(console.error);
@@ -164,17 +164,17 @@ const provider = window.ethereum;
       <button id="enter-market-button">Enter ETH Market</button>
       <br />
       <div id="enter-market-content"></div>
-      <pre><code class="js">const compound = new Compound(window.ethereum);
+      <pre><code class="js">const venus = new Venus(window.ethereum);
 
 (async function() {
 
   console.log('Entering ETH market (use as collateral)...');
-  const trx = await compound.enterMarkets(Compound.ETH); // also accepts []
+  const trx = await venus.enterMarkets(Venus.ETH); // also accepts []
 
   console.log('Ethers.js transaction object', trx);
 
   // Exit a market (string argument of only 1 market at a time)
-  // const trx = await compound.exitMarket(Compound.ETH);
+  // const trx = await venus.exitMarket(Venus.ETH);
 
 })().catch(console.error);</code></pre>
     </div>
@@ -187,7 +187,7 @@ const provider = window.ethereum;
       <button id="borrow-button">Borrow 32 Dai</button>
       <br />
       <div id="borrow-content"></div>
-      <pre><code class="js">const compound = new Compound(window.ethereum);
+      <pre><code class="js">const venus = new Venus(window.ethereum);
 
 (async function() {
 
@@ -195,7 +195,7 @@ const provider = window.ethereum;
   const trxOptions = { mantissa: true };
 
   console.log('Borrowing 32 Dai...');
-  const trx = await compound.borrow(Compound.DAI, daiScaledUp, trxOptions);
+  const trx = await venus.borrow(Venus.DAI, daiScaledUp, trxOptions);
 
   console.log('Ethers.js transaction object', trx);
 
@@ -210,13 +210,13 @@ const provider = window.ethereum;
       <button id="repay-borrow-button">Repay 32 Dai</button>
       <br />
       <div id="repay-borrow-content"></div>
-      <pre><code class="js">const compound = new Compound(window.ethereum);
+      <pre><code class="js">const venus = new Venus(window.ethereum);
 
 (async function() {
 
   console.log('Repaying Dai borrow...');
   const address = null; // set this to any address to repayBorrowBehalf
-  const trx = await compound.repayBorrow(Compound.DAI, 32, address);
+  const trx = await venus.repayBorrow(Venus.DAI, 32, address);
 
   console.log('Ethers.js transaction object', trx);
 
@@ -234,7 +234,7 @@ const provider = window.ethereum;
       <pre><code class="js">(async function() {
 
   // Accepts 2 args, cTokens or underlyings. Second arg defaults to USDC.
-  const price = await compound.getPrice(Compound.BAT);
+  const price = await venus.getPrice(Venus.BAT);
   console.log('BAT in USDC', price);
 
 })().catch(console.error);</code></pre>
@@ -249,7 +249,7 @@ const provider = window.ethereum;
       <br />
       <div id="get-address-content"></div>
       <pre><code class="js">// Accepts cTokens or underlyings. Second arg defaults to main net.
-const cEthAddressRopsten = Compound.util.getAddress(Compound.cETH, 'ropsten');</code></pre>
+const cEthAddressRopsten = Venus.util.getAddress(Venus.cETH, 'ropsten');</code></pre>
     </div>
 
     &nbsp;
@@ -293,7 +293,7 @@ const ethCallExample = () => {
 
   (async function() {
 
-    const srpb = await Compound.eth.read(
+    const srpb = await Venus.eth.read(
       cEthAddress,
       'function supplyRatePerBlock() returns (uint256)',
       // [], // [optional] parameters
@@ -328,10 +328,10 @@ const ethSendTransactionExample = () => {
   const provider = window.ethereum;
 
   (async function() {
-    console.log('Supplying ETH to the Compound Protocol...');
+    console.log('Supplying ETH to the Venus Protocol...');
 
-    // Mint some cETH by supplying ETH to the Compound Protocol
-    const trx = await Compound.eth.trx(
+    // Mint some cETH by supplying ETH to the Venus Protocol
+    const trx = await Venus.eth.trx(
       cEthAddress,
       'function mint() payable',
       [],
@@ -366,15 +366,15 @@ ganache-cli \
 const supplyExample = () => {
   spin(supplyContent);
 
-  const compound = new Compound(window.ethereum);
+  const venus = new Venus(window.ethereum);
 
   // Ethers.js overrides are an optional 3rd parameter for `supply`
   // const trxOptions = { gasLimit: 250000, mantissa: false };
 
   (async function() {
 
-    console.log('Supplying ETH to the Compound protocol...');
-    const trx = await compound.supply(Compound.ETH, 1);
+    console.log('Supplying ETH to the Venus protocol...');
+    const trx = await venus.supply(Venus.ETH, 1);
     supplyContent.innerText = 'Success, see the developer console for the Ethers.js transaction object.';
     console.log('Ethers.js transaction object', trx);
 
@@ -397,12 +397,12 @@ ganache-cli \
 const redeemExample = () => {
   spin(redeemContent);
 
-  const compound = new Compound(window.ethereum);
+  const venus = new Venus(window.ethereum);
 
   (async function() {
 
     console.log('Redeeming ETH...');
-    const trx = await compound.redeem(Compound.ETH, 1); // also accepts cToken args
+    const trx = await venus.redeem(Venus.ETH, 1); // also accepts cToken args
     console.log('Ethers.js transaction object', trx);
     redeemContent.innerText = 'Success, see the developer console for the Ethers.js transaction object.';
 
@@ -426,17 +426,17 @@ ganache-cli \
 const enterMarketExample = () => {
   spin(enterMarketContent);
 
-  const compound = new Compound(window.ethereum);
+  const venus = new Venus(window.ethereum);
 
   (async function() {
 
     console.log('Entering ETH market (use as collateral)...');
-    const trx = await compound.enterMarkets(Compound.ETH); // also accepts []
+    const trx = await venus.enterMarkets(Venus.ETH); // also accepts []
 
     console.log('Ethers.js transaction object', trx);
 
     // Exit a market (string parameter of only 1 market at a time)
-    // const trx = await compound.exitMarket(Compound.ETH);
+    // const trx = await venus.exitMarket(Venus.ETH);
 
     enterMarketContent.innerText = 'Success, see the developer console for the Ethers.js transaction object.';
 
@@ -460,7 +460,7 @@ ganache-cli \
 const borrowExample = () => {
   spin(borrowContent);
 
-  const compound = new Compound(window.ethereum);
+  const venus = new Venus(window.ethereum);
 
   (async function() {
 
@@ -468,7 +468,7 @@ const borrowExample = () => {
     const trxOptions = { mantissa: true };
 
     console.log('Borrowing 32 Dai...');
-    const trx = await compound.borrow(Compound.DAI, daiScaledUp, trxOptions);
+    const trx = await venus.borrow(Venus.DAI, daiScaledUp, trxOptions);
 
     borrowContent.innerText = 'Success, see the developer console for the Ethers.js transaction object.';
     console.log('Ethers.js transaction object', trx);
@@ -493,13 +493,13 @@ ganache-cli \
 const repayBorrowExample = () => {
   spin(repayBorrowContent);
 
-  const compound = new Compound(window.ethereum);
+  const venus = new Venus(window.ethereum);
 
   (async function() {
 
     console.log('Repaying Dai borrow...');
     const address = null; // set this to any address to repayBorrowBehalf
-    const trx = await compound.repayBorrow(Compound.DAI, 32, address);
+    const trx = await venus.repayBorrow(Venus.DAI, 32, address);
 
     repayBorrowContent.innerText = 'Success, see the developer console for the Ethers.js transaction object.';
     console.log('Ethers.js transaction object', trx);
@@ -515,12 +515,12 @@ const repayBorrowExample = () => {
 const getPriceExample = () => {
   spin(getPriceContent);
 
-  const compound = new Compound();
+  const venus = new Venus();
 
   (async function() {
 
     // Accepts 2 args, cTokens or underlyings. Second arg defaults to USDC.
-    const price = await compound.getPrice(Compound.BAT);
+    const price = await venus.getPrice(Venus.BAT);
     console.log('BAT in USDC', price);
 
     getPriceContent.innerText = price.toString();
@@ -536,12 +536,12 @@ const getPriceExample = () => {
 const getAddressExample = () => {
   spin(getAddressContent);
 
-  const compound = new Compound();
+  const venus = new Venus();
 
   (async function() {
 
     // Accepts cTokens or underlyings. Second arg defaults to main net.
-    const cEthAddressRopsten = Compound.util.getAddress(Compound.cETH, 'ropsten');
+    const cEthAddressRopsten = Venus.util.getAddress(Venus.cETH, 'ropsten');
 
     getAddressContent.innerText = cEthAddressRopsten.toString();
 
