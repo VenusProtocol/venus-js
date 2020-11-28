@@ -3,8 +3,8 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>&quot;index&quot; | Compound.js - v0.1.2</title>
-	<meta name="description" content="Documentation for Compound.js - v0.1.2">
+	<title>&quot;index&quot; | Venus.js - v0.0.1</title>
+	<meta name="description" content="Documentation for Venus.js - v0.0.1">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
 </head>
@@ -22,7 +22,7 @@
 						<li class="state loading">Preparing search index...</li>
 						<li class="state failure">The search index is not available</li>
 					</ul>
-					<a href="../index.html" class="title">Compound.js - v0.1.2</a>
+					<a href="../index.html" class="title">Venus.js - v0.0.1</a>
 				</div>
 				<div class="table-cell" id="tsd-widgets">
 					<div id="tsd-filter">
@@ -71,7 +71,7 @@
 						<section class="tsd-index-section ">
 							<h3>Functions</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-function tsd-parent-kind-module"><a href="_index_.html#compound" class="tsd-kind-icon">Compound</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="_index_.html#venus" class="tsd-kind-icon">Venus</a></li>
 							</ul>
 						</section>
 					</div>
@@ -80,39 +80,39 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Functions</h2>
 				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
-					<a name="compound" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagConst">Const</span> <span class="tsd-flag ts-flagExport assignment">Export assignment</span> Compound</h3>
+					<a name="venus" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> <span class="tsd-flag ts-flagExport assignment">Export assignment</span> Venus</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
-						<li class="tsd-signature tsd-kind-icon">Compound<span class="tsd-signature-symbol">(</span>provider<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">any</span>, options<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span></li>
+						<li class="tsd-signature tsd-kind-icon">Venus<span class="tsd-signature-symbol">(</span>provider<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">Provider</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span>, options<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">CompoundOptions</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">CompoundInstance</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/compound-finance/compound-js/blob/0b4de92/src/index.ts#L51">index.ts:51</a></li>
+									<li>Defined in <a href="https://github.com/SwipeWallet/venus-js/blob/5244f0d/src/index.ts#L52">index.ts:52</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>Creates an instance of the Compound.js SDK.</p>
+									<p>Creates an instance of the Venus.js SDK.</p>
 								</div>
 								<dl class="tsd-comment-tags">
 									<dt>example</dt>
-									<dd><pre><code><span class="hljs-keyword">var</span> compound = <span class="hljs-keyword">new</span> Compound(<span class="hljs-built_in">window</span>.ethereum); <span class="hljs-comment">// web browser</span>
+									<dd><pre><code><span class="hljs-keyword">var</span> venus = <span class="hljs-keyword">new</span> Venus(<span class="hljs-built_in">window</span>.ethereum); <span class="hljs-comment">// web browser</span>
 
-<span class="hljs-keyword">var</span> compound = <span class="hljs-keyword">new</span> Compound(<span class="hljs-string">&#x27;http://127.0.0.1:8545&#x27;</span>); <span class="hljs-comment">// HTTP provider</span>
+<span class="hljs-keyword">var</span> venus = <span class="hljs-keyword">new</span> Venus(<span class="hljs-string">&#x27;http://127.0.0.1:8545&#x27;</span>); <span class="hljs-comment">// HTTP provider</span>
 
-<span class="hljs-keyword">var</span> compound = <span class="hljs-keyword">new</span> Compound(); <span class="hljs-comment">// Uses Ethers.js fallback mainnet (for testing only)</span>
+<span class="hljs-keyword">var</span> venus = <span class="hljs-keyword">new</span> Venus(); <span class="hljs-comment">// Uses Ethers.js fallback mainnet (for testing only)</span>
 
-<span class="hljs-keyword">var</span> compound = <span class="hljs-keyword">new</span> Compound(<span class="hljs-string">&#x27;ropsten&#x27;</span>); <span class="hljs-comment">// Uses Ethers.js fallback (for testing only)</span>
+<span class="hljs-keyword">var</span> venus = <span class="hljs-keyword">new</span> Venus(<span class="hljs-string">&#x27;ropsten&#x27;</span>); <span class="hljs-comment">// Uses Ethers.js fallback (for testing only)</span>
 
 <span class="hljs-comment">// Init with private key (server side)</span>
-<span class="hljs-keyword">var</span> compound = <span class="hljs-keyword">new</span> Compound(<span class="hljs-string">&#x27;https://mainnet.infura.io/v3/_your_project_id_&#x27;</span>, {
+<span class="hljs-keyword">var</span> venus = <span class="hljs-keyword">new</span> Venus(<span class="hljs-string">&#x27;https://mainnet.infura.io/v3/_your_project_id_&#x27;</span>, {
   privateKey: <span class="hljs-string">&#x27;0x_your_private_key_&#x27;</span>, <span class="hljs-comment">// preferably with environment variable</span>
 });
 
 <span class="hljs-comment">// Init with HD mnemonic (server side)</span>
-<span class="hljs-keyword">var</span> compound = <span class="hljs-keyword">new</span> Compound(<span class="hljs-string">&#x27;mainnet&#x27;</span> {
+<span class="hljs-keyword">var</span> venus = <span class="hljs-keyword">new</span> Venus(<span class="hljs-string">&#x27;mainnet&#x27;</span> {
   mnemonic: <span class="hljs-string">&#x27;clutch captain shoe...&#x27;</span>, <span class="hljs-comment">// preferably with environment variable</span>
 });</code></pre>
 									</dd>
@@ -121,14 +121,14 @@
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> provider: <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol"> = &quot;mainnet&quot;</span></h5>
+									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> provider: <span class="tsd-signature-type">Provider</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = &quot;mainnet&quot;</span></h5>
 								</li>
 								<li>
-									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> options: <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol"> = {}</span></h5>
+									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> options: <span class="tsd-signature-type">CompoundOptions</span><span class="tsd-signature-symbol"> = {}</span></h5>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span></h4>
-							<p>Returns an instance of the Compound.js SDK.</p>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">CompoundInstance</span></h4>
+							<p>Returns an instance of the Venus.js SDK.</p>
 						</li>
 					</ul>
 				</section>
@@ -172,7 +172,7 @@
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
 					<li class=" tsd-kind-function tsd-parent-kind-module">
-						<a href="_index_.html#compound" class="tsd-kind-icon">Compound</a>
+						<a href="_index_.html#venus" class="tsd-kind-icon">Venus</a>
 					</li>
 				</ul>
 			</nav>

@@ -1,11 +1,11 @@
-// Example of calling JSON RPC's eth_call with Compound.js
-const Compound = require('../../dist/nodejs/index.js');
+// Example of calling JSON RPC's eth_call with Venus.js
+const Venus = require('../../dist/nodejs/index.js');
 
-const cEthAddress = Compound.util.getAddress(Compound.cETH);
+const cEthAddress = Venus.util.getAddress(Venus.cETH);
 
 (async function() {
 
-  const srpb = await Compound.eth.read(
+  const srpb = await Venus.eth.read(
     cEthAddress,
     'function supplyRatePerBlock() returns (uint256)',
     // [], // [optional] parameters

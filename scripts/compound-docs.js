@@ -196,9 +196,9 @@ function getAllFilePaths(srcPath, resultPaths) {
 
 let intro = '';
 intro += '<section id="introduction" name="Introduction">\n\n';
-intro += '# Compound.js\n\n';
+intro += '# Venus.js\n\n';
 intro += '## Introduction\n\n';
-intro += '[Compound.js](https://github.com/compound-finance/compound-js) is a ';
+intro += '[Venus.js](https://github.com/SwipeWallet/venus-js) is a ';
 intro += 'JavaScript SDK for Ethereum and the Compound Protocol. It wraps ';
 intro += 'around Ethers.js, which is its only dependency. It is designed for ';
 intro += 'both the web browser and Node.js.\n\n';

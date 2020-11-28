@@ -3,8 +3,8 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>&quot;comptroller&quot; | Compound.js - v0.1.2</title>
-	<meta name="description" content="Documentation for Compound.js - v0.1.2">
+	<title>&quot;comptroller&quot; | Venus.js - v0.0.1</title>
+	<meta name="description" content="Documentation for Venus.js - v0.0.1">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
 </head>
@@ -22,7 +22,7 @@
 						<li class="state loading">Preparing search index...</li>
 						<li class="state failure">The search index is not available</li>
 					</ul>
-					<a href="../index.html" class="title">Compound.js - v0.1.2</a>
+					<a href="../index.html" class="title">Venus.js - v0.0.1</a>
 				</div>
 				<div class="table-cell" id="tsd-widgets">
 					<div id="tsd-filter">
@@ -84,25 +84,25 @@
 					<a name="entermarkets" class="tsd-anchor"></a>
 					<h3>enter<wbr>Markets</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
-						<li class="tsd-signature tsd-kind-icon">enter<wbr>Markets<span class="tsd-signature-symbol">(</span>markets<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">any</span>, options<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">enter<wbr>Markets<span class="tsd-signature-symbol">(</span>markets<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span>, options<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">CallOptions</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">TrxResponse</span><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/compound-finance/compound-js/blob/0b4de92/src/comptroller.ts#L35">comptroller.ts:35</a></li>
+									<li>Defined in <a href="https://github.com/SwipeWallet/venus-js/blob/5244f0d/src/comptroller.ts#L35">comptroller.ts:35</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>Enters the user&#39;s address into Compound Protocol markets.</p>
+									<p>Enters the user&#39;s address into Venus Protocol markets.</p>
 								</div>
 								<dl class="tsd-comment-tags">
 									<dt>example</dt>
-									<dd><pre><code><span class="hljs-keyword">const</span> compound = <span class="hljs-keyword">new</span> Compound(<span class="hljs-built_in">window</span>.ethereum);
+									<dd><pre><code><span class="hljs-keyword">const</span> venus = <span class="hljs-keyword">new</span> Venus(<span class="hljs-built_in">window</span>.ethereum);
 
 (<span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
-  <span class="hljs-keyword">const</span> trx = <span class="hljs-keyword">await</span> compound.enterMarkets(Compound.ETH); <span class="hljs-comment">// Use [] for multiple</span>
+  <span class="hljs-keyword">const</span> trx = <span class="hljs-keyword">await</span> venus.enterMarkets(Venus.SXP); <span class="hljs-comment">// Use [] for multiple</span>
   <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;Ethers.js transaction object&#x27;</span>, trx);
 })().catch(<span class="hljs-built_in">console</span>.error);</code></pre>
 									</dd>
@@ -111,17 +111,17 @@
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> markets: <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol"> = []</span></h5>
+									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> markets: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> = []</span></h5>
 									<div class="tsd-comment tsd-typography">
 										<p>An array of strings of markets to enter, meaning use
 										those supplied assets as collateral.</p>
 									</div>
 								</li>
 								<li>
-									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> options: <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol"> = {}</span></h5>
+									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> options: <span class="tsd-signature-type">CallOptions</span><span class="tsd-signature-symbol"> = {}</span></h5>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">TrxResponse</span><span class="tsd-signature-symbol">&gt;</span></h4>
 							<p>Returns an Ethers.js transaction object of the enterMarkets
 							transaction.</p>
 						</li>
@@ -131,25 +131,25 @@
 					<a name="exitmarket" class="tsd-anchor"></a>
 					<h3>exit<wbr>Market</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
-						<li class="tsd-signature tsd-kind-icon">exit<wbr>Market<span class="tsd-signature-symbol">(</span>market<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, options<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">exit<wbr>Market<span class="tsd-signature-symbol">(</span>market<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, options<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">CallOptions</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">TrxResponse</span><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/compound-finance/compound-js/blob/0b4de92/src/comptroller.ts#L91">comptroller.ts:91</a></li>
+									<li>Defined in <a href="https://github.com/SwipeWallet/venus-js/blob/5244f0d/src/comptroller.ts#L96">comptroller.ts:96</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>Exits the user&#39;s address from a Compound Protocol market.</p>
+									<p>Exits the user&#39;s address from a Venus Protocol market.</p>
 								</div>
 								<dl class="tsd-comment-tags">
 									<dt>example</dt>
-									<dd><pre><code><span class="hljs-keyword">const</span> compound = <span class="hljs-keyword">new</span> Compound(<span class="hljs-built_in">window</span>.ethereum);
+									<dd><pre><code><span class="hljs-keyword">const</span> venus = <span class="hljs-keyword">new</span> Venus(<span class="hljs-built_in">window</span>.ethereum);
 
 (<span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
-  <span class="hljs-keyword">const</span> trx = <span class="hljs-keyword">await</span> compound.exitMarket(Compound.ETH);
+  <span class="hljs-keyword">const</span> trx = <span class="hljs-keyword">await</span> venus.exitMarket(Venus.SXP);
   <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;Ethers.js transaction object&#x27;</span>, trx);
 })().catch(<span class="hljs-built_in">console</span>.error);</code></pre>
 									</dd>
@@ -164,10 +164,10 @@
 									</div>
 								</li>
 								<li>
-									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> options: <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol"> = {}</span></h5>
+									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> options: <span class="tsd-signature-type">CallOptions</span><span class="tsd-signature-symbol"> = {}</span></h5>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">TrxResponse</span><span class="tsd-signature-symbol">&gt;</span></h4>
 							<p>Returns an Ethers.js transaction object of the exitMarket
 							transaction.</p>
 						</li>
