@@ -86,9 +86,9 @@ Venus.api = api;
 Venus.util = util;
 Venus._ethers = ethers;
 Venus.decimals = decimals;
-Venus.xvs = {
-  getXVSBalance: comp.getXVSBalance,
-  getXVSAccrued: comp.getXVSAccrued,
+Venus.venus = {
+  getVenusBalance: comp.getVenusBalance,
+  getVenusAccrued: comp.getVenusAccrued,
 };
 Object.assign(Venus, constants);
 

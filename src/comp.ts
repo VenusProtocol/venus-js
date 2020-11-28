@@ -51,32 +51,32 @@ function toChecksumAddress(_address) {
 }
 
 /**
- * Get the balance of XVS tokens held by an address.
+ * Get the balance of VENUS tokens held by an address.
  *
- * @param {string} _address The address in which to find the XVS balance.
+ * @param {string} _address The address in which to find the VENUS balance.
  * @param {Provider | string} [_provider] An Ethers.js provider or valid network
  *     name string.
  *
- * @returns {string} Returns a string of the numeric balance of XVS. The value
+ * @returns {string} Returns a string of the numeric balance of VENUS. The value
  *     is scaled up by 18 decimal places.
  *
  * @example
  *
  * ```
  * (async function () {
- *   const bal = await Venus.xvs.getXVSBalance('0x2775b1c75658Be0F640272CCb8c72ac986009e38');
+ *   const bal = await Venus.venus.getVenusBalance('0x2775b1c75658Be0F640272CCb8c72ac986009e38');
  *   console.log('Balance', bal);
  * })().catch(console.error);
  * ```
  */
-export async function getXVSBalance(
+export async function getVenusBalance(
   _address: string,
   _provider : Provider | string='mainnet'
 ) : Promise<string> {
   const provider = await eth._createProvider({ provider: _provider });
   const net = await eth.getProviderNetwork(provider);
 
-  const errorPrefix = 'Venus [getXVSBalance] | ';
+  const errorPrefix = 'Venus [getVenusBalance] | ';
 
   if (typeof _address !== 'string') {
     throw Error(errorPrefix + 'Argument `_address` must be a string.');
@@ -100,32 +100,32 @@ export async function getXVSBalance(
 }
 
 /**
- * Get the amount of XVS tokens accrued but not yet claimed by an address.
+ * Get the amount of VENUS tokens accrued but not yet claimed by an address.
  *
- * @param {string} _address The address in which to find the XVS accrued.
+ * @param {string} _address The address in which to find the VENUS accrued.
  * @param {Provider | string} [_provider] An Ethers.js provider or valid network
  *     name string.
  *
- * @returns {string} Returns a string of the numeric accruement of XVS. The
+ * @returns {string} Returns a string of the numeric accruement of VENUS. The
  *     value is scaled up by 18 decimal places.
  *
  * @example
  *
  * ```
  * (async function () {
- *   const acc = await Venus.xvs.getXVSAccrued('0x4Ddc2D193948926D02f9B1fE9e1daa0718270ED5');
+ *   const acc = await Venus.venus.getVenusAccrued('0x4Ddc2D193948926D02f9B1fE9e1daa0718270ED5');
  *   console.log('Accrued', acc);
  * })().catch(console.error);
  * ```
  */
-export async function getXVSAccrued(
+export async function getVenusAccrued(
   _address: string,
   _provider : Provider | string='mainnet'
 ) : Promise<string> {
   const provider = await eth._createProvider({ provider: _provider });
   const net = await eth.getProviderNetwork(provider);
 
-  const errorPrefix = 'Venus [getXVSAccrued] | ';
+  const errorPrefix = 'Venus [getVenusAccrued] | ';
 
   if (typeof _address !== 'string') {
     throw Error(errorPrefix + 'Argument `_address` must be a string.');
@@ -151,7 +151,7 @@ export async function getXVSAccrued(
 }
 
 /**
- * Create a transaction to claim accrued XVS tokens for the user.
+ * Create a transaction to claim accrued VENUS tokens for the user.
  *
  * @param {CallOptions} [options] Options to set for a transaction and Ethers.js
  *     method overrides.
@@ -256,7 +256,7 @@ export async function delegate(
  *
  * @param {string} _address The address to delegate the user's voting rights to.
  * @param {number} nonce The contract state required to match the signature.
- *     This can be retrieved from the XVS contract's public nonces mapping.
+ *     This can be retrieved from the VENUS contract's public nonces mapping.
  * @param {number} expiry The time at which to expire the signature. A block 
  *     timestamp as seconds since the unix epoch.
  * @param {object} signature An object that contains the v, r, and, s values of
@@ -298,7 +298,7 @@ export async function delegateBySig(
 ) : Promise<TrxResponse> {
   await netId(this);
 
-  const errorPrefix = 'Compound [delegateBySig] | ';
+  const errorPrefix = 'Venus [delegateBySig] | ';
 
   if (typeof _address !== 'string') {
     throw Error(errorPrefix + 'Argument `_address` must be a string.');
