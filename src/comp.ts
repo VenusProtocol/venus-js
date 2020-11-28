@@ -51,32 +51,32 @@ function toChecksumAddress(_address) {
 }
 
 /**
- * Get the balance of COMP tokens held by an address.
+ * Get the balance of VENUS tokens held by an address.
  *
- * @param {string} _address The address in which to find the COMP balance.
+ * @param {string} _address The address in which to find the VENUS balance.
  * @param {Provider | string} [_provider] An Ethers.js provider or valid network
  *     name string.
  *
- * @returns {string} Returns a string of the numeric balance of COMP. The value
+ * @returns {string} Returns a string of the numeric balance of VENUS. The value
  *     is scaled up by 18 decimal places.
  *
  * @example
  *
  * ```
  * (async function () {
- *   const bal = await Compound.comp.getCompBalance('0x2775b1c75658Be0F640272CCb8c72ac986009e38');
+ *   const bal = await Venus.venus.getVenusBalance('0x2775b1c75658Be0F640272CCb8c72ac986009e38');
  *   console.log('Balance', bal);
  * })().catch(console.error);
  * ```
  */
-export async function getCompBalance(
+export async function getVenusBalance(
   _address: string,
   _provider : Provider | string='mainnet'
 ) : Promise<string> {
   const provider = await eth._createProvider({ provider: _provider });
   const net = await eth.getProviderNetwork(provider);
 
-  const errorPrefix = 'Compound [getCompBalance] | ';
+  const errorPrefix = 'Venus [getVenusBalance] | ';
 
   if (typeof _address !== 'string') {
     throw Error(errorPrefix + 'Argument `_address` must be a string.');
@@ -100,32 +100,32 @@ export async function getCompBalance(
 }
 
 /**
- * Get the amount of COMP tokens accrued but not yet claimed by an address.
+ * Get the amount of VENUS tokens accrued but not yet claimed by an address.
  *
- * @param {string} _address The address in which to find the COMP accrued.
+ * @param {string} _address The address in which to find the VENUS accrued.
  * @param {Provider | string} [_provider] An Ethers.js provider or valid network
  *     name string.
  *
- * @returns {string} Returns a string of the numeric accruement of COMP. The
+ * @returns {string} Returns a string of the numeric accruement of VENUS. The
  *     value is scaled up by 18 decimal places.
  *
  * @example
  *
  * ```
  * (async function () {
- *   const acc = await Compound.comp.getCompAccrued('0x4Ddc2D193948926D02f9B1fE9e1daa0718270ED5');
+ *   const acc = await Venus.venus.getVenusAccrued('0x4Ddc2D193948926D02f9B1fE9e1daa0718270ED5');
  *   console.log('Accrued', acc);
  * })().catch(console.error);
  * ```
  */
-export async function getCompAccrued(
+export async function getVenusAccrued(
   _address: string,
   _provider : Provider | string='mainnet'
 ) : Promise<string> {
   const provider = await eth._createProvider({ provider: _provider });
   const net = await eth.getProviderNetwork(provider);
 
-  const errorPrefix = 'Compound [getCompAccrued] | ';
+  const errorPrefix = 'Venus [getVenusAccrued] | ';
 
   if (typeof _address !== 'string') {
     throw Error(errorPrefix + 'Argument `_address` must be a string.');
@@ -146,12 +146,12 @@ export async function getCompAccrued(
     abi: abi.CompoundLens,
   };
 
-  const result = await eth.read(lensAddress, 'getCompBalanceMetadataExt', parameters, trxOptions);
+  const result = await eth.read(lensAddress, 'getXVSBalanceMetadataExt', parameters, trxOptions);
   return result.allocated.toString();
 }
 
 /**
- * Create a transaction to claim accrued COMP tokens for the user.
+ * Create a transaction to claim accrued VENUS tokens for the user.
  *
  * @param {CallOptions} [options] Options to set for a transaction and Ethers.js
  *     method overrides.
@@ -162,18 +162,18 @@ export async function getCompAccrued(
  * @example
  *
  * ```
- * const compound = new Compound(window.ethereum);
+ * const venus = new Venus(window.ethereum);
  * 
  * (async function() {
  * 
- *   console.log('Claiming COMP...');
- *   const trx = await compound.claimComp();
+ *   console.log('Claiming Venus...');
+ *   const trx = await venus.claimVenus();
  *   console.log('Ethers.js transaction object', trx);
  * 
  * })().catch(console.error);
  * ```
  */
-export async function claimComp(
+export async function claimVenus(
   options: CallOptions = {}
 ) : Promise<TrxResponse> {
   await netId(this);
@@ -187,18 +187,18 @@ export async function claimComp(
       abi: abi.Comptroller,
     };
     const parameters = [ userAddress ];
-    const method = 'claimComp(address)';
+    const method = 'claimVenus(address)';
 
     return eth.trx(comptrollerAddress, method, parameters, trxOptions);
   } catch(e) {
-    const errorPrefix = 'Compound [claimComp] | ';
+    const errorPrefix = 'Venus [claimVenus] | ';
     e.message = errorPrefix + e.message;
     return e;
   }
 }
 
 /**
- * Create a transaction to delegate Compound Governance voting rights to an
+ * Create a transaction to delegate Venus Governance voting rights to an
  *     address.
  *
  * @param {string} _address The address in which to delegate voting rights to.
@@ -213,10 +213,10 @@ export async function claimComp(
  * @example
  *
  * ```
- * const compound = new Compound(window.ethereum);
+ * const venus = new Venus(window.ethereum);
  * 
  * (async function() {
- *   const delegateTx = await compound.delegate('0xa0df350d2637096571F7A701CBc1C5fdE30dF76A');
+ *   const delegateTx = await venus.delegate('0xa0df350d2637096571F7A701CBc1C5fdE30dF76A');
  *   console.log('Ethers.js transaction object', delegateTx);
  * })().catch(console.error);
  * ```
@@ -227,7 +227,7 @@ export async function delegate(
 ) : Promise<TrxResponse> {
   await netId(this);
 
-  const errorPrefix = 'Compound [delegate] | ';
+  const errorPrefix = 'Venus [delegate] | ';
 
   if (typeof _address !== 'string') {
     throw Error(errorPrefix + 'Argument `_address` must be a string.');
@@ -252,11 +252,11 @@ export async function delegate(
 }
 
 /**
- * Delegate voting rights in Compound Governance using an EIP-712 signature.
+ * Delegate voting rights in Venus Governance using an EIP-712 signature.
  *
  * @param {string} _address The address to delegate the user's voting rights to.
  * @param {number} nonce The contract state required to match the signature.
- *     This can be retrieved from the COMP contract's public nonces mapping.
+ *     This can be retrieved from the VENUS contract's public nonces mapping.
  * @param {number} expiry The time at which to expire the signature. A block 
  *     timestamp as seconds since the unix epoch.
  * @param {object} signature An object that contains the v, r, and, s values of
@@ -272,10 +272,10 @@ export async function delegate(
  * @example
  *
  * ```
- * const compound = new Compound(window.ethereum);
+ * const venus = new Venus(window.ethereum);
  * 
  * (async function() {
- *   const delegateTx = await compound.delegateBySig(
+ *   const delegateTx = await venus.delegateBySig(
  *     '0xa0df350d2637096571F7A701CBc1C5fdE30dF76A',
  *     42,
  *     9999999999,
@@ -298,7 +298,7 @@ export async function delegateBySig(
 ) : Promise<TrxResponse> {
   await netId(this);
 
-  const errorPrefix = 'Compound [delegateBySig] | ';
+  const errorPrefix = 'Venus [delegateBySig] | ';
 
   if (typeof _address !== 'string') {
     throw Error(errorPrefix + 'Argument `_address` must be a string.');
@@ -342,7 +342,7 @@ export async function delegateBySig(
 }
 
 /**
- * Create a delegate signature for Compound Governance using EIP-712. The
+ * Create a delegate signature for Venus Governance using EIP-712. The
  *     signature can be created without burning gas. Anyone can post it to the
  *     blockchain using the `delegateBySig` method, which does have gas costs.
  *
@@ -357,11 +357,11 @@ export async function delegateBySig(
  * @example
  *
  * ```
- * const compound = new Compound(window.ethereum);
+ * const venus = new Venus(window.ethereum);
  *
  * (async () => {
  *
- *   const delegateSignature = await compound.createDelegateSignature('0xa0df350d2637096571F7A701CBc1C5fdE30dF76A');
+ *   const delegateSignature = await venus.createDelegateSignature('0xa0df350d2637096571F7A701CBc1C5fdE30dF76A');
  *   console.log('delegateSignature', delegateSignature);
  *
  * })().catch(console.error);

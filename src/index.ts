@@ -65,7 +65,7 @@ const Venus = function(
     ...cToken,
     ...priceFeed,
     ...gov,
-    claimComp: comp.claimComp,
+    claimVenus: comp.claimVenus,
     delegate: comp.delegate,
     delegateBySig: comp.delegateBySig,
     createDelegateSignature: comp.createDelegateSignature,
@@ -86,9 +86,9 @@ Venus.api = api;
 Venus.util = util;
 Venus._ethers = ethers;
 Venus.decimals = decimals;
-Venus.comp = {
-  getCompBalance: comp.getCompBalance,
-  getCompAccrued: comp.getCompAccrued,
+Venus.venus = {
+  getVenusBalance: comp.getVenusBalance,
+  getVenusAccrued: comp.getVenusAccrued,
 };
 Object.assign(Venus, constants);
 
