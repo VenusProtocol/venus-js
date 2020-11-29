@@ -55,18 +55,18 @@ import {
  *     "network": "ropsten"
  *   });
  * 
- *   let daiBorrowBalance = 0;
+ *   let sxpBorrowBalance = 0;
  *   if (Object.isExtensible(account) && account.accounts) {
  *     account.accounts.forEach((acc) => {
  *       acc.tokens.forEach((tok) => {
- *         if (tok.symbol === Venus.cDAI) {
- *           daiBorrowBalance = +tok.borrow_balance_underlying.value;
+ *         if (tok.symbol === Venus.vSXP) {
+ *           sxpBorrowBalance = +tok.borrow_balance_underlying.value;
  *         }
  *       });
  *     });
  *   }
  * 
- *   console.log('daiBorrowBalance', daiBorrowBalance);
+ *   console.log('sxpBorrowBalance', sxpBorrowBalance);
  * })().catch(console.error);
  * ```
  */
@@ -88,36 +88,11 @@ export function account(options: AccountServiceRequest): Promise<APIResponse> {
  *
  * ```
  * (async function() {
- *   const cDaiData = await Venus.api.cToken({
- *     "addresses": Venus.util.getAddress(Venus.cDAI)
+ *   const vSxpData = await Venus.api.vToken({
+ *     "addresses": Venus.util.getAddress(Venus.vSXP)
  *   });
  * 
- *   console.log('cDaiData', cDaiData); // JavaScript Object
- * })().catch(console.error);
- * ```
- */
-export function cToken(options: CTokenServiceRequest): Promise<APIResponse> {
-  return queryApi(options, 'cToken', '/api/v2/ctoken');
-}
-
-/**
- * Makes a request to the CTokenService API. The vToken API retrieves
- *     information about vToken contract interaction. For more details, see the 
- *     Venus API documentation.
- *
- * @param {object} options A JavaScript object of API request parameters.
- *
- * @returns {object} Returns the HTTP response body or error.
- *
- * @example
- *
- * ```
- * (async function() {
- *   const cDaiData = await Venus.api.vToken({
- *     "addresses": Venus.util.getAddress(Venus.cDAI)
- *   });
- * 
- *   console.log('cDaiData', cDaiData); // JavaScript Object
+ *   console.log('vSxpData', vSxpData); // JavaScript Object
  * })().catch(console.error);
  * ```
  */
@@ -138,14 +113,14 @@ export function vToken(options: CTokenServiceRequest): Promise<APIResponse> {
  *
  * ```
  * (async function() {
- *   const cUsdcMarketData = await Venus.api.marketHistory({
- *     "asset": Venus.util.getAddress(Venus.cUSDC),
+ *   const vUsdcMarketData = await Venus.api.marketHistory({
+ *     "asset": Venus.util.getAddress(Venus.vUSDC),
  *     "min_block_timestamp": 1559339900,
  *     "max_block_timestamp": 1598320674,
  *     "num_buckets": 10,
  *   });
  * 
- *   console.log('cUsdcMarketData', cUsdcMarketData); // JavaScript Object
+ *   console.log('vUsdcMarketData', vUsdcMarketData); // JavaScript Object
  * })().catch(console.error);
  * ```
  */

@@ -2,7 +2,7 @@
 
 A JavaScript SDK for Ethereum and the Venus Protocol. Wraps around [Ethers.js](https://github.com/ethers-io/ethers.js/). Works in the **web browser** and **Node.js**.
 
-[Venus.js Documentation](https://compound.finance/docs/compound-js)
+[Venus.js Documentation](https://docs927beta.venus.io)
 
 This SDK is in **open beta**, and is constantly under development. **USE AT YOUR OWN RISK**.
 
@@ -14,7 +14,7 @@ JSON RPC based Ethereum **read** and **write**.
 
 ```js
 const Venus = require('@compound-finance/compound-js'); // in Node.js
-const cUsdtAddress = Venus.util.getAddress(Venus.cUSDT);
+const cUsdtAddress = Venus.util.getAddress(Venus.vUSDT);
 
 (async function() {
 
@@ -133,10 +133,10 @@ var compound = new Venus('mainnet' {
 Names of contracts, their addresses, ABIs, token decimals, and more can be found in `/src/constants.ts`. Addresses, for all networks, can be easily fetched using the `getAddress` function, combined with contract name constants.
 
 ```js
-console.log(Venus.DAI, Venus.ETH, Venus.cETH);
-// DAI, ETH, cETH
+console.log(Venus.DAI, Venus.BNB, Venus.vSXP);
+// DAI, BNB, vSXP
 
-const cUsdtAddress = Venus.util.getAddress(Venus.cUSDT);
+const cUsdtAddress = Venus.util.getAddress(Venus.vUSDT);
 // Mainnet cUSDT address. Second parameter can be a network like 'ropsten'.
 ```
 
@@ -198,18 +198,18 @@ const main = async () => {
     "network": "ropsten"
   });
 
-  let daiBorrowBalance = 0;
+  let sxpBorrowBalance = 0;
   if (Object.isExtensible(account) && account.accounts) {
     account.accounts.forEach((acc) => {
       acc.tokens.forEach((tok) => {
-        if (tok.symbol === Venus.cDAI) {
+        if (tok.symbol === Venus.vSXP) {
           daiBorrowBalance = +tok.borrow_balance_underlying.value;
         }
       });
     });
   }
 
-  console.log('daiBorrowBalance', daiBorrowBalance);
+  console.log('sxpBorrowBalance', sxpBorrowBalance);
 }
 
 main().catch(console.error);
