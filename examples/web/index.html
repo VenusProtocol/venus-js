@@ -248,8 +248,8 @@ const provider = window.ethereum;
       <button id="get-address-button">Get cETH Address</button>
       <br />
       <div id="get-address-content"></div>
-      <pre><code class="js">// Accepts cTokens or underlyings. Second arg defaults to main net.
-const cEthAddressRopsten = Venus.util.getAddress(Venus.cETH, 'ropsten');</code></pre>
+      <pre><code class="js">// Accepts vTokens or underlyings. Second arg defaults to main net.
+const vSXPAddressRopsten = Venus.util.getAddress(Venus.vSXP, 'ropsten');</code></pre>
     </div>
 
     &nbsp;
@@ -540,10 +540,10 @@ const getAddressExample = () => {
 
   (async function() {
 
-    // Accepts cTokens or underlyings. Second arg defaults to main net.
-    const cEthAddressRopsten = Venus.util.getAddress(Venus.cETH, 'ropsten');
+    // Accepts vTokens or underlyings. Second arg defaults to main net.
+    const vSxpAddressRopsten = Venus.util.getAddress(Venus.vSXP, 'ropsten');
 
-    getAddressContent.innerText = cEthAddressRopsten.toString();
+    getAddressContent.innerText = vSxpAddressRopsten.toString();
 
   })().catch((err) => {
     getAddressContent.innerText = 'Error occured; See developer console for details.';
