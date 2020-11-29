@@ -14,7 +14,7 @@ ganache-cli \
 const Venus = require('../../dist/nodejs/index.js');
 
 const oneEthInWei = '1000000000000000000';
-const cEthAddress = Venus.util.getAddress(Venus.cETH);
+const vSxpAddress = Venus.util.getAddress(Venus.vSXP);
 const provider = 'http://localhost:8545';
 const privateKey = '0xb8c1b5c1d81f9475fdf2e334517d29f733bdfa40682207571b12fc1142cbf329';
 // const mnemonic = 'clutch captain shoe salt awake harvest setup primary inmate ugly among become';
@@ -22,9 +22,9 @@ const privateKey = '0xb8c1b5c1d81f9475fdf2e334517d29f733bdfa40682207571b12fc1142
 (async function() {
   console.log('Supplying ETH to the Venus Protocol...');
 
-  // Mint some cETH by supplying ETH to the Venus Protocol
+  // Mint some vSXP by supplying SXP to the Venus Protocol
   const trx = await Venus.eth.trx(
-    cEthAddress,
+    vSxpAddress,
     'function mint() payable',
     [],
     {
