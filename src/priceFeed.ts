@@ -9,6 +9,7 @@ import { netId } from './helpers';
 import {
   constants, address, abi, cTokens, underlyings, decimals, opfAssets
 } from './constants';
+import { BigNumber } from '@ethersproject/bignumber/lib/bignumber';
 import { CallOptions } from './types';
 
 function validateAsset(
@@ -127,8 +128,16 @@ export async function getPrice(
     _compoundProvider: this._provider,
     abi: abi.PriceOracle,
   };
-  const assetUnderlyingPrice = await eth.read(priceOracleAddress, 'getUnderlyingPrice', [ vTokenAddress ], trxOptions);
+  let assetUnderlyingPrice = await eth.read(priceOracleAddress, 'getUnderlyingPrice', [ vTokenAddress ], trxOptions);
   const inAssetUnderlyingPrice =  await eth.read(priceOracleAddress, 'getUnderlyingPrice', [ inAssetVTokenAddress ], trxOptions);
+
+  const assetDecimal = decimals[asset];
+  const inAssetDecimal = decimals[inAsset];
+  if ((assetDecimal-inAssetDecimal) > 0) {
+    assetUnderlyingPrice = assetUnderlyingPrice.mul(BigNumber.from("10").pow(assetDecimal-inAssetDecimal));
+  } else {
+    assetUnderlyingPrice = assetUnderlyingPrice.div(BigNumber.from("10").pow(inAssetDecimal-assetDecimal));
+  }  
 
   let assetVTokensInUnderlying, inAssetVTokensInUnderlying;
 
