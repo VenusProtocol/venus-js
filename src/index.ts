@@ -90,6 +90,7 @@ Venus.eth = eth;
 Venus.api = api;
 Venus.util = util;
 Venus._ethers = ethers;
+Venus.decimals = decimals;
 Venus.venus = {
   getVenusBalance: comp.getVenusBalance,
   getVenusAccrued: comp.getVenusAccrued,
