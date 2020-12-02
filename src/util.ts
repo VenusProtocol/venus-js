@@ -176,7 +176,7 @@ export function request(options: any) : Promise<any> {
  *
  * @example
  * ```
- * console.log('cETH Address: ', Venus.util.getAddress(Venus.cETH));
+ * console.log('vBNB Address: ', Venus.util.getAddress(Venus.vBNB));
  * ```
  */
 export function getAddress(contract: string, network='mainnet') : string {
@@ -193,7 +193,7 @@ export function getAddress(contract: string, network='mainnet') : string {
  *
  * @example
  * ```
- * console.log('cETH ABI: ', Venus.util.getAbi(Venus.cETH));
+ * console.log('vBNB ABI: ', Venus.util.getAbi(Venus.vBNB));
  * ```
  */
 export function getAbi(contract: string): AbiType[] {
