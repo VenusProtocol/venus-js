@@ -75,7 +75,7 @@ const Venus = function(
   //     use the correct contract addresses.
   instance._networkPromise = eth.getProviderNetwork(provider).then((network) => {    
     instance.decimals = decimals;
-    if (network.id === 56 && network.name === "mainnet") {
+    if (network.id === 56 || network.name === "mainnet") {
       instance.decimals.USDC = 18;
       instance.decimals.USDT = 18;
     }
