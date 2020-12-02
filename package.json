@@ -1,6 +1,6 @@
 {
   "name": "@swipewallet/venus-js",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "author": "Venus Labs, Inc.",
   "description": "A JavaScript SDK for Ethereum and the Venus Protocol.",
   "license": "BSD-3-Clause",
