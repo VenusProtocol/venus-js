@@ -82,7 +82,7 @@ async function vTokenExchangeRate(
  * (async function () {
  * 
  *   price = await venus.getPrice(Venus.BNB);
- *   console.log('BNB in USD', price); // 6 decimals, see Open Price Feed docs
+ *   console.log('BNB in USD', price);
  * 
  *   price = await venus.getPrice(Venus.SXP, Venus.USDC); // supports vTokens too
  *   console.log('SXP in USDC', price);
