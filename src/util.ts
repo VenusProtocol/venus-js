@@ -1,6 +1,6 @@
 /**
  * @file Utility
- * @desc These methods are helpers for the Compound class.
+ * @desc These methods are helpers for the Venus class.
  */
 
 import { address, abi } from './constants';
@@ -166,7 +166,7 @@ export function request(options: any) : Promise<any> {
 
 /**
  * Gets the contract address of the named contract. This method supports 
- *     contracts used by the Compound Protocol.
+ *     contracts used by the Venus Protocol.
  *
  * @param {string} contract The name of the contract.
  * @param {string} [network] Optional name of the Ethereum network. Main net and
@@ -176,7 +176,7 @@ export function request(options: any) : Promise<any> {
  *
  * @example
  * ```
- * console.log('cETH Address: ', Compound.util.getAddress(Compound.cETH));
+ * console.log('cETH Address: ', Venus.util.getAddress(Venus.cETH));
  * ```
  */
 export function getAddress(contract: string, network='mainnet') : string {
@@ -185,7 +185,7 @@ export function getAddress(contract: string, network='mainnet') : string {
 
 /**
  * Gets a contract ABI as a JavaScript array. This method supports 
- *     contracts used by the Compound Protocol.
+ *     contracts used by the Venus Protocol.
  *
  * @param {string} contract The name of the contract.
  *
@@ -193,7 +193,7 @@ export function getAddress(contract: string, network='mainnet') : string {
  *
  * @example
  * ```
- * console.log('cETH ABI: ', Compound.util.getAbi(Compound.cETH));
+ * console.log('cETH ABI: ', Venus.util.getAbi(Venus.cETH));
  * ```
  */
 export function getAbi(contract: string): AbiType[] {
@@ -209,7 +209,7 @@ export function getAbi(contract: string): AbiType[] {
  *
  * @example
  * ```
- * console.log('Ropsten : ', Compound.util.getNetNameWithChainId(3));
+ * console.log('Ropsten : ', Venus.util.getNetNameWithChainId(3));
  * ```
  */
 export function getNetNameWithChainId(chainId: number) : string {

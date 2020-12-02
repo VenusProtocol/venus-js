@@ -174,7 +174,7 @@ function queryApi(options: APIRequest, name: string, path: string): Promise<APIR
     let responseCode, responseMessage;
 
     // TODO -- api service endpoint should be updated.
-    let hostname = 'https://mainnetapi.venus.io'; // 'https://api.compound.finance'
+    let hostname = 'https://mainnetapi.venus.io';
     if (options && (options.network === 'testnet')) hostname = 'https://testnetapi.venus.io';
 
     request({
@@ -183,7 +183,7 @@ function queryApi(options: APIRequest, name: string, path: string): Promise<APIR
       method: 'POST',
       headers: {
         'Content-type': 'application/json',
-        // 'compound-js': `[${version}]_[${userPlatform}]`,
+        // 'venus-js': `[${version}]_[${userPlatform}]`,
       },
       body: options
     }).then((response) => {
