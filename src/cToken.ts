@@ -194,6 +194,7 @@ export async function redeem(
   amount = ethers.BigNumber.from(amount.toString());
 
   const trxOptions: CallOptions = {
+    ...options,
     _compoundProvider: this._provider,
     abi: vTokenName === constants.vBNB ? abi.vBNB : abi.vBep20,
   };

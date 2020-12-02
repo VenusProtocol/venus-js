@@ -36,10 +36,13 @@ export const constants = {
   'vUSDC': 'vUSDC',
   'vUSDT': 'vUSDT',
   'vSXP': 'vSXP',
-  'DAI': 'DAI',
+  'vBUSD': 'vBUSD',
+  'vXVS': 'vXVS',
+  'BUSD': 'BUSD',
   'USDC': 'USDC',
   'USDT': 'USDT',
   'SXP': 'SXP',
+  'XVS': 'XVS',
   'BNB': 'BNB',
 };
 
@@ -48,10 +51,10 @@ export const address = {
     "PriceFeed": "0x922018674c12a7f0d394ebeef9b58f186cde13c1",
     "Maximillion": "0xf859A1AD94BcF445A406B892eF0d3082f4174088",
     "CompoundLens": "0xd513d22422a3062Bd342Ae374b4b9c20E0a9a074",
-    "GovernorAlpha": "0xc0dA01a04C3f3E0be433606045bB7017A7323E38",
-    "Comptroller": "0x3d9819210A31b4961b30EF54bE2aeD79B9c9Cd3B",
+    "GovernorAlpha": "0x406f48f47D25E9caa29f17e7Cfbd1dc6878F078f",
+    "Comptroller": "0xfD36E2c2a6789Db23113685031d7F16329158384",
     "Reservoir": "0x2775b1c75658Be0F640272CCb8c72ac986009e38",
-    "COMP": "0xc00e94Cb662C3520282E6f5717214004A7f26888",
+    "COMP": "0xcF6BB5389c92Bdda8a3747Ddb454cB7a64626C63",
     "cBAT": "0x6C8c6b02E7b2BE14d4fA6022Dfd6d75921D90E4E",
     "cCOMP": "0x70e36f6bf80a52b3b46b3af8e106cc0ed743e8e4",
     "cDAI": "0x5d3a536E4D6DbD6114cc1Ead35777bAB948E3643",
@@ -68,10 +71,23 @@ export const address = {
     "REP": "0x1985365e9f78359a9B6AD760e32412f4a445E862",
     "SAI": "0x89d24a6b4ccb1b6faa2625fe562bdd9a23260359",
     "UNI": "0x1f9840a85d5af5bf1d1762f925bdaddc4201f984",
-    "USDC": "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
-    "USDT": "0xdAC17F958D2ee523a2206206994597C13D831ec7",
+    // "USDC": "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
+    // "USDT": "0xdAC17F958D2ee523a2206206994597C13D831ec7",
     "WBTC": "0x2260fac5e5542a773aa44fbcfedf7c193bc2c599",
     "ZRX": "0xE41d2489571d322189246DaFA5ebDe1F4699F498",
+
+    // bsc mainnet
+    "vBNB": "0xA07c5b74C9B40447a954e1466938b865b6BBea36",
+    "vUSDC": "0xecA88125a5ADbe82614ffC12D0DB554E2e2867C8",
+    "vUSDT": "0xfD5840Cd36d94D7229439859C0112a4185BC0255",
+    "vSXP": "0x2fF3d0F6990a40261c66E1ff2017aCBc282EB6d0",
+    "vBUSD": "0x95c78222B3D6e262426483D42CfA53685A67Ab9D",
+    "vXVS": "0x151B1e2635A717bcDc836ECd6FbB62B674FE3E1D",
+    "USDC": "0x8AC76a51cc950d9822D68b83fE1Ad97B32Cd580d",
+    "USDT": "0x55d398326f99059fF775485246999027B3197955",
+    "SXP": "0x47BEAd2563dCBf3bF2c9407fEa4dC236fAbA485A",
+    "BUSD": "0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56",
+    "XVS": "0xcF6BB5389c92Bdda8a3747Ddb454cB7a64626C63",
   },
   "rinkeby": {
     "PriceFeed": "0x5722A3F60fa4F0EC5120DCD6C386289A4758D1b2",
@@ -184,10 +200,13 @@ export const address = {
     "vUSDC": "0xD5C4C2e2facBEB59D0216D0595d63FcDc6F9A1a7",
     "vUSDT": "0xb7526572FFE56AB9D7489838Bf2E18e3323b441A",
     "vSXP": "0x74469281310195A04840Daf6EdF576F559a3dE80",
-    "DAI": "0x8301F2213c0eeD49a7E28Ae4c3e91722919B8B47",
+    "vBUSD": "0x08e0A5575De71037aE36AbfAfb516595fE68e5e4",
+    "vXVS": "0x6d6F697e34145Bb95c54E77482d97cc261Dc237E",    
     "USDC": "0x16227D60f7a0e586C66B005219dfc887D13C9531",
     "USDT": "0xA11c8D9DC9b66E209Ef60F0C8D969D3CD988782c",
     "SXP": "0x75107940Cf1121232C0559c747A986DEfbc69DA9",
+    "BUSD": "0x8301F2213c0eeD49a7E28Ae4c3e91722919B8B47",
+    "XVS": "0xB9e0E753630434d7863528cc73CB7AC638a7c8ff",
   }
 };
 
@@ -209,12 +228,12 @@ export const abi = {
 export const cTokens = [
   'cBAT', 'cCOMP', 'cDAI', 'cETH', 'cREP', 'cSAI', 'cUNI', 'cUSDC', 'cUSDT', 'cWBTC', 'cZRX',
   // venus tokens
-  'vBNB', 'vUSDC', 'vUSDT', 'vSXP',
+  'vBNB', 'vUSDC', 'vUSDT', 'vSXP', 'vBUSD', 'vXVS',
 ];
 export const underlyings = [
   'BAT', 'COMP', 'DAI', 'ETH', 'REP', 'SAI', 'UNI', 'USDC', 'USDT', 'WBTC', 'ZRX',
   // venus underlyings
-  'BNB', 'USDC', 'USDT', 'SXP',
+  'BNB', 'USDC', 'USDT', 'SXP', 'BUSD', 'XVS',
 ];
 
 // additional assets supported by the open price feed
@@ -251,10 +270,14 @@ export const decimals = {
   'vUSDC': 8,
   'vUSDT': 8,
   'vSXP': 8,
+  'vBUSD': 8,
+  'vXVS': 8,
   'BNB': 18,
   'USDC': 6,
   'USDT': 6,
   'SXP': 18,
+  'BUSD': 18,
+  'XVS': 18,
 };
 
 export const errorCodes = {
