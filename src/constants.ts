@@ -50,7 +50,7 @@ export const address = {
   "mainnet": {
     "PriceFeed": "0x922018674c12a7f0d394ebeef9b58f186cde13c1",
     "Maximillion": "0xf859A1AD94BcF445A406B892eF0d3082f4174088",
-    "CompoundLens": "0xd513d22422a3062Bd342Ae374b4b9c20E0a9a074",
+    "CompoundLens": "0x595e9DDfEbd47B54b996c839Ef3Dd97db3ED19bA",
     "GovernorAlpha": "0x406f48f47D25E9caa29f17e7Cfbd1dc6878F078f",
     "Comptroller": "0xfD36E2c2a6789Db23113685031d7F16329158384",
     "Reservoir": "0x2775b1c75658Be0F640272CCb8c72ac986009e38",
