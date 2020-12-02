@@ -75,7 +75,7 @@
 				<a href="#read" id="read" style="color: inherit; text-decoration: none;">
 					<h3>Read</h3>
 				</a>
-				<pre><code class="language-js"><span class="hljs-keyword">const</span> Venus = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;@compound-finance/compound-js&#x27;</span>); <span class="hljs-comment">// in Node.js</span>
+				<pre><code class="language-js"><span class="hljs-keyword">const</span> Venus = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;@swipewallet/venus-js&#x27;</span>); <span class="hljs-comment">// in Node.js</span>
 <span class="hljs-keyword">const</span> cUsdtAddress = Venus.util.getAddress(Venus.vUSDT);
 
 (<span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
@@ -114,7 +114,7 @@
 					<h2>Venus Protocol</h2>
 				</a>
 				<p>Simple methods for using the Venus protocol.</p>
-				<pre><code class="language-js"><span class="hljs-keyword">const</span> compound = <span class="hljs-keyword">new</span> Venus(<span class="hljs-built_in">window</span>.ethereum); <span class="hljs-comment">// in a web browser</span>
+				<pre><code class="language-js"><span class="hljs-keyword">const</span> venus = <span class="hljs-keyword">new</span> Venus(<span class="hljs-built_in">window</span>.ethereum); <span class="hljs-comment">// in a web browser</span>
 
 <span class="hljs-comment">// Ethers.js overrides are an optional 3rd parameter for `supply`</span>
 <span class="hljs-comment">// const trxOptions = { gasLimit: 250000, mantissa: false };</span>
@@ -122,7 +122,7 @@
 (<span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
 
   <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;Supplying ETH to the Venus protocol...&#x27;</span>);
-  <span class="hljs-keyword">const</span> trx = <span class="hljs-keyword">await</span> compound.supply(Venus.ETH, <span class="hljs-number">1</span>);
+  <span class="hljs-keyword">const</span> trx = <span class="hljs-keyword">await</span> venus.supply(Venus.ETH, <span class="hljs-number">1</span>);
   <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;Ethers.js transaction object&#x27;</span>, trx);
 
 })().catch(<span class="hljs-built_in">console</span>.error);</code></pre>
@@ -130,45 +130,45 @@
 					<h2>Install / Import</h2>
 				</a>
 				<p>Web Browser</p>
-				<pre><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text/javascript&quot;</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;https://cdn.jsdelivr.net/npm/@compound-finance/compound-js@latest/dist/browser/compound.min.js&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+				<pre><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text/javascript&quot;</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;https://cdn.jsdelivr.net/npm/@swipewallet/venus-js@latest/dist/browser/venus.min.js&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
 
 <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text/javascript&quot;</span>&gt;</span><span class="javascript">
   <span class="hljs-built_in">window</span>.Venus; <span class="hljs-comment">// or `Venus`</span>
 </span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></code></pre>
 				<p>Node.js</p>
-				<pre><code>npm <span class="hljs-keyword">install</span> @<span class="hljs-keyword">compound</span>-finance/<span class="hljs-keyword">compound</span>-js</code></pre>
-				<pre><code class="language-js"><span class="hljs-keyword">const</span> Venus = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;@compound-finance/compound-js&#x27;</span>);
+				<pre><code><span class="hljs-built_in">npm</span> install @swipewallet/venus-js</code></pre>
+				<pre><code class="language-js"><span class="hljs-keyword">const</span> Venus = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;@swipewallet/venus-js&#x27;</span>);
 
 <span class="hljs-comment">// or, when using ES6</span>
 
-<span class="hljs-keyword">import</span> Venus <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@compound-finance/compound-js&#x27;</span>;</code></pre>
+<span class="hljs-keyword">import</span> Venus <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@swipewallet/venus-js&#x27;</span>;</code></pre>
 				<a href="#more-code-examples" id="more-code-examples" style="color: inherit; text-decoration: none;">
 					<h2>More Code Examples</h2>
 				</a>
 				<ul>
-					<li><a href="https://github.com/compound-finance/compound-js/tree/master/examples">Node.js</a></li>
-					<li><a href="https://compound-finance.github.io/compound-js/examples/web/">Web Browser</a></li>
+					<li><a href="https://github.com/SwipeWallet/venus-js/tree/master/examples">Node.js</a></li>
+					<li><a href="https://github.com/SwipeWallet/venus-js/examples/web/">Web Browser</a></li>
 				</ul>
-				<p><a href="https://github.com/compound-finance/compound-js/tree/master/examples">To run, boot Ganache fork of mainnet locally</a></p>
+				<p><a href="https://github.com/SwipeWallet/venus-js/tree/master/examples">To run, boot Ganache fork of mainnet locally</a></p>
 				<a href="#instance-creation" id="instance-creation" style="color: inherit; text-decoration: none;">
 					<h2>Instance Creation</h2>
 				</a>
 				<p>The following are valid Ethereum providers for initialization of the SDK.</p>
-				<pre><code class="language-js"><span class="hljs-keyword">var</span> compound = <span class="hljs-keyword">new</span> Venus(<span class="hljs-built_in">window</span>.ethereum); <span class="hljs-comment">// web browser</span>
+				<pre><code class="language-js"><span class="hljs-keyword">var</span> venus = <span class="hljs-keyword">new</span> Venus(<span class="hljs-built_in">window</span>.ethereum); <span class="hljs-comment">// web browser</span>
 
-<span class="hljs-keyword">var</span> compound = <span class="hljs-keyword">new</span> Venus(<span class="hljs-string">&#x27;http://127.0.0.1:8545&#x27;</span>); <span class="hljs-comment">// HTTP provider</span>
+<span class="hljs-keyword">var</span> venus = <span class="hljs-keyword">new</span> Venus(<span class="hljs-string">&#x27;http://127.0.0.1:8545&#x27;</span>); <span class="hljs-comment">// HTTP provider</span>
 
-<span class="hljs-keyword">var</span> compound = <span class="hljs-keyword">new</span> Venus(); <span class="hljs-comment">// Uses Ethers.js fallback mainnet (for testing only)</span>
+<span class="hljs-keyword">var</span> venus = <span class="hljs-keyword">new</span> Venus(); <span class="hljs-comment">// Uses Ethers.js fallback mainnet (for testing only)</span>
 
-<span class="hljs-keyword">var</span> compound = <span class="hljs-keyword">new</span> Venus(<span class="hljs-string">&#x27;ropsten&#x27;</span>); <span class="hljs-comment">// Uses Ethers.js fallback (for testing only)</span>
+<span class="hljs-keyword">var</span> venus = <span class="hljs-keyword">new</span> Venus(<span class="hljs-string">&#x27;ropsten&#x27;</span>); <span class="hljs-comment">// Uses Ethers.js fallback (for testing only)</span>
 
 <span class="hljs-comment">// Init with private key (server side)</span>
-<span class="hljs-keyword">var</span> compound = <span class="hljs-keyword">new</span> Venus(<span class="hljs-string">&#x27;https://mainnet.infura.io/v3/_your_project_id_&#x27;</span>, {
+<span class="hljs-keyword">var</span> venus = <span class="hljs-keyword">new</span> Venus(<span class="hljs-string">&#x27;https://mainnet.infura.io/v3/_your_project_id_&#x27;</span>, {
   <span class="hljs-attr">privateKey</span>: <span class="hljs-string">&#x27;0x_your_private_key_&#x27;</span>, <span class="hljs-comment">// preferably with environment variable</span>
 });
 
 <span class="hljs-comment">// Init with HD mnemonic (server side)</span>
-<span class="hljs-keyword">var</span> compound = <span class="hljs-keyword">new</span> Venus(<span class="hljs-string">&#x27;mainnet&#x27;</span> {
+<span class="hljs-keyword">var</span> venus = <span class="hljs-keyword">new</span> Venus(<span class="hljs-string">&#x27;mainnet&#x27;</span> {
   <span class="hljs-attr">mnemonic</span>: <span class="hljs-string">&#x27;clutch captain shoe...&#x27;</span>, <span class="hljs-comment">// preferably with environment variable</span>
 });</code></pre>
 				<a href="#constants-and-contract-addresses" id="constants-and-contract-addresses" style="color: inherit; text-decoration: none;">
@@ -185,10 +185,10 @@
 				</a>
 				<p>Parameters of number values can be plain numbers or their scaled up mantissa values. There is a transaction option boolean to tell the SDK what the developer is passing.</p>
 				<pre><code class="language-js"><span class="hljs-comment">// 1 Dai</span>
-<span class="hljs-keyword">await</span> compound.borrow(Venus.DAI, <span class="hljs-string">&#x27;1000000000000000000&#x27;</span>, { <span class="hljs-attr">mantissa</span>: <span class="hljs-literal">true</span> });
+<span class="hljs-keyword">await</span> venus.borrow(Venus.DAI, <span class="hljs-string">&#x27;1000000000000000000&#x27;</span>, { <span class="hljs-attr">mantissa</span>: <span class="hljs-literal">true</span> });
 
 <span class="hljs-comment">// `mantissa` defaults to false if it is not specified or if an options object is not passed</span>
-<span class="hljs-keyword">await</span> compound.borrow(Venus.DAI, <span class="hljs-number">1</span>, { <span class="hljs-attr">mantissa</span>: <span class="hljs-literal">false</span> });</code></pre>
+<span class="hljs-keyword">await</span> venus.borrow(Venus.DAI, <span class="hljs-number">1</span>, { <span class="hljs-attr">mantissa</span>: <span class="hljs-literal">false</span> });</code></pre>
 				<a href="#transaction-options" id="transaction-options" style="color: inherit; text-decoration: none;">
 					<h2>Transaction Options</h2>
 				</a>
@@ -212,14 +212,14 @@
 				<a href="#api" id="api" style="color: inherit; text-decoration: none;">
 					<h2>API</h2>
 				</a>
-				<p>The <a href="https://compound.finance/docs/api">Venus API</a> is accessible from Venus.js. The corresponding services are defined in the <code>api</code> namespace on the class.</p>
+				<p>The <a href="https://docs927beta.venus.io/docs/api">Venus API</a> is accessible from Venus.js. The corresponding services are defined in the <code>api</code> namespace on the class.</p>
 				<ul>
 					<li><code>Venus.api.account</code></li>
 					<li><code>Venus.api.cToken</code></li>
 					<li><code>Venus.api.marketHistory</code></li>
 					<li><code>Venus.api.governance</code></li>
 				</ul>
-				<p>The governance method requires a second parameter (string) for the corresponding endpoint shown in the <a href="https://compound.finance/docs/api#GovernanceService">documentation</a>.</p>
+				<p>The governance method requires a second parameter (string) for the corresponding endpoint shown in the <a href="https://docs927beta.venus.io/docs/venus-js/api#GovernanceService">documentation</a>.</p>
 				<ul>
 					<li><code>proposals</code></li>
 					<li><code>voteReceipts</code></li>
@@ -250,18 +250,18 @@ main().catch(<span class="hljs-built_in">console</span>.error);</code></pre>
 				<a href="#build-for-nodejs-amp-web-browser" id="build-for-nodejs-amp-web-browser" style="color: inherit; text-decoration: none;">
 					<h2>Build for Node.js &amp; Web Browser</h2>
 				</a>
-				<pre><code><span class="hljs-attr">git</span> <span class="hljs-string">clone git@github.com:compound-finance/compound-js.git</span>
-<span class="hljs-attr">cd</span> <span class="hljs-string">compound-js/</span>
-<span class="hljs-attr">npm</span> <span class="hljs-string">install</span>
-<span class="hljs-attr">npm</span> <span class="hljs-string">run build</span></code></pre>
+				<pre><code>git <span class="hljs-keyword">clone </span>git@github.com:<span class="hljs-keyword">SwipeWallet/venus-js.git
+</span>cd venus-<span class="hljs-keyword">js/
+</span>npm <span class="hljs-keyword">install
+</span>npm run <span class="hljs-keyword">build</span></code></pre>
 				<a href="#web-browser-build" id="web-browser-build" style="color: inherit; text-decoration: none;">
 					<h3>Web Browser Build</h3>
 				</a>
 				<pre><code class="language-html"><span class="hljs-comment">&lt;!-- Local build (do `npm install` first) --&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text/javascript&quot;</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;./dist/browser/compound.min.js&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text/javascript&quot;</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;./dist/browser/venus.min.js&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
 
 <span class="hljs-comment">&lt;!-- Public NPM -&gt; jsdeliver build --&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text/javascript&quot;</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;https://cdn.jsdelivr.net/npm/@compound-finance/compound-js@latest/dist/browser/compound.min.js&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></code></pre>
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text/javascript&quot;</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;https://cdn.jsdelivr.net/npm/@swipewallet/venus-js@latest/dist/browser/venus.min.js&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></code></pre>
 				<a href="#nodejs-build" id="nodejs-build" style="color: inherit; text-decoration: none;">
 					<h3>Node.js Build</h3>
 				</a>
@@ -269,7 +269,7 @@ main().catch(<span class="hljs-built_in">console</span>.error);</code></pre>
 <span class="hljs-keyword">const</span> Venus = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;./dist/nodejs/index.js&#x27;</span>);
 
 <span class="hljs-comment">// Public NPM build</span>
-<span class="hljs-keyword">const</span> Venus = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;@compound-finance/compound-js&#x27;</span>);</code></pre>
+<span class="hljs-keyword">const</span> Venus = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;@swipewallet/venus-js&#x27;</span>);</code></pre>
 			</div>
 		</div>
 		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">

@@ -13,7 +13,7 @@ JSON RPC based Ethereum **read** and **write**.
 ### Read
 
 ```js
-const Venus = require('@compound-finance/compound-js'); // in Node.js
+const Venus = require('@swipewallet/venus-js'); // in Node.js
 const cUsdtAddress = Venus.util.getAddress(Venus.vUSDT);
 
 (async function() {
@@ -57,7 +57,7 @@ const toAddress = '0xa0df350d2637096571F7A701CBc1C5fdE30dF76A';
 Simple methods for using the Venus protocol.
 
 ```js
-const compound = new Venus(window.ethereum); // in a web browser
+const venus = new Venus(window.ethereum); // in a web browser
 
 // Ethers.js overrides are an optional 3rd parameter for `supply`
 // const trxOptions = { gasLimit: 250000, mantissa: false };
@@ -65,7 +65,7 @@ const compound = new Venus(window.ethereum); // in a web browser
 (async function() {
 
   console.log('Supplying ETH to the Venus protocol...');
-  const trx = await compound.supply(Venus.ETH, 1);
+  const trx = await venus.supply(Venus.ETH, 1);
   console.log('Ethers.js transaction object', trx);
 
 })().catch(console.error);
@@ -76,7 +76,7 @@ const compound = new Venus(window.ethereum); // in a web browser
 Web Browser
 
 ```html
-<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@compound-finance/compound-js@latest/dist/browser/compound.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@swipewallet/venus-js@latest/dist/browser/venus.min.js"></script>
 
 <script type="text/javascript">
   window.Venus; // or `Venus`
@@ -86,44 +86,44 @@ Web Browser
 Node.js
 
 ```
-npm install @compound-finance/compound-js
+npm install @swipewallet/venus-js
 ```
 
 ```js
-const Venus = require('@compound-finance/compound-js');
+const Venus = require('@swipewallet/venus-js');
 
 // or, when using ES6
 
-import Venus from '@compound-finance/compound-js';
+import Venus from '@swipewallet/venus-js';
 ```
 
 ## More Code Examples
 
-- [Node.js](https://github.com/compound-finance/compound-js/tree/master/examples)
-- [Web Browser](https://compound-finance.github.io/compound-js/examples/web/)
+- [Node.js](https://github.com/SwipeWallet/venus-js/tree/master/examples)
+- [Web Browser](https://github.com/SwipeWallet/venus-js/examples/web/)
 
-[To run, boot Ganache fork of mainnet locally](https://github.com/compound-finance/compound-js/tree/master/examples)
+[To run, boot Ganache fork of mainnet locally](https://github.com/SwipeWallet/venus-js/tree/master/examples)
 
 ## Instance Creation
 
 The following are valid Ethereum providers for initialization of the SDK.
 
 ```js
-var compound = new Venus(window.ethereum); // web browser
+var venus = new Venus(window.ethereum); // web browser
 
-var compound = new Venus('http://127.0.0.1:8545'); // HTTP provider
+var venus = new Venus('http://127.0.0.1:8545'); // HTTP provider
 
-var compound = new Venus(); // Uses Ethers.js fallback mainnet (for testing only)
+var venus = new Venus(); // Uses Ethers.js fallback mainnet (for testing only)
 
-var compound = new Venus('ropsten'); // Uses Ethers.js fallback (for testing only)
+var venus = new Venus('ropsten'); // Uses Ethers.js fallback (for testing only)
 
 // Init with private key (server side)
-var compound = new Venus('https://mainnet.infura.io/v3/_your_project_id_', {
+var venus = new Venus('https://mainnet.infura.io/v3/_your_project_id_', {
   privateKey: '0x_your_private_key_', // preferably with environment variable
 });
 
 // Init with HD mnemonic (server side)
-var compound = new Venus('mainnet' {
+var venus = new Venus('mainnet' {
   mnemonic: 'clutch captain shoe...', // preferably with environment variable
 });
 ```
@@ -146,10 +146,10 @@ Parameters of number values can be plain numbers or their scaled up mantissa val
 
 ```js
 // 1 Dai
-await compound.borrow(Venus.DAI, '1000000000000000000', { mantissa: true });
+await venus.borrow(Venus.DAI, '1000000000000000000', { mantissa: true });
 
 // `mantissa` defaults to false if it is not specified or if an options object is not passed
-await compound.borrow(Venus.DAI, 1, { mantissa: false });
+await venus.borrow(Venus.DAI, 1, { mantissa: false });
 ```
 
 ## Transaction Options
@@ -176,14 +176,14 @@ const trxOptions = {
 
 ## API
 
-The [Venus API](https://compound.finance/docs/api) is accessible from Venus.js. The corresponding services are defined in the `api` namespace on the class.
+The [Venus API](https://docs927beta.venus.io/docs/api) is accessible from Venus.js. The corresponding services are defined in the `api` namespace on the class.
 
 - `Venus.api.account`
 - `Venus.api.cToken`
 - `Venus.api.marketHistory`
 - `Venus.api.governance`
 
-The governance method requires a second parameter (string) for the corresponding endpoint shown in the [documentation](https://compound.finance/docs/api#GovernanceService).
+The governance method requires a second parameter (string) for the corresponding endpoint shown in the [documentation](https://docs927beta.venus.io/docs/venus-js/api#GovernanceService).
 
 - `proposals`
 - `voteReceipts`
@@ -218,8 +218,8 @@ main().catch(console.error);
 ## Build for Node.js & Web Browser
 
 ```
-git clone git@github.com:compound-finance/compound-js.git
-cd compound-js/
+git clone git@github.com:SwipeWallet/venus-js.git
+cd venus-js/
 npm install
 npm run build
 ```
@@ -227,10 +227,10 @@ npm run build
 ### Web Browser Build
 ```html
 <!-- Local build (do `npm install` first) -->
-<script type="text/javascript" src="./dist/browser/compound.min.js"></script>
+<script type="text/javascript" src="./dist/browser/venus.min.js"></script>
 
 <!-- Public NPM -> jsdeliver build -->
-<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@compound-finance/compound-js@latest/dist/browser/compound.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@swipewallet/venus-js@latest/dist/browser/venus.min.js"></script>
 ```
 
 ### Node.js Build
@@ -239,5 +239,5 @@ npm run build
 const Venus = require('./dist/nodejs/index.js');
 
 // Public NPM build
-const Venus = require('@compound-finance/compound-js');
+const Venus = require('@swipewallet/venus-js');
 ```

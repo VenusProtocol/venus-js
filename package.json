@@ -1,5 +1,5 @@
 {
-  "name": "venus-js",
+  "name": "@swipewallet/venus-js",
   "version": "0.0.1",
   "author": "Venus Labs, Inc.",
   "description": "A JavaScript SDK for Ethereum and the Venus Protocol.",
@@ -9,7 +9,7 @@
     "lint": "./node_modules/.bin/eslint ./src/*.ts",
     "build": "npm run lint && ./node_modules/.bin/tsc && npm run rollup",
     "docs": "./node_modules/typedoc/bin/typedoc --out ./docs/ ./src/",
-    "compound_docs": "node ./scripts/compound-docs.js",
+    "venus_docs": "node ./scripts/venus-docs.js",
     "prepare": "npm run build",
     "publish_patch": "npm version patch && npm publish --access public",
     "publish_minor": "npm version minor && npm publish --access public",
@@ -19,7 +19,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/compound-finance/compound-js.git"
+    "url": "https://github.com/SwipeWallet/venus-js"
   },
   "keywords": [
     "venus",
@@ -28,7 +28,9 @@
     "venus protocol",
     "decentralized finance",
     "defi",
-    "ethereum"
+    "ethereum",
+    "binance",
+    "binance smart chain"
   ],
   "devDependencies": {
     "@babel/core": "^7.10.2",
