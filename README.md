@@ -2,7 +2,7 @@
 
 A JavaScript SDK for Ethereum and the Venus Protocol. Wraps around [Ethers.js](https://github.com/ethers-io/ethers.js/). Works in the **web browser** and **Node.js**.
 
-[Venus.js Documentation](https://docs927beta.venus.io)
+[Venus.js Documentation](https://docs.venus.io/venus-js)
 
 This SDK is in **open beta**, and is constantly under development. **USE AT YOUR OWN RISK**.
 
@@ -176,14 +176,14 @@ const trxOptions = {
 
 ## API
 
-The [Venus API](https://docs927beta.venus.io/docs/api) is accessible from Venus.js. The corresponding services are defined in the `api` namespace on the class.
+The [Venus API](https://docs.venus.io/venus-js/api) is accessible from Venus.js. The corresponding services are defined in the `api` namespace on the class.
 
 - `Venus.api.account`
 - `Venus.api.cToken`
 - `Venus.api.marketHistory`
 - `Venus.api.governance`
 
-The governance method requires a second parameter (string) for the corresponding endpoint shown in the [documentation](https://docs927beta.venus.io/docs/venus-js/api#GovernanceService).
+The governance method requires a second parameter (string) for the corresponding endpoint shown in the [documentation](https://docs.venus.io/venus-js/api#GovernanceService).
 
 - `proposals`
 - `voteReceipts`
