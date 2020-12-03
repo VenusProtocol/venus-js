@@ -179,7 +179,7 @@ const trxOptions = {
 The [Venus API](https://docs.venus.io/venus-js/api) is accessible from Venus.js. The corresponding services are defined in the `api` namespace on the class.
 
 - `Venus.api.account`
-- `Venus.api.cToken`
+- `Venus.api.vToken`
 - `Venus.api.marketHistory`
 - `Venus.api.governance`
 
