@@ -3,8 +3,8 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>&quot;priceFeed&quot; | Compound.js - v0.1.2</title>
-	<meta name="description" content="Documentation for Compound.js - v0.1.2">
+	<title>&quot;priceFeed&quot; | Venus.js - v0.0.1</title>
+	<meta name="description" content="Documentation for Venus.js - v0.0.1">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
 </head>
@@ -22,7 +22,7 @@
 						<li class="state loading">Preparing search index...</li>
 						<li class="state failure">The search index is not available</li>
 					</ul>
-					<a href="../index.html" class="title">Compound.js - v0.1.2</a>
+					<a href="../index.html" class="title">Venus.js - v0.0.1</a>
 				</div>
 				<div class="table-cell" id="tsd-widgets">
 					<div id="tsd-filter">
@@ -83,33 +83,33 @@
 					<a name="getprice" class="tsd-anchor"></a>
 					<h3>get<wbr>Price</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
-						<li class="tsd-signature tsd-kind-icon">get<wbr>Price<span class="tsd-signature-symbol">(</span>asset<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, inAsset<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Price<span class="tsd-signature-symbol">(</span>asset<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, inAsset<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/compound-finance/compound-js/blob/0b4de92/src/priceFeed.ts#L82">priceFeed.ts:82</a></li>
+									<li>Defined in <a href="https://github.com/SwipeWallet/venus-js/blob/6609e88/src/priceFeed.ts#L93">priceFeed.ts:93</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>Gets an asset&#39;s price from the Compound Protocol open price feed. The price
+									<p>Gets an asset&#39;s price from the Venus Protocol open price feed. The price
 										of the asset can be returned in any other supported asset value, including
-									all cTokens and underlyings.</p>
+									all vTokens and underlyings.</p>
 								</div>
 								<dl class="tsd-comment-tags">
 									<dt>example</dt>
-									<dd><pre><code><span class="hljs-keyword">const</span> compound = <span class="hljs-keyword">new</span> Compound(<span class="hljs-built_in">window</span>.ethereum);
+									<dd><pre><code><span class="hljs-keyword">const</span> venus = <span class="hljs-keyword">new</span> Venus(<span class="hljs-built_in">window</span>.ethereum);
 <span class="hljs-keyword">let</span> price;
 
 (<span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
 
-  price = <span class="hljs-keyword">await</span> compound.getPrice(Compound.WBTC);
-  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;WBTC in USD&#x27;</span>, price); <span class="hljs-comment">// 6 decimals, see Open Price Feed docs</span>
+  price = <span class="hljs-keyword">await</span> venus.getPrice(Venus.BNB);
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;BNB in USD&#x27;</span>, price);
 
-  price = <span class="hljs-keyword">await</span> compound.getPrice(Compound.BAT, Compound.USDC); <span class="hljs-comment">// supports cTokens too</span>
-  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;BAT in USDC&#x27;</span>, price);
+  price = <span class="hljs-keyword">await</span> venus.getPrice(Venus.SXP, Venus.USDC); <span class="hljs-comment">// supports vTokens too</span>
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;SXP in USDC&#x27;</span>, price);
 
 })().catch(<span class="hljs-built_in">console</span>.error);</code></pre>
 									</dd>
@@ -128,7 +128,7 @@
 									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> inAsset: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = constants.USDC</span></h5>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">&gt;</span></h4>
 							<p>Returns a string of the numeric value of the asset.</p>
 						</li>
 					</ul>

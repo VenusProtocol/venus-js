@@ -1,11 +1,11 @@
-// Example of fetching a Compound protocol contract address with Compound.js
-const Compound = require('../../dist/nodejs/index.js');
+// Example of fetching a Venus protocol contract address with Venus.js
+const Venus = require('../../dist/nodejs/index.js');
 
-const batAddress = Compound.util.getAddress(Compound.BAT);
-const cbatAddress = Compound.util.getAddress(Compound.cBAT);
-const cEthAddressRopsten = Compound.util.getAddress(Compound.cETH, 'ropsten');
+const sxpAddress = Venus.util.getAddress(Venus.SXP);
+const vsxpAddress = Venus.util.getAddress(Venus.vSXP);
+const vBNBAddressRopsten = Venus.util.getAddress(Venus.vBNB, 'ropsten');
 
-console.log('BAT (mainnet)', batAddress);
-console.log('cBAT (mainnet)', cbatAddress);
+console.log('SXP (mainnet)', sxpAddress);
+console.log('vSXP (mainnet)', vsxpAddress);
 
-console.log('cETH (ropsten)', cEthAddressRopsten);
+console.log('vBNB (ropsten)', vBNBAddressRopsten);

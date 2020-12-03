@@ -65,7 +65,7 @@ const Venus = function(
     ...cToken,
     ...priceFeed,
     ...gov,
-    claimComp: comp.claimComp,
+    claimVenus: comp.claimVenus,
     delegate: comp.delegate,
     delegateBySig: comp.delegateBySig,
     createDelegateSignature: comp.createDelegateSignature,
@@ -73,7 +73,12 @@ const Venus = function(
 
   // Instance needs to know which network the provider connects to, so it can
   //     use the correct contract addresses.
-  instance._networkPromise = eth.getProviderNetwork(provider).then((network) => {
+  instance._networkPromise = eth.getProviderNetwork(provider).then((network) => {    
+    instance.decimals = decimals;
+    if (network.id === 56 || network.name === "mainnet") {
+      instance.decimals.USDC = 18;
+      instance.decimals.USDT = 18;
+    }
     delete instance._networkPromise;
     instance._network = network;
   });
@@ -86,9 +91,9 @@ Venus.api = api;
 Venus.util = util;
 Venus._ethers = ethers;
 Venus.decimals = decimals;
-Venus.comp = {
-  getCompBalance: comp.getCompBalance,
-  getCompAccrued: comp.getCompAccrued,
+Venus.venus = {
+  getVenusBalance: comp.getVenusBalance,
+  getVenusAccrued: comp.getVenusAccrued,
 };
 Object.assign(Venus, constants);
 

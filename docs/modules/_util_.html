@@ -3,8 +3,8 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>&quot;util&quot; | Compound.js - v0.1.2</title>
-	<meta name="description" content="Documentation for Compound.js - v0.1.2">
+	<title>&quot;util&quot; | Venus.js - v0.0.1</title>
+	<meta name="description" content="Documentation for Venus.js - v0.0.1">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
 </head>
@@ -22,7 +22,7 @@
 						<li class="state loading">Preparing search index...</li>
 						<li class="state failure">The search index is not available</li>
 					</ul>
-					<a href="../index.html" class="title">Compound.js - v0.1.2</a>
+					<a href="../index.html" class="title">Venus.js - v0.0.1</a>
 				</div>
 				<div class="table-cell" id="tsd-widgets">
 					<div id="tsd-filter">
@@ -85,23 +85,23 @@
 					<a name="getabi" class="tsd-anchor"></a>
 					<h3>get<wbr>Abi</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
-						<li class="tsd-signature tsd-kind-icon">get<wbr>Abi<span class="tsd-signature-symbol">(</span>contract<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span></li>
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Abi<span class="tsd-signature-symbol">(</span>contract<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">AbiType</span><span class="tsd-signature-symbol">[]</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/compound-finance/compound-js/blob/0b4de92/src/util.ts#L193">util.ts:193</a></li>
+									<li>Defined in <a href="https://github.com/SwipeWallet/venus-js/blob/6609e88/src/util.ts#L199">util.ts:199</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
 									<p>Gets a contract ABI as a JavaScript array. This method supports
-									contracts used by the Compound Protocol.</p>
+									contracts used by the Venus Protocol.</p>
 								</div>
 								<dl class="tsd-comment-tags">
 									<dt>example</dt>
-									<dd><pre><code>console.log(&#x27;cETH ABI: &#x27;, <span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">Compound</span>.</span></span>util.get<span class="hljs-constructor">Abi(Compound.<span class="hljs-params">cETH</span>)</span>);</code></pre>
+									<dd><pre><code>console.log(&#x27;vBNB ABI: &#x27;, <span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">Venus</span>.</span></span>util.get<span class="hljs-constructor">Abi(Venus.<span class="hljs-params">vBNB</span>)</span>);</code></pre>
 									</dd>
 								</dl>
 							</div>
@@ -114,7 +114,7 @@
 									</div>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">AbiType</span><span class="tsd-signature-symbol">[]</span></h4>
 							<p>Returns the ABI of the contract as a JavaScript array.</p>
 						</li>
 					</ul>
@@ -123,23 +123,23 @@
 					<a name="getaddress" class="tsd-anchor"></a>
 					<h3>get<wbr>Address</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
-						<li class="tsd-signature tsd-kind-icon">get<wbr>Address<span class="tsd-signature-symbol">(</span>contract<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, network<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span></li>
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Address<span class="tsd-signature-symbol">(</span>contract<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, network<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/compound-finance/compound-js/blob/0b4de92/src/util.ts#L176">util.ts:176</a></li>
+									<li>Defined in <a href="https://github.com/SwipeWallet/venus-js/blob/6609e88/src/util.ts#L182">util.ts:182</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
 									<p>Gets the contract address of the named contract. This method supports
-									contracts used by the Compound Protocol.</p>
+									contracts used by the Venus Protocol.</p>
 								</div>
 								<dl class="tsd-comment-tags">
 									<dt>example</dt>
-									<dd><pre><code>console.log(&#x27;cETH Address: &#x27;, <span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">Compound</span>.</span></span>util.get<span class="hljs-constructor">Address(Compound.<span class="hljs-params">cETH</span>)</span>);</code></pre>
+									<dd><pre><code>console.log(&#x27;vBNB Address: &#x27;, <span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">Venus</span>.</span></span>util.get<span class="hljs-constructor">Address(Venus.<span class="hljs-params">vBNB</span>)</span>);</code></pre>
 									</dd>
 								</dl>
 							</div>
@@ -155,7 +155,7 @@
 									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> network: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = &quot;mainnet&quot;</span></h5>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
 							<p>Returns the address of the contract.</p>
 						</li>
 					</ul>
@@ -164,13 +164,13 @@
 					<a name="getnetnamewithchainid" class="tsd-anchor"></a>
 					<h3>get<wbr>Net<wbr>Name<wbr>With<wbr>Chain<wbr>Id</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
-						<li class="tsd-signature tsd-kind-icon">get<wbr>Net<wbr>Name<wbr>With<wbr>Chain<wbr>Id<span class="tsd-signature-symbol">(</span>chainId<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span></li>
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Net<wbr>Name<wbr>With<wbr>Chain<wbr>Id<span class="tsd-signature-symbol">(</span>chainId<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/compound-finance/compound-js/blob/0b4de92/src/util.ts#L209">util.ts:209</a></li>
+									<li>Defined in <a href="https://github.com/SwipeWallet/venus-js/blob/6609e88/src/util.ts#L215">util.ts:215</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -179,7 +179,7 @@
 								</div>
 								<dl class="tsd-comment-tags">
 									<dt>example</dt>
-									<dd><pre><code>console.log(&#x27;Ropsten : &#x27;, <span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">Compound</span>.</span></span>util.get<span class="hljs-constructor">NetNameWithChainId(3)</span>);</code></pre>
+									<dd><pre><code>console.log(&#x27;Ropsten : &#x27;, <span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">Venus</span>.</span></span>util.get<span class="hljs-constructor">NetNameWithChainId(3)</span>);</code></pre>
 									</dd>
 								</dl>
 							</div>
@@ -192,7 +192,7 @@
 									</div>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
 							<p>Returns the name of the Ethereum network.</p>
 						</li>
 					</ul>

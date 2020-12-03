@@ -1,5 +1,5 @@
 /** 
- * Example of calling JSON RPC's eth_sendTransaction with Compound.js
+ * Example of calling JSON RPC's eth_sendTransaction with Venus.js
  *
  * Run ganache-cli in another command line window before running this script. Be
  *     sure to fork mainnet.
@@ -11,20 +11,20 @@ ganache-cli \
 
  */
 
-const Compound = require('../../dist/nodejs/index.js');
+const Venus = require('../../dist/nodejs/index.js');
 
 const oneEthInWei = '1000000000000000000';
-const cEthAddress = Compound.util.getAddress(Compound.cETH);
+const vSxpAddress = Venus.util.getAddress(Venus.vSXP);
 const provider = 'http://localhost:8545';
 const privateKey = '0xb8c1b5c1d81f9475fdf2e334517d29f733bdfa40682207571b12fc1142cbf329';
 // const mnemonic = 'clutch captain shoe salt awake harvest setup primary inmate ugly among become';
 
 (async function() {
-  console.log('Supplying ETH to the Compound Protocol...');
+  console.log('Supplying ETH to the Venus Protocol...');
 
-  // Mint some cETH by supplying ETH to the Compound Protocol
-  const trx = await Compound.eth.trx(
-    cEthAddress,
+  // Mint some vSXP by supplying SXP to the Venus Protocol
+  const trx = await Venus.eth.trx(
+    vSxpAddress,
     'function mint() payable',
     [],
     {
