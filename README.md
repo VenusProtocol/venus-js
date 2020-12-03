@@ -2,7 +2,7 @@
 
 A JavaScript SDK for Ethereum and the Venus Protocol. Wraps around [Ethers.js](https://github.com/ethers-io/ethers.js/). Works in the **web browser** and **Node.js**.
 
-[Venus.js Documentation](https://docs.venus.io/venus-js)
+[Venus.js Documentation](https://docs.venus.io/docs/venus-js)
 
 This SDK is in **open beta**, and is constantly under development. **USE AT YOUR OWN RISK**.
 
@@ -118,7 +118,7 @@ var venus = new Venus(); // Uses Ethers.js fallback mainnet (for testing only)
 var venus = new Venus('ropsten'); // Uses Ethers.js fallback (for testing only)
 
 // Init with private key (server side)
-var venus = new Venus('https://mainnet.infura.io/v3/_your_project_id_', {
+var venus = new Venus('http://127.0.0.1:8545', {
   privateKey: '0x_your_private_key_', // preferably with environment variable
 });
 
@@ -176,14 +176,14 @@ const trxOptions = {
 
 ## API
 
-The [Venus API](https://docs.venus.io/venus-js/api) is accessible from Venus.js. The corresponding services are defined in the `api` namespace on the class.
+The [Venus API](https://docs.venus.io/docs/api) is accessible from Venus.js. The corresponding services are defined in the `api` namespace on the class.
 
 - `Venus.api.account`
 - `Venus.api.vToken`
 - `Venus.api.marketHistory`
 - `Venus.api.governance`
 
-The governance method requires a second parameter (string) for the corresponding endpoint shown in the [documentation](https://docs.venus.io/venus-js/api#GovernanceService).
+The governance method requires a second parameter (string) for the corresponding endpoint shown in the [documentation](https://docs.venus.io/docs/api#GovernanceService).
 
 - `proposals`
 - `voteReceipts`

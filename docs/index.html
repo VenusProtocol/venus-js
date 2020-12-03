@@ -66,7 +66,7 @@
 					<h1>Venus.js</h1>
 				</a>
 				<p>A JavaScript SDK for Ethereum and the Venus Protocol. Wraps around <a href="https://github.com/ethers-io/ethers.js/">Ethers.js</a>. Works in the <strong>web browser</strong> and <strong>Node.js</strong>.</p>
-				<p><a href="https://docs.venus.io/venus-js">Venus.js Documentation</a></p>
+				<p><a href="https://docs.venus.io/docs/venus-js">Venus.js Documentation</a></p>
 				<p>This SDK is in <strong>open beta</strong>, and is constantly under development. <strong>USE AT YOUR OWN RISK</strong>.</p>
 				<a href="#ethereum-read-amp-write" id="ethereum-read-amp-write" style="color: inherit; text-decoration: none;">
 					<h2>Ethereum Read &amp; Write</h2>
@@ -163,7 +163,7 @@
 <span class="hljs-keyword">var</span> venus = <span class="hljs-keyword">new</span> Venus(<span class="hljs-string">&#x27;ropsten&#x27;</span>); <span class="hljs-comment">// Uses Ethers.js fallback (for testing only)</span>
 
 <span class="hljs-comment">// Init with private key (server side)</span>
-<span class="hljs-keyword">var</span> venus = <span class="hljs-keyword">new</span> Venus(<span class="hljs-string">&#x27;https://mainnet.infura.io/v3/_your_project_id_&#x27;</span>, {
+<span class="hljs-keyword">var</span> venus = <span class="hljs-keyword">new</span> Venus(<span class="hljs-string">&#x27;http://127.0.0.1:8545&#x27;</span>, {
   <span class="hljs-attr">privateKey</span>: <span class="hljs-string">&#x27;0x_your_private_key_&#x27;</span>, <span class="hljs-comment">// preferably with environment variable</span>
 });
 
@@ -212,14 +212,14 @@
 				<a href="#api" id="api" style="color: inherit; text-decoration: none;">
 					<h2>API</h2>
 				</a>
-				<p>The <a href="https://docs.venus.io/venus-js/api">Venus API</a> is accessible from Venus.js. The corresponding services are defined in the <code>api</code> namespace on the class.</p>
+				<p>The <a href="https://docs.venus.io/docs/api">Venus API</a> is accessible from Venus.js. The corresponding services are defined in the <code>api</code> namespace on the class.</p>
 				<ul>
 					<li><code>Venus.api.account</code></li>
 					<li><code>Venus.api.vToken</code></li>
 					<li><code>Venus.api.marketHistory</code></li>
 					<li><code>Venus.api.governance</code></li>
 				</ul>
-				<p>The governance method requires a second parameter (string) for the corresponding endpoint shown in the <a href="https://docs.venus.io/venus-js/api#GovernanceService">documentation</a>.</p>
+				<p>The governance method requires a second parameter (string) for the corresponding endpoint shown in the <a href="https://docs.venus.io/docs/api#GovernanceService">documentation</a>.</p>
 				<ul>
 					<li><code>proposals</code></li>
 					<li><code>voteReceipts</code></li>
