@@ -14,12 +14,12 @@ JSON RPC based Ethereum **read** and **write**.
 
 ```js
 const Venus = require('@swipewallet/venus-js'); // in Node.js
-const cUsdtAddress = Venus.util.getAddress(Venus.vUSDT);
+const vUsdtAddress = Venus.util.getAddress(Venus.vUSDT);
 
 (async function() {
 
   let supplyRatePerBlock = await Venus.eth.read(
-    cUsdtAddress,
+    vUsdtAddress,
     'function supplyRatePerBlock() returns (uint)',
     [], // [optional] parameters
     {}  // [optional] call options, provider, network, ethers.js "overrides"
@@ -136,7 +136,7 @@ Names of contracts, their addresses, ABIs, token decimals, and more can be found
 console.log(Venus.DAI, Venus.BNB, Venus.vSXP);
 // DAI, BNB, vSXP
 
-const cUsdtAddress = Venus.util.getAddress(Venus.vUSDT);
+const vUsdtAddress = Venus.util.getAddress(Venus.vUSDT);
 // Mainnet cUSDT address. Second parameter can be a network like 'ropsten'.
 ```
 
