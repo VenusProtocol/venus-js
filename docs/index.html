@@ -76,12 +76,12 @@
 					<h3>Read</h3>
 				</a>
 				<pre><code class="language-js"><span class="hljs-keyword">const</span> Venus = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;@swipewallet/venus-js&#x27;</span>); <span class="hljs-comment">// in Node.js</span>
-<span class="hljs-keyword">const</span> cUsdtAddress = Venus.util.getAddress(Venus.vUSDT);
+<span class="hljs-keyword">const</span> vUsdtAddress = Venus.util.getAddress(Venus.vUSDT);
 
 (<span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
 
   <span class="hljs-keyword">let</span> supplyRatePerBlock = <span class="hljs-keyword">await</span> Venus.eth.read(
-    cUsdtAddress,
+    vUsdtAddress,
     <span class="hljs-string">&#x27;function supplyRatePerBlock() returns (uint)&#x27;</span>,
     [], <span class="hljs-comment">// [optional] parameters</span>
     {}  <span class="hljs-comment">// [optional] call options, provider, network, ethers.js &quot;overrides&quot;</span>
@@ -178,7 +178,7 @@
 				<pre><code class="language-js"><span class="hljs-built_in">console</span>.log(Venus.DAI, Venus.BNB, Venus.vSXP);
 <span class="hljs-comment">// DAI, BNB, vSXP</span>
 
-<span class="hljs-keyword">const</span> cUsdtAddress = Venus.util.getAddress(Venus.vUSDT);
+<span class="hljs-keyword">const</span> vUsdtAddress = Venus.util.getAddress(Venus.vUSDT);
 <span class="hljs-comment">// Mainnet cUSDT address. Second parameter can be a network like &#x27;ropsten&#x27;.</span></code></pre>
 				<a href="#mantissas" id="mantissas" style="color: inherit; text-decoration: none;">
 					<h2>Mantissas</h2>
