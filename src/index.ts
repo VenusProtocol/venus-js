@@ -77,6 +77,8 @@ const Venus = function(
     mintedVAIs: comp.mintedVAIs,
     vaiController: comp.vaiController,
     vaiMintRate: comp.vaiMintRate,
+    mintVAI: comp.mintVAI,
+    repayVAI: comp.repayVAI,
   };
 
   // Instance needs to know which network the provider connects to, so it can
