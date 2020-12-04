@@ -18,6 +18,7 @@ import {
   DelegateSignatureMessage,
   Provider,
 } from './types';
+import { BigNumber } from '@ethersproject/bignumber/lib/bignumber';
 
 const keccak256 = ethers.utils.keccak256;
 
@@ -771,4 +772,150 @@ export async function vaiMintRate(
 
   const result = await eth.read(comptrollerAddress, 'vaiMintRate', [], trxOptions);
   return result.toString();
+}
+
+/**
+ * Mint VAI in the Venus Protocol.
+ *
+ * @param {number | string | BigNumber} mintVAIAmount A string, number, or BigNumber
+ *     object of the amount of an asset to mintVAI. Use the `mantissa` boolean in
+ *     the `options` parameter to indicate if this value is scaled up (so there 
+ *     are no decimals) or in its natural scale.
+ * @param {CallOptions} [options] Call options and Ethers.js overrides for the 
+ *     transaction.
+ *
+ * @returns {object} Returns an Ethers.js transaction object of the mintVAI
+ *     transaction.
+ *
+ * @example
+ *
+ * ```
+ * const venus = new Venus(window.ethereum);
+ *
+ * // const trxOptions = { gasLimit: 250000, mantissa: false };
+ * 
+ * (async function() {
+ * 
+ *   console.log('Minting VAI in the Venus Protocol...');
+ *   const trx = await venus.mintVAI(1);
+ *   console.log('Ethers.js transaction object', trx);
+ * 
+ * })().catch(console.error);
+ * ```
+ */
+export async function mintVAI(
+  mintVAIAmount: string | number | BigNumber,
+  options: CallOptions = {}
+) : Promise<TrxResponse> {
+  await netId(this);
+  const errorPrefix = 'Venus [mintVAI] | ';
+
+  if (
+    typeof mintVAIAmount !== 'number' &&
+    typeof mintVAIAmount !== 'string' &&
+    !ethers.BigNumber.isBigNumber(mintVAIAmount)
+  ) {
+    throw Error(errorPrefix + 'Argument `amount` must be a string, number, or BigNumber.');
+  }
+
+  if (!options.mantissa) {
+    mintVAIAmount = +mintVAIAmount;
+    mintVAIAmount = mintVAIAmount * Math.pow(10, 18);
+  }
+
+  mintVAIAmount = ethers.BigNumber.from(mintVAIAmount.toString());
+
+  try {
+    let userAddress = this._provider.address;
+    if (!userAddress && this._provider.getAddress) {
+      userAddress = await this._provider.getAddress();
+    }
+
+    const comptrollerAddress = address[this._network.name].Comptroller;
+    const trxOptions: CallOptions = {
+      ...options,
+      _compoundProvider: this._provider,
+      abi: abi.Comptroller,
+    };
+    const parameters = [ mintVAIAmount ];
+
+    return eth.trx(comptrollerAddress, 'mintVAI', parameters, trxOptions);
+  } catch(e) {
+    const errorPrefix = 'Venus [mintVAI] | ';
+    e.message = errorPrefix + e.message;
+    return e;
+  }
+}
+
+/**
+ * Repay VAI in the Venus Protocol.
+ *
+ * @param {number | string | BigNumber} repayVAIAmount A string, number, or BigNumber
+ *     object of the amount of an asset to repay. Use the `mantissa` boolean in
+ *     the `options` parameter to indicate if this value is scaled up (so there 
+ *     are no decimals) or in its natural scale.
+ * @param {CallOptions} [options] Call options and Ethers.js overrides for the 
+ *     transaction.
+ *
+ * @returns {object} Returns an Ethers.js transaction object of the repayVAI
+ *     transaction.
+ *
+ * @example
+ *
+ * ```
+ * const venus = new Venus(window.ethereum);
+ *
+ * // const trxOptions = { gasLimit: 250000, mantissa: false };
+ * 
+ * (async function() {
+ * 
+ *   console.log('Repaying VAI in the Venus Protocol...');
+ *   const trx = await venus.repayVAI(1);
+ *   console.log('Ethers.js transaction object', trx);
+ * 
+ * })().catch(console.error);
+ * ```
+ */
+export async function repayVAI(
+  repayVAIAmount: string | number | BigNumber,
+  options: CallOptions = {}
+) : Promise<TrxResponse> {
+  await netId(this);
+  const errorPrefix = 'Venus [mintVAI] | ';
+
+  if (
+    typeof repayVAIAmount !== 'number' &&
+    typeof repayVAIAmount !== 'string' &&
+    !ethers.BigNumber.isBigNumber(repayVAIAmount)
+  ) {
+    throw Error(errorPrefix + 'Argument `amount` must be a string, number, or BigNumber.');
+  }
+
+  if (!options.mantissa) {
+    repayVAIAmount = +repayVAIAmount;
+    repayVAIAmount = repayVAIAmount * Math.pow(10, 18);
+  }
+
+  repayVAIAmount = ethers.BigNumber.from(repayVAIAmount.toString());
+
+  try {
+    let userAddress = this._provider.address;
+    if (!userAddress && this._provider.getAddress) {
+      userAddress = await this._provider.getAddress();
+    }
+
+    const comptrollerAddress = address[this._network.name].Comptroller;
+    const trxOptions: CallOptions = {
+      ...options,
+      _compoundProvider: this._provider,
+      abi: abi.Comptroller,
+    };
+    const parameters = [ repayVAIAmount ];
+
+    return eth.trx(comptrollerAddress, 'repayVAI', parameters, trxOptions);
+  } catch(e) {
+    const errorPrefix = 'Venus [repayVAI] | ';
+    e.message = errorPrefix + e.message;
+    return e;
+  }
 }
