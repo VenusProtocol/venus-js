@@ -3,8 +3,8 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Venus.js - v0.0.1</title>
-	<meta name="description" content="Documentation for Venus.js - v0.0.1">
+	<title>Venus.js - v0.0.2</title>
+	<meta name="description" content="Documentation for Venus.js - v0.0.2">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="assets/css/main.css">
 </head>
@@ -22,7 +22,7 @@
 						<li class="state loading">Preparing search index...</li>
 						<li class="state failure">The search index is not available</li>
 					</ul>
-					<a href="index.html" class="title">Venus.js - v0.0.1</a>
+					<a href="index.html" class="title">Venus.js - v0.0.2</a>
 				</div>
 				<div class="table-cell" id="tsd-widgets">
 					<div id="tsd-filter">
@@ -54,7 +54,7 @@
 					<a href="globals.html">Globals</a>
 				</li>
 			</ul>
-			<h1>Venus.js - v0.0.1</h1>
+			<h1>Venus.js - v0.0.2</h1>
 		</div>
 	</div>
 </header>
@@ -66,7 +66,7 @@
 					<h1>Venus.js</h1>
 				</a>
 				<p>A JavaScript SDK for Ethereum and the Venus Protocol. Wraps around <a href="https://github.com/ethers-io/ethers.js/">Ethers.js</a>. Works in the <strong>web browser</strong> and <strong>Node.js</strong>.</p>
-				<p><a href="https://docs927beta.venus.io">Venus.js Documentation</a></p>
+				<p><a href="https://docs.venus.io/docs/venus-js">Venus.js Documentation</a></p>
 				<p>This SDK is in <strong>open beta</strong>, and is constantly under development. <strong>USE AT YOUR OWN RISK</strong>.</p>
 				<a href="#ethereum-read-amp-write" id="ethereum-read-amp-write" style="color: inherit; text-decoration: none;">
 					<h2>Ethereum Read &amp; Write</h2>
@@ -76,12 +76,12 @@
 					<h3>Read</h3>
 				</a>
 				<pre><code class="language-js"><span class="hljs-keyword">const</span> Venus = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;@swipewallet/venus-js&#x27;</span>); <span class="hljs-comment">// in Node.js</span>
-<span class="hljs-keyword">const</span> cUsdtAddress = Venus.util.getAddress(Venus.vUSDT);
+<span class="hljs-keyword">const</span> vUsdtAddress = Venus.util.getAddress(Venus.vUSDT);
 
 (<span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
 
   <span class="hljs-keyword">let</span> supplyRatePerBlock = <span class="hljs-keyword">await</span> Venus.eth.read(
-    cUsdtAddress,
+    vUsdtAddress,
     <span class="hljs-string">&#x27;function supplyRatePerBlock() returns (uint)&#x27;</span>,
     [], <span class="hljs-comment">// [optional] parameters</span>
     {}  <span class="hljs-comment">// [optional] call options, provider, network, ethers.js &quot;overrides&quot;</span>
@@ -163,7 +163,7 @@
 <span class="hljs-keyword">var</span> venus = <span class="hljs-keyword">new</span> Venus(<span class="hljs-string">&#x27;ropsten&#x27;</span>); <span class="hljs-comment">// Uses Ethers.js fallback (for testing only)</span>
 
 <span class="hljs-comment">// Init with private key (server side)</span>
-<span class="hljs-keyword">var</span> venus = <span class="hljs-keyword">new</span> Venus(<span class="hljs-string">&#x27;https://mainnet.infura.io/v3/_your_project_id_&#x27;</span>, {
+<span class="hljs-keyword">var</span> venus = <span class="hljs-keyword">new</span> Venus(<span class="hljs-string">&#x27;http://127.0.0.1:8545&#x27;</span>, {
   <span class="hljs-attr">privateKey</span>: <span class="hljs-string">&#x27;0x_your_private_key_&#x27;</span>, <span class="hljs-comment">// preferably with environment variable</span>
 });
 
@@ -178,7 +178,7 @@
 				<pre><code class="language-js"><span class="hljs-built_in">console</span>.log(Venus.DAI, Venus.BNB, Venus.vSXP);
 <span class="hljs-comment">// DAI, BNB, vSXP</span>
 
-<span class="hljs-keyword">const</span> cUsdtAddress = Venus.util.getAddress(Venus.vUSDT);
+<span class="hljs-keyword">const</span> vUsdtAddress = Venus.util.getAddress(Venus.vUSDT);
 <span class="hljs-comment">// Mainnet cUSDT address. Second parameter can be a network like &#x27;ropsten&#x27;.</span></code></pre>
 				<a href="#mantissas" id="mantissas" style="color: inherit; text-decoration: none;">
 					<h2>Mantissas</h2>
@@ -212,14 +212,14 @@
 				<a href="#api" id="api" style="color: inherit; text-decoration: none;">
 					<h2>API</h2>
 				</a>
-				<p>The <a href="https://docs927beta.venus.io/docs/api">Venus API</a> is accessible from Venus.js. The corresponding services are defined in the <code>api</code> namespace on the class.</p>
+				<p>The <a href="https://docs.venus.io/docs/api">Venus API</a> is accessible from Venus.js. The corresponding services are defined in the <code>api</code> namespace on the class.</p>
 				<ul>
 					<li><code>Venus.api.account</code></li>
-					<li><code>Venus.api.cToken</code></li>
+					<li><code>Venus.api.vToken</code></li>
 					<li><code>Venus.api.marketHistory</code></li>
 					<li><code>Venus.api.governance</code></li>
 				</ul>
-				<p>The governance method requires a second parameter (string) for the corresponding endpoint shown in the <a href="https://docs927beta.venus.io/docs/venus-js/api#GovernanceService">documentation</a>.</p>
+				<p>The governance method requires a second parameter (string) for the corresponding endpoint shown in the <a href="https://docs.venus.io/docs/api#GovernanceService">documentation</a>.</p>
 				<ul>
 					<li><code>proposals</code></li>
 					<li><code>voteReceipts</code></li>

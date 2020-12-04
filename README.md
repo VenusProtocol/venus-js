@@ -2,7 +2,7 @@
 
 A JavaScript SDK for Ethereum and the Venus Protocol. Wraps around [Ethers.js](https://github.com/ethers-io/ethers.js/). Works in the **web browser** and **Node.js**.
 
-[Venus.js Documentation](https://docs927beta.venus.io)
+[Venus.js Documentation](https://docs.venus.io/docs/venus-js)
 
 This SDK is in **open beta**, and is constantly under development. **USE AT YOUR OWN RISK**.
 
@@ -14,12 +14,12 @@ JSON RPC based Ethereum **read** and **write**.
 
 ```js
 const Venus = require('@swipewallet/venus-js'); // in Node.js
-const cUsdtAddress = Venus.util.getAddress(Venus.vUSDT);
+const vUsdtAddress = Venus.util.getAddress(Venus.vUSDT);
 
 (async function() {
 
   let supplyRatePerBlock = await Venus.eth.read(
-    cUsdtAddress,
+    vUsdtAddress,
     'function supplyRatePerBlock() returns (uint)',
     [], // [optional] parameters
     {}  // [optional] call options, provider, network, ethers.js "overrides"
@@ -118,7 +118,7 @@ var venus = new Venus(); // Uses Ethers.js fallback mainnet (for testing only)
 var venus = new Venus('ropsten'); // Uses Ethers.js fallback (for testing only)
 
 // Init with private key (server side)
-var venus = new Venus('https://mainnet.infura.io/v3/_your_project_id_', {
+var venus = new Venus('http://127.0.0.1:8545', {
   privateKey: '0x_your_private_key_', // preferably with environment variable
 });
 
@@ -136,7 +136,7 @@ Names of contracts, their addresses, ABIs, token decimals, and more can be found
 console.log(Venus.DAI, Venus.BNB, Venus.vSXP);
 // DAI, BNB, vSXP
 
-const cUsdtAddress = Venus.util.getAddress(Venus.vUSDT);
+const vUsdtAddress = Venus.util.getAddress(Venus.vUSDT);
 // Mainnet cUSDT address. Second parameter can be a network like 'ropsten'.
 ```
 
@@ -176,14 +176,14 @@ const trxOptions = {
 
 ## API
 
-The [Venus API](https://docs927beta.venus.io/docs/api) is accessible from Venus.js. The corresponding services are defined in the `api` namespace on the class.
+The [Venus API](https://docs.venus.io/docs/api) is accessible from Venus.js. The corresponding services are defined in the `api` namespace on the class.
 
 - `Venus.api.account`
-- `Venus.api.cToken`
+- `Venus.api.vToken`
 - `Venus.api.marketHistory`
 - `Venus.api.governance`
 
-The governance method requires a second parameter (string) for the corresponding endpoint shown in the [documentation](https://docs927beta.venus.io/docs/venus-js/api#GovernanceService).
+The governance method requires a second parameter (string) for the corresponding endpoint shown in the [documentation](https://docs.venus.io/docs/api#GovernanceService).
 
 - `proposals`
 - `voteReceipts`
