@@ -234,15 +234,15 @@ export async function getProviderNetwork(
   if (network.name === 'unknown') {
     if (networkId === 97) {
       // TODO -- should update later with Chapel
-      // 'ropsten',
+      // 'testnet',
       // {
       //   name: 'Chapel',
       //   networkId: 97,
       //   chainId: 97,
       // },
-      network = { chainId: 97, name: 'ropsten' }
+      network = { chainId: 97, name: 'testnet' }
     } else if (networkId === 56) {
-      network = { chainId: 97, name: 'mainnet' }
+      network = { chainId: 56, name: 'mainnet' }
     }
   }
 

@@ -167,7 +167,7 @@ export const address = {
     "WBTC": "0xd3A691C852CDB01E281545A27064741F0B7f6825",
     "ZRX": "0x162c44e53097e7B5aaE939b297ffFD6Bf90D1EE3"
   },
-  "ropsten": {
+  "testnet": {
     "PriceFeed": "0xBEf4E076A995c784be6094a432b9CA99b7431A3f",
     "Maximillion": "0xE0a38ab2951B6525C33f20D5E637Ab24DFEF9bcB",
     "CompoundLens": "0x40e42Ad74AA4c61B577387821e845a8892E65002",

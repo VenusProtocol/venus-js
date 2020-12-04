@@ -52,7 +52,7 @@ import {
  * (async function() {
  *   const account = await Venus.api.account({
  *     "addresses": "0xB61C5971d9c0472befceFfbE662555B78284c307",
- *     "network": "ropsten"
+ *     "network": "testnet"
  *   });
  * 
  *   let sxpBorrowBalance = 0;

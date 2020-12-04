@@ -80,9 +80,9 @@ function markdownify(block, functionName) {
   let title = functionName.toTitleCase();
 
   // handle special cases
-  if (functionName === 'cToken') {
-    id = 'cToken';
-    title = 'cToken';
+  if (functionName === 'vToken') {
+    id = 'vToken';
+    title = 'vToken';
   }
 
   if (functionName === 'function') {
