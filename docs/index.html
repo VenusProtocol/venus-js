@@ -160,7 +160,7 @@
 
 <span class="hljs-keyword">var</span> venus = <span class="hljs-keyword">new</span> Venus(); <span class="hljs-comment">// Uses Ethers.js fallback mainnet (for testing only)</span>
 
-<span class="hljs-keyword">var</span> venus = <span class="hljs-keyword">new</span> Venus(<span class="hljs-string">&#x27;ropsten&#x27;</span>); <span class="hljs-comment">// Uses Ethers.js fallback (for testing only)</span>
+<span class="hljs-keyword">var</span> venus = <span class="hljs-keyword">new</span> Venus(<span class="hljs-string">&#x27;testnet&#x27;</span>); <span class="hljs-comment">// Uses Ethers.js fallback (for testing only)</span>
 
 <span class="hljs-comment">// Init with private key (server side)</span>
 <span class="hljs-keyword">var</span> venus = <span class="hljs-keyword">new</span> Venus(<span class="hljs-string">&#x27;http://127.0.0.1:8545&#x27;</span>, {
@@ -175,20 +175,20 @@
 					<h2>Constants and Contract Addresses</h2>
 				</a>
 				<p>Names of contracts, their addresses, ABIs, token decimals, and more can be found in <code>/src/constants.ts</code>. Addresses, for all networks, can be easily fetched using the <code>getAddress</code> function, combined with contract name constants.</p>
-				<pre><code class="language-js"><span class="hljs-built_in">console</span>.log(Venus.DAI, Venus.BNB, Venus.vSXP);
-<span class="hljs-comment">// DAI, BNB, vSXP</span>
+				<pre><code class="language-js"><span class="hljs-built_in">console</span>.log(Venus.BUSD, Venus.BNB, Venus.vSXP);
+<span class="hljs-comment">// BUSD, BNB, vSXP</span>
 
 <span class="hljs-keyword">const</span> vUsdtAddress = Venus.util.getAddress(Venus.vUSDT);
-<span class="hljs-comment">// Mainnet cUSDT address. Second parameter can be a network like &#x27;ropsten&#x27;.</span></code></pre>
+<span class="hljs-comment">// Mainnet vUSDT address. Second parameter can be a network like &#x27;testnet&#x27;.</span></code></pre>
 				<a href="#mantissas" id="mantissas" style="color: inherit; text-decoration: none;">
 					<h2>Mantissas</h2>
 				</a>
 				<p>Parameters of number values can be plain numbers or their scaled up mantissa values. There is a transaction option boolean to tell the SDK what the developer is passing.</p>
-				<pre><code class="language-js"><span class="hljs-comment">// 1 Dai</span>
-<span class="hljs-keyword">await</span> venus.borrow(Venus.DAI, <span class="hljs-string">&#x27;1000000000000000000&#x27;</span>, { <span class="hljs-attr">mantissa</span>: <span class="hljs-literal">true</span> });
+				<pre><code class="language-js"><span class="hljs-comment">// 1 BUSD</span>
+<span class="hljs-keyword">await</span> venus.borrow(Venus.BUSD, <span class="hljs-string">&#x27;1000000000000000000&#x27;</span>, { <span class="hljs-attr">mantissa</span>: <span class="hljs-literal">true</span> });
 
 <span class="hljs-comment">// `mantissa` defaults to false if it is not specified or if an options object is not passed</span>
-<span class="hljs-keyword">await</span> venus.borrow(Venus.DAI, <span class="hljs-number">1</span>, { <span class="hljs-attr">mantissa</span>: <span class="hljs-literal">false</span> });</code></pre>
+<span class="hljs-keyword">await</span> venus.borrow(Venus.BUSD, <span class="hljs-number">1</span>, { <span class="hljs-attr">mantissa</span>: <span class="hljs-literal">false</span> });</code></pre>
 				<a href="#transaction-options" id="transaction-options" style="color: inherit; text-decoration: none;">
 					<h2>Transaction Options</h2>
 				</a>
@@ -229,7 +229,7 @@
 				<pre><code class="language-js"><span class="hljs-keyword">const</span> main = <span class="hljs-keyword">async</span> () =&gt; {
   <span class="hljs-keyword">const</span> account = <span class="hljs-keyword">await</span> Venus.api.account({
     <span class="hljs-string">&quot;addresses&quot;</span>: <span class="hljs-string">&quot;0xB61C5971d9c0472befceFfbE662555B78284c307&quot;</span>,
-    <span class="hljs-string">&quot;network&quot;</span>: <span class="hljs-string">&quot;ropsten&quot;</span>
+    <span class="hljs-string">&quot;network&quot;</span>: <span class="hljs-string">&quot;testnet&quot;</span>
   });
 
   <span class="hljs-keyword">let</span> sxpBorrowBalance = <span class="hljs-number">0</span>;
@@ -237,7 +237,7 @@
     account.accounts.forEach(<span class="hljs-function">(<span class="hljs-params">acc</span>) =&gt;</span> {
       acc.tokens.forEach(<span class="hljs-function">(<span class="hljs-params">tok</span>) =&gt;</span> {
         <span class="hljs-keyword">if</span> (tok.symbol === Venus.vSXP) {
-          daiBorrowBalance = +tok.borrow_balance_underlying.value;
+          sxpBorrowBalance = +tok.borrow_balance_underlying.value;
         }
       });
     });
@@ -282,9 +282,6 @@ main().catch(<span class="hljs-built_in">console</span>.error);</code></pre>
 						<a href="modules/_api_.html">&quot;api&quot;</a>
 					</li>
 					<li class=" tsd-kind-module">
-						<a href="modules/_ctoken_.html">&quot;c<wbr>Token&quot;</a>
-					</li>
-					<li class=" tsd-kind-module">
 						<a href="modules/_comp_.html">&quot;comp&quot;</a>
 					</li>
 					<li class=" tsd-kind-module">
@@ -304,6 +301,9 @@ main().catch(<span class="hljs-built_in">console</span>.error);</code></pre>
 					</li>
 					<li class=" tsd-kind-module">
 						<a href="modules/_util_.html">&quot;util&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_vtoken_.html">&quot;v<wbr>Token&quot;</a>
 					</li>
 				</ul>
 			</nav>
