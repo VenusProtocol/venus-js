@@ -826,11 +826,6 @@ export async function mintVAI(
   mintVAIAmount = ethers.BigNumber.from(mintVAIAmount.toString());
 
   try {
-    let userAddress = this._provider.address;
-    if (!userAddress && this._provider.getAddress) {
-      userAddress = await this._provider.getAddress();
-    }
-
     const comptrollerAddress = address[this._network.name].Comptroller;
     const trxOptions: CallOptions = {
       ...options,
@@ -899,11 +894,6 @@ export async function repayVAI(
   repayVAIAmount = ethers.BigNumber.from(repayVAIAmount.toString());
 
   try {
-    let userAddress = this._provider.address;
-    if (!userAddress && this._provider.getAddress) {
-      userAddress = await this._provider.getAddress();
-    }
-
     const comptrollerAddress = address[this._network.name].Comptroller;
     const trxOptions: CallOptions = {
       ...options,
