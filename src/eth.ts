@@ -242,7 +242,7 @@ export async function getProviderNetwork(
       // },
       network = { chainId: 97, name: 'testnet' }
     } else if (networkId === 56) {
-      network = { chainId: 97, name: 'mainnet' }
+      network = { chainId: 56, name: 'mainnet' }
     }
   }
 
