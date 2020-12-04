@@ -115,7 +115,7 @@ var venus = new Venus('http://127.0.0.1:8545'); // HTTP provider
 
 var venus = new Venus(); // Uses Ethers.js fallback mainnet (for testing only)
 
-var venus = new Venus('ropsten'); // Uses Ethers.js fallback (for testing only)
+var venus = new Venus('testnet'); // Uses Ethers.js fallback (for testing only)
 
 // Init with private key (server side)
 var venus = new Venus('http://127.0.0.1:8545', {
@@ -133,11 +133,11 @@ var venus = new Venus('mainnet' {
 Names of contracts, their addresses, ABIs, token decimals, and more can be found in `/src/constants.ts`. Addresses, for all networks, can be easily fetched using the `getAddress` function, combined with contract name constants.
 
 ```js
-console.log(Venus.DAI, Venus.BNB, Venus.vSXP);
-// DAI, BNB, vSXP
+console.log(Venus.BUSD, Venus.BNB, Venus.vSXP);
+// BUSD, BNB, vSXP
 
 const vUsdtAddress = Venus.util.getAddress(Venus.vUSDT);
-// Mainnet cUSDT address. Second parameter can be a network like 'ropsten'.
+// Mainnet vUSDT address. Second parameter can be a network like 'testnet'.
 ```
 
 ## Mantissas
@@ -145,11 +145,11 @@ const vUsdtAddress = Venus.util.getAddress(Venus.vUSDT);
 Parameters of number values can be plain numbers or their scaled up mantissa values. There is a transaction option boolean to tell the SDK what the developer is passing.
 
 ```js
-// 1 Dai
-await venus.borrow(Venus.DAI, '1000000000000000000', { mantissa: true });
+// 1 BUSD
+await venus.borrow(Venus.BUSD, '1000000000000000000', { mantissa: true });
 
 // `mantissa` defaults to false if it is not specified or if an options object is not passed
-await venus.borrow(Venus.DAI, 1, { mantissa: false });
+await venus.borrow(Venus.BUSD, 1, { mantissa: false });
 ```
 
 ## Transaction Options
@@ -195,7 +195,7 @@ Here is an example for using the `account` endpoint. The `network` parameter in 
 const main = async () => {
   const account = await Venus.api.account({
     "addresses": "0xB61C5971d9c0472befceFfbE662555B78284c307",
-    "network": "ropsten"
+    "network": "testnet"
   });
 
   let sxpBorrowBalance = 0;
@@ -203,7 +203,7 @@ const main = async () => {
     account.accounts.forEach((acc) => {
       acc.tokens.forEach((tok) => {
         if (tok.symbol === Venus.vSXP) {
-          daiBorrowBalance = +tok.borrow_balance_underlying.value;
+          sxpBorrowBalance = +tok.borrow_balance_underlying.value;
         }
       });
     });

@@ -8,7 +8,7 @@ import { ethers } from 'ethers';
 import * as eth from './eth';
 import * as util from './util';
 import * as comptroller from './comptroller';
-import * as cToken from './cToken';
+import * as vToken from './vToken';
 import * as priceFeed from './priceFeed';
 import * as comp from './comp';
 import * as gov from './gov';
@@ -34,7 +34,7 @@ ethers.utils.Logger.setLogLevel(ethers.utils.Logger.levels.ERROR);
  * 
  * var venus = new Venus(); // Uses Ethers.js fallback mainnet (for testing only)
  * 
- * var venus = new Venus('ropsten'); // Uses Ethers.js fallback (for testing only)
+ * var venus = new Venus('testnet'); // Uses Ethers.js fallback (for testing only)
  * 
  * // Init with private key (server side)
  * var venus = new Venus('https://mainnet.infura.io/v3/_your_project_id_', {
@@ -62,7 +62,7 @@ const Venus = function(
     _originalProvider: originalProvider,
     _provider: provider,
     ...comptroller,
-    ...cToken,
+    ...vToken,
     ...priceFeed,
     ...gov,
     claimVenus: comp.claimVenus,
