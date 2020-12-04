@@ -75,9 +75,17 @@
 								<li class="tsd-kind-function tsd-parent-kind-module"><a href="_comp_.html#createdelegatesignature" class="tsd-kind-icon">create<wbr>Delegate<wbr>Signature</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-module"><a href="_comp_.html#delegate" class="tsd-kind-icon">delegate</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-module"><a href="_comp_.html#delegatebysig" class="tsd-kind-icon">delegate<wbr>BySig</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="_comp_.html#getmintablevai" class="tsd-kind-icon">get<wbr>MintableVAI</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="_comp_.html#getvaimintrate" class="tsd-kind-icon">getVAIMint<wbr>Rate</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-module"><a href="_comp_.html#getvenusaccrued" class="tsd-kind-icon">get<wbr>Venus<wbr>Accrued</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-module"><a href="_comp_.html#getvenusbalance" class="tsd-kind-icon">get<wbr>Venus<wbr>Balance</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="_comp_.html#mintvaiguardianpaused" class="tsd-kind-icon">mintVAIGuardian<wbr>Paused</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="_comp_.html#mintedvaiof" class="tsd-kind-icon">mintedVAIOf</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="_comp_.html#mintedvais" class="tsd-kind-icon">mintedVAIs</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="_comp_.html#repayvaiguardianpaused" class="tsd-kind-icon">repayVAIGuardian<wbr>Paused</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-module tsd-is-not-exported"><a href="_comp_.html#tochecksumaddress" class="tsd-kind-icon">to<wbr>Checksum<wbr>Address</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="_comp_.html#vaicontroller" class="tsd-kind-icon">vai<wbr>Controller</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="_comp_.html#vaimintrate" class="tsd-kind-icon">vai<wbr>Mint<wbr>Rate</a></li>
 							</ul>
 						</section>
 					</div>
@@ -95,7 +103,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/SwipeWallet/venus-js/blob/d825d89/src/comp.ts#L176">comp.ts:176</a></li>
+									<li>Defined in <a href="https://github.com/SwipeWallet/venus-js/blob/26461c0/src/comp.ts#L176">comp.ts:176</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -138,7 +146,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/SwipeWallet/venus-js/blob/d825d89/src/comp.ts#L374">comp.ts:374</a></li>
+									<li>Defined in <a href="https://github.com/SwipeWallet/venus-js/blob/26461c0/src/comp.ts#L374">comp.ts:374</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -189,7 +197,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/SwipeWallet/venus-js/blob/d825d89/src/comp.ts#L228">comp.ts:228</a></li>
+									<li>Defined in <a href="https://github.com/SwipeWallet/venus-js/blob/26461c0/src/comp.ts#L228">comp.ts:228</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -236,7 +244,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/SwipeWallet/venus-js/blob/d825d89/src/comp.ts#L296">comp.ts:296</a></li>
+									<li>Defined in <a href="https://github.com/SwipeWallet/venus-js/blob/26461c0/src/comp.ts#L296">comp.ts:296</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -303,6 +311,95 @@
 					</ul>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+					<a name="getmintablevai" class="tsd-anchor"></a>
+					<h3>get<wbr>MintableVAI</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>MintableVAI<span class="tsd-signature-symbol">(</span>_address<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, options<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">CallOptions</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/SwipeWallet/venus-js/blob/26461c0/src/comp.ts#L453">comp.ts:453</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Get the mintable VAI amount of address.</p>
+								</div>
+								<dl class="tsd-comment-tags">
+									<dt>example</dt>
+									<dd><pre><code><span class="hljs-keyword">const</span> venus = <span class="hljs-keyword">new</span> Venus(<span class="hljs-built_in">window</span>.ethereum);
+
+(<span class="hljs-keyword">async</span> () =&gt; {
+
+  <span class="hljs-keyword">const</span> amount = <span class="hljs-keyword">await</span> venus.getMintableVAI(<span class="hljs-string">&#x27;0x4Ddc2D193948926D02f9B1fE9e1daa0718270ED5&#x27;</span>);
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;MintableVAI amount&#x27;</span>, amount);
+
+})().<span class="hljs-keyword">catch</span>(<span class="hljs-built_in">console</span>.error);</code></pre>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>_address: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The address in which to get mintable VAI amount.</p>
+									</div>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> options: <span class="tsd-signature-type">CallOptions</span><span class="tsd-signature-symbol"> = {}</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<p>Returns a string of the numeric amount of mintable VAI. The
+							value is scaled up by 18 decimal places.</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+					<a name="getvaimintrate" class="tsd-anchor"></a>
+					<h3>getVAIMint<wbr>Rate</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">getVAIMint<wbr>Rate<span class="tsd-signature-symbol">(</span>options<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">CallOptions</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/SwipeWallet/venus-js/blob/26461c0/src/comp.ts#L508">comp.ts:508</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Get the VAI mint rate.</p>
+								</div>
+								<dl class="tsd-comment-tags">
+									<dt>example</dt>
+									<dd><pre><code><span class="hljs-keyword">const</span> venus = <span class="hljs-keyword">new</span> Venus(<span class="hljs-built_in">window</span>.ethereum);
+
+(<span class="hljs-keyword">async</span> () =&gt; {
+
+  <span class="hljs-keyword">const</span> rate = <span class="hljs-keyword">await</span> venus.getVAIMintRate();
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;VAI mint rate&#x27;</span>, rate);
+
+})().<span class="hljs-keyword">catch</span>(<span class="hljs-built_in">console</span>.error);</code></pre>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> options: <span class="tsd-signature-type">CallOptions</span><span class="tsd-signature-symbol"> = {}</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<p>Returns a string of the numeric VAI mint rate.</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
 					<a name="getvenusaccrued" class="tsd-anchor"></a>
 					<h3>get<wbr>Venus<wbr>Accrued</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
@@ -312,7 +409,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/SwipeWallet/venus-js/blob/d825d89/src/comp.ts#L121">comp.ts:121</a></li>
+									<li>Defined in <a href="https://github.com/SwipeWallet/venus-js/blob/26461c0/src/comp.ts#L121">comp.ts:121</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -356,7 +453,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/SwipeWallet/venus-js/blob/d825d89/src/comp.ts#L72">comp.ts:72</a></li>
+									<li>Defined in <a href="https://github.com/SwipeWallet/venus-js/blob/26461c0/src/comp.ts#L72">comp.ts:72</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -390,6 +487,184 @@
 						</li>
 					</ul>
 				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+					<a name="mintvaiguardianpaused" class="tsd-anchor"></a>
+					<h3>mintVAIGuardian<wbr>Paused</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">mintVAIGuardian<wbr>Paused<span class="tsd-signature-symbol">(</span>options<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">CallOptions</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/SwipeWallet/venus-js/blob/26461c0/src/comp.ts#L545">comp.ts:545</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Get the mintVAIGuardianPaused.</p>
+								</div>
+								<dl class="tsd-comment-tags">
+									<dt>example</dt>
+									<dd><pre><code><span class="hljs-keyword">const</span> venus = <span class="hljs-keyword">new</span> Venus(<span class="hljs-built_in">window</span>.ethereum);
+
+(<span class="hljs-keyword">async</span> () =&gt; {
+
+  <span class="hljs-keyword">const</span> _mintVAIGuardianPaused = <span class="hljs-keyword">await</span> venus.mintVAIGuardianPaused();
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;mintVAIGuardianPaused&#x27;</span>, _mintVAIGuardianPaused);
+
+})().<span class="hljs-keyword">catch</span>(<span class="hljs-built_in">console</span>.error);</code></pre>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> options: <span class="tsd-signature-type">CallOptions</span><span class="tsd-signature-symbol"> = {}</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<p>Returns a string of the boolean mintVAIGuardianPaused.</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+					<a name="mintedvaiof" class="tsd-anchor"></a>
+					<h3>mintedVAIOf</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">mintedVAIOf<span class="tsd-signature-symbol">(</span>_address<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, options<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">CallOptions</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/SwipeWallet/venus-js/blob/26461c0/src/comp.ts#L621">comp.ts:621</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Get the minted VAI amount of the address.</p>
+								</div>
+								<dl class="tsd-comment-tags">
+									<dt>example</dt>
+									<dd><pre><code><span class="hljs-keyword">const</span> venus = <span class="hljs-keyword">new</span> Venus(<span class="hljs-built_in">window</span>.ethereum);
+
+(<span class="hljs-keyword">async</span> () =&gt; {
+
+  <span class="hljs-keyword">const</span> amount = <span class="hljs-keyword">await</span> venus.mintedVAIOf(<span class="hljs-string">&#x27;0x4Ddc2D193948926D02f9B1fE9e1daa0718270ED5&#x27;</span>);
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;Minted VAI amount&#x27;</span>, amount);
+
+})().<span class="hljs-keyword">catch</span>(<span class="hljs-built_in">console</span>.error);</code></pre>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>_address: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The address in which to get the minted VAI amount.</p>
+									</div>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> options: <span class="tsd-signature-type">CallOptions</span><span class="tsd-signature-symbol"> = {}</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<p>Returns a string of the numeric amount of minted VAI. The
+							value is scaled up by 18 decimal places.</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+					<a name="mintedvais" class="tsd-anchor"></a>
+					<h3>mintedVAIs</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">mintedVAIs<span class="tsd-signature-symbol">(</span>_address<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, options<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">CallOptions</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/SwipeWallet/venus-js/blob/26461c0/src/comp.ts#L674">comp.ts:674</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Get the minted VAI amount of the address.</p>
+								</div>
+								<dl class="tsd-comment-tags">
+									<dt>example</dt>
+									<dd><pre><code><span class="hljs-keyword">const</span> venus = <span class="hljs-keyword">new</span> Venus(<span class="hljs-built_in">window</span>.ethereum);
+
+(<span class="hljs-keyword">async</span> () =&gt; {
+
+  <span class="hljs-keyword">const</span> amount = <span class="hljs-keyword">await</span> venus.mintedVAIs(<span class="hljs-string">&#x27;0x4Ddc2D193948926D02f9B1fE9e1daa0718270ED5&#x27;</span>);
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;Minted VAI amount&#x27;</span>, amount);
+
+})().<span class="hljs-keyword">catch</span>(<span class="hljs-built_in">console</span>.error);</code></pre>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>_address: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The address in which to get the minted VAI amount.</p>
+									</div>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> options: <span class="tsd-signature-type">CallOptions</span><span class="tsd-signature-symbol"> = {}</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<p>Returns a string of the numeric amount of minted VAI. The
+							value is scaled up by 18 decimal places.</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+					<a name="repayvaiguardianpaused" class="tsd-anchor"></a>
+					<h3>repayVAIGuardian<wbr>Paused</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">repayVAIGuardian<wbr>Paused<span class="tsd-signature-symbol">(</span>options<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">CallOptions</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/SwipeWallet/venus-js/blob/26461c0/src/comp.ts#L582">comp.ts:582</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Get the repayVAIGuardianPaused.</p>
+								</div>
+								<dl class="tsd-comment-tags">
+									<dt>example</dt>
+									<dd><pre><code><span class="hljs-keyword">const</span> venus = <span class="hljs-keyword">new</span> Venus(<span class="hljs-built_in">window</span>.ethereum);
+
+(<span class="hljs-keyword">async</span> () =&gt; {
+
+  <span class="hljs-keyword">const</span> _repayVAIGuardianPaused = <span class="hljs-keyword">await</span> venus.repayVAIGuardianPaused();
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;repayVAIGuardianPaused&#x27;</span>, _repayVAIGuardianPaused);
+
+})().<span class="hljs-keyword">catch</span>(<span class="hljs-built_in">console</span>.error);</code></pre>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> options: <span class="tsd-signature-type">CallOptions</span><span class="tsd-signature-symbol"> = {}</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<p>Returns a string of the boolean repayVAIGuardianPaused.</p>
+						</li>
+					</ul>
+				</section>
 				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
 					<a name="tochecksumaddress" class="tsd-anchor"></a>
 					<h3>to<wbr>Checksum<wbr>Address</h3>
@@ -400,7 +675,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/SwipeWallet/venus-js/blob/d825d89/src/comp.ts#L31">comp.ts:31</a></li>
+									<li>Defined in <a href="https://github.com/SwipeWallet/venus-js/blob/26461c0/src/comp.ts#L31">comp.ts:31</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -419,6 +694,88 @@
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
 							<p>Returns a string of the Ethereum address.</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+					<a name="vaicontroller" class="tsd-anchor"></a>
+					<h3>vai<wbr>Controller</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">vai<wbr>Controller<span class="tsd-signature-symbol">(</span>options<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">CallOptions</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/SwipeWallet/venus-js/blob/26461c0/src/comp.ts#L725">comp.ts:725</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Get the vaiController.</p>
+								</div>
+								<dl class="tsd-comment-tags">
+									<dt>example</dt>
+									<dd><pre><code><span class="hljs-keyword">const</span> venus = <span class="hljs-keyword">new</span> Venus(<span class="hljs-built_in">window</span>.ethereum);
+
+(<span class="hljs-keyword">async</span> () =&gt; {
+
+  <span class="hljs-keyword">const</span> vaiControllerAddress = <span class="hljs-keyword">await</span> venus.vaiController();
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;vaiControllerAddress&#x27;</span>, vaiControllerAddress);
+
+})().<span class="hljs-keyword">catch</span>(<span class="hljs-built_in">console</span>.error);</code></pre>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> options: <span class="tsd-signature-type">CallOptions</span><span class="tsd-signature-symbol"> = {}</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<p>Returns a string of the vaiController address.</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+					<a name="vaimintrate" class="tsd-anchor"></a>
+					<h3>vai<wbr>Mint<wbr>Rate</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">vai<wbr>Mint<wbr>Rate<span class="tsd-signature-symbol">(</span>options<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">CallOptions</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/SwipeWallet/venus-js/blob/26461c0/src/comp.ts#L762">comp.ts:762</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Get the vaiMintRate.</p>
+								</div>
+								<dl class="tsd-comment-tags">
+									<dt>example</dt>
+									<dd><pre><code><span class="hljs-keyword">const</span> venus = <span class="hljs-keyword">new</span> Venus(<span class="hljs-built_in">window</span>.ethereum);
+
+(<span class="hljs-keyword">async</span> () =&gt; {
+
+  <span class="hljs-keyword">const</span> vaiMintRate = <span class="hljs-keyword">await</span> venus.vaiMintRate();
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;vaiMintRate&#x27;</span>, vaiMintRate);
+
+})().<span class="hljs-keyword">catch</span>(<span class="hljs-built_in">console</span>.error);</code></pre>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> options: <span class="tsd-signature-type">CallOptions</span><span class="tsd-signature-symbol"> = {}</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<p>Returns a string of the numeric vaiMintRate.</p>
 						</li>
 					</ul>
 				</section>
@@ -474,13 +831,37 @@
 						<a href="_comp_.html#delegatebysig" class="tsd-kind-icon">delegate<wbr>BySig</a>
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="_comp_.html#getmintablevai" class="tsd-kind-icon">get<wbr>MintableVAI</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="_comp_.html#getvaimintrate" class="tsd-kind-icon">getVAIMint<wbr>Rate</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module">
 						<a href="_comp_.html#getvenusaccrued" class="tsd-kind-icon">get<wbr>Venus<wbr>Accrued</a>
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-module">
 						<a href="_comp_.html#getvenusbalance" class="tsd-kind-icon">get<wbr>Venus<wbr>Balance</a>
 					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="_comp_.html#mintvaiguardianpaused" class="tsd-kind-icon">mintVAIGuardian<wbr>Paused</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="_comp_.html#mintedvaiof" class="tsd-kind-icon">mintedVAIOf</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="_comp_.html#mintedvais" class="tsd-kind-icon">mintedVAIs</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="_comp_.html#repayvaiguardianpaused" class="tsd-kind-icon">repayVAIGuardian<wbr>Paused</a>
+					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
 						<a href="_comp_.html#tochecksumaddress" class="tsd-kind-icon">to<wbr>Checksum<wbr>Address</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="_comp_.html#vaicontroller" class="tsd-kind-icon">vai<wbr>Controller</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="_comp_.html#vaimintrate" class="tsd-kind-icon">vai<wbr>Mint<wbr>Rate</a>
 					</li>
 				</ul>
 			</nav>

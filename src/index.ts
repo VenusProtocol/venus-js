@@ -69,6 +69,14 @@ const Venus = function(
     delegate: comp.delegate,
     delegateBySig: comp.delegateBySig,
     createDelegateSignature: comp.createDelegateSignature,
+    getMintableVAI: comp.getMintableVAI,
+    getVAIMintRate: comp.getVAIMintRate,
+    mintVAIGuardianPaused: comp.mintVAIGuardianPaused,
+    repayVAIGuardianPaused: comp.repayVAIGuardianPaused,
+    mintedVAIOf: comp.mintedVAIOf,
+    mintedVAIs: comp.mintedVAIs,
+    vaiController: comp.vaiController,
+    vaiMintRate: comp.vaiMintRate,
   };
 
   // Instance needs to know which network the provider connects to, so it can
