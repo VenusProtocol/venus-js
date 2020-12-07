@@ -1,14 +1,14 @@
 # Venus.js
 
-A JavaScript SDK for Ethereum and the Venus Protocol. Wraps around [Ethers.js](https://github.com/ethers-io/ethers.js/). Works in the **web browser** and **Node.js**.
+A JavaScript SDK for Binance Smart Chain and the Venus Protocol. Wraps around [Ethers.js](https://github.com/ethers-io/ethers.js/). Works in the **web browser** and **Node.js**.
 
 [Venus.js Documentation](https://docs.venus.io/docs/venus-js)
 
 This SDK is in **open beta**, and is constantly under development. **USE AT YOUR OWN RISK**.
 
-## Ethereum Read & Write
+## Binance Smart Chain Read & Write
 
-JSON RPC based Ethereum **read** and **write**.
+JSON RPC based Binance Smart Chain **read** and **write**.
 
 ### Read
 
@@ -106,7 +106,7 @@ import Venus from '@swipewallet/venus-js';
 
 ## Instance Creation
 
-The following are valid Ethereum providers for initialization of the SDK.
+The following are valid Binance Smart Chain providers for initialization of the SDK.
 
 ```js
 var venus = new Venus(window.ethereum); // web browser
@@ -162,7 +162,7 @@ const trxOptions = {
   abi,        // Definition string or an ABI array from a solc build
   provider,   // JSON RPC string, Web3 object, or Ethers.js fallback network (string)
   network,    // Ethers.js fallback network provider, "provider" has precedence over "network"
-  from,       // Address that the Ethereum transaction is send from
+  from,       // Address that the Binance Smart Chain transaction is send from
   gasPrice,   // Ethers.js override `Venus._ethers.utils.parseUnits('10.0', 'gwei')`
   gasLimit,   // Ethers.js override - see https://docs.ethers.io/ethers.js/v5-beta/api-contract.html#overrides
   value,      // Number or string
