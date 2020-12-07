@@ -65,13 +65,13 @@
 				<a href="#venusjs" id="venusjs" style="color: inherit; text-decoration: none;">
 					<h1>Venus.js</h1>
 				</a>
-				<p>A JavaScript SDK for Ethereum and the Venus Protocol. Wraps around <a href="https://github.com/ethers-io/ethers.js/">Ethers.js</a>. Works in the <strong>web browser</strong> and <strong>Node.js</strong>.</p>
+				<p>A JavaScript SDK for Binance Smart Chain and the Venus Protocol. Wraps around <a href="https://github.com/ethers-io/ethers.js/">Ethers.js</a>. Works in the <strong>web browser</strong> and <strong>Node.js</strong>.</p>
 				<p><a href="https://docs.venus.io/docs/venus-js">Venus.js Documentation</a></p>
 				<p>This SDK is in <strong>open beta</strong>, and is constantly under development. <strong>USE AT YOUR OWN RISK</strong>.</p>
-				<a href="#ethereum-read-amp-write" id="ethereum-read-amp-write" style="color: inherit; text-decoration: none;">
-					<h2>Ethereum Read &amp; Write</h2>
+				<a href="#binance-smart-chain-read-amp-write" id="binance-smart-chain-read-amp-write" style="color: inherit; text-decoration: none;">
+					<h2>Binance Smart Chain Read &amp; Write</h2>
 				</a>
-				<p>JSON RPC based Ethereum <strong>read</strong> and <strong>write</strong>.</p>
+				<p>JSON RPC based Binance Smart Chain <strong>read</strong> and <strong>write</strong>.</p>
 				<a href="#read" id="read" style="color: inherit; text-decoration: none;">
 					<h3>Read</h3>
 				</a>
@@ -153,7 +153,7 @@
 				<a href="#instance-creation" id="instance-creation" style="color: inherit; text-decoration: none;">
 					<h2>Instance Creation</h2>
 				</a>
-				<p>The following are valid Ethereum providers for initialization of the SDK.</p>
+				<p>The following are valid Binance Smart Chain providers for initialization of the SDK.</p>
 				<pre><code class="language-js"><span class="hljs-keyword">var</span> venus = <span class="hljs-keyword">new</span> Venus(<span class="hljs-built_in">window</span>.ethereum); <span class="hljs-comment">// web browser</span>
 
 <span class="hljs-keyword">var</span> venus = <span class="hljs-keyword">new</span> Venus(<span class="hljs-string">&#x27;http://127.0.0.1:8545&#x27;</span>); <span class="hljs-comment">// HTTP provider</span>
@@ -199,7 +199,7 @@
   abi,        <span class="hljs-comment">// Definition string or an ABI array from a solc build</span>
   provider,   <span class="hljs-comment">// JSON RPC string, Web3 object, or Ethers.js fallback network (string)</span>
   network,    <span class="hljs-comment">// Ethers.js fallback network provider, &quot;provider&quot; has precedence over &quot;network&quot;</span>
-  <span class="hljs-keyword">from</span>,       <span class="hljs-comment">// Address that the Ethereum transaction is send from</span>
+  <span class="hljs-keyword">from</span>,       <span class="hljs-comment">// Address that the Binance Smart Chain transaction is send from</span>
   gasPrice,   <span class="hljs-comment">// Ethers.js override `Venus._ethers.utils.parseUnits(&#x27;10.0&#x27;, &#x27;gwei&#x27;)`</span>
   gasLimit,   <span class="hljs-comment">// Ethers.js override - see https://docs.ethers.io/ethers.js/v5-beta/api-contract.html#overrides</span>
   value,      <span class="hljs-comment">// Number or string</span>
