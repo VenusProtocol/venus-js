@@ -2,8 +2,8 @@
 
 Be sure to **build the SDK** from the root directory before running the Node.js examples: `npm run build`.
 
-- [Node.js](https://github.com/SwipeWallet/venus-js/tree/master/examples/nodejs) Source code files.
-- [Web Browser](https://github.com/SwipeWallet/venus-js/examples/web/) Easiest to surf in the GitHub Pages webpage.
+- [Node.js](https://github.com/venusprotocol/venus-js/tree/master/examples/nodejs) Source code files.
+- [Web Browser](https://github.com/venusprotocol/venus-js/examples/web/) Easiest to surf in the GitHub Pages webpage.
 
 ## Use Ganache
 Run [ganache-cli](https://www.npmjs.com/package/ganache-cli) or [Ganache](https://www.trufflesuite.com/ganache) in another command line window before running the `eth_sendTransaction` type examples. Be sure to fork mainnet.

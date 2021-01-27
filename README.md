@@ -99,10 +99,10 @@ import Venus from '@swipewallet/venus-js';
 
 ## More Code Examples
 
-- [Node.js](https://github.com/SwipeWallet/venus-js/tree/master/examples)
-- [Web Browser](https://github.com/SwipeWallet/venus-js/examples/web/)
+- [Node.js](https://github.com/venusprotocol/venus-js/tree/master/examples)
+- [Web Browser](https://github.com/venusprotocol/venus-js/examples/web/)
 
-[To run, boot Ganache fork of mainnet locally](https://github.com/SwipeWallet/venus-js/tree/master/examples)
+[To run, boot Ganache fork of mainnet locally](https://github.com/venusprotocol/venus-js/tree/master/examples)
 
 ## Instance Creation
 
@@ -218,7 +218,7 @@ main().catch(console.error);
 ## Build for Node.js & Web Browser
 
 ```
-git clone git@github.com:SwipeWallet/venus-js.git
+git clone git@github.com:venusprotocol/venus-js.git
 cd venus-js/
 npm install
 npm run build
