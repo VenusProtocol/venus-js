@@ -174,7 +174,7 @@ function queryApi(options: APIRequest, name: string, path: string): Promise<APIR
     let responseCode, responseMessage;
 
     // TODO -- api service endpoint should be updated.
-    let hostname = 'https://mainnetapi.venus.io';
+    let hostname = 'https://api.venus.io';
     if (options && (options.network === 'testnet')) hostname = 'https://testnetapi.venus.io';
 
     request({
