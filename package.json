@@ -1,6 +1,6 @@
 {
-  "name": "@swipewallet/venus-js",
-  "version": "0.0.5",
+  "name": "@venusprotocol/venus-js",
+  "version": "2.0.1",
   "author": "Venus Labs, Inc.",
   "description": "A JavaScript SDK for Ethereum and the Venus Protocol.",
   "license": "BSD-3-Clause",
@@ -19,7 +19,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/venusprotocol/venus-js"
+    "url": "https://github.com/venusprotocol/venus-js.git"
   },
   "keywords": [
     "venus",
