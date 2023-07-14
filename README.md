@@ -1,5 +1,8 @@
 # Venus.js
 
+> :warning: **Not Maintained**: This repo has been archived for historical purposes and is not maintained. Check docs.venus.io for documentation on how to interact with the protocol.
+
+
 A JavaScript SDK for Binance Smart Chain and the Venus Protocol. Wraps around [Ethers.js](https://github.com/ethers-io/ethers.js/). Works in the **web browser** and **Node.js**.
 
 [Venus.js Documentation](https://docs.venus.io/docs/venus-js)
